@@ -1,4 +1,4 @@
-name: plaineda
+name: group_25
 channels:
   - conda-forge
 dependencies:
