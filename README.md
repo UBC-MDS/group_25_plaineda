@@ -1,4 +1,4 @@
-# Plain EDA
+# Not set yet
 
 ## About
 Plaineda is a minimalistic set of resources to ease the very first steps of data exploration, It offers prompt column summaries, elementary statistics, missing value verifications, and several basic images that hasty and dull early EDA.
