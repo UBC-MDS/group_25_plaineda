@@ -26,22 +26,22 @@ def format_destination(city, country_code):
     TypeError
         If inputs are not strings.
     """
-    if not isinstance(city, str):
-        raise TypeError("city must be a string.")
-    if not isinstance(country_code, str):
-        raise TypeError("country_code must be a string.")
+    # if not isinstance(city, str):
+    #     raise TypeError("city must be a string.")
+    # if not isinstance(country_code, str):
+    #     raise TypeError("country_code must be a string.")
 
-    city_clean = city.strip()
-    code_clean = country_code.strip()
+    # city_clean = city.strip()
+    # code_clean = country_code.strip()
 
-    if city_clean == "" or code_clean == "":
-        raise ValueError("city and country_code must not be empty.")
+    # if city_clean == "" or code_clean == "":
+    #     raise ValueError("city and country_code must not be empty.")
 
-    if len(code_clean) != 2 or not code_clean.isalpha():
-        raise ValueError("country_code must be exactly two letters (A-Z).")
+    # if len(code_clean) != 2 or not code_clean.isalpha():
+    #     raise ValueError("country_code must be exactly two letters (A-Z).")
 
-    return f"{city_clean.title()}, {code_clean.upper()}"
-
+    # return f"{city_clean.title()}, {code_clean.upper()}"
+    pass
 
 
 
