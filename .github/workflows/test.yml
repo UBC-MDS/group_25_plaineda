@@ -30,14 +30,19 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install hatch
 
-    # Milestone 2 requirement:
-    # Install the package so pytest can import dsci_524_group_25 from src/.
-    # Without this, CI fails even if local tests pass.
+    # ================================
+    # Milestone 2 REQUIRED STEP
+    # Install the package so pytest can import:
+    #   from dsci_524_group_25.format_destination import ...
+    # Without this, CI fails with ModuleNotFoundError
+    # ================================
     - name: Install package (Milestone 2)
-      run: pip install -e .
+      run: |
+        pip install -e .
 
     - name: Run test suite
-      run: hatch run +py=${{ matrix.python-version }} test:run
+      run: |
+        hatch run +py=${{ matrix.python-version }} test:run
 
     # Upload coverage to Codecov (only once to avoid duplicates)
     - name: Upload to codecov
