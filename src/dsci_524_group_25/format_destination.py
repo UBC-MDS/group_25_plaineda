@@ -41,7 +41,7 @@ def format_destination(city, country_code):
         raise ValueError("country_code must be exactly two letters (A-Z).")
 
     return f"{city_clean.title()}, {code_clean.upper()}"
-
+    pass
 
 
 

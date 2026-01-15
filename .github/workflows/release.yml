@@ -1,7 +1,8 @@
 name: Publish to PyPI
 
 on:
-  pull_request:
+  #pull_request:
+  # Milestone 2: disable PyPI publishing on pull requests — releases only happen on GitHub releases
   push:
     branches:
       - main
