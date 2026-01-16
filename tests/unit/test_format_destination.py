@@ -1,4 +1,4 @@
-test_example.pyimport pytest
+import pytest
 from dsci_524_group_25.format_destination import format_destination
 
 def test_basic():
