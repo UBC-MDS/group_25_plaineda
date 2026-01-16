@@ -35,7 +35,7 @@ def estimate_trip_cost(distance, fuel_price, efficiency):
     if fuel_price <= 0:
         raise ValueError("Fuel price must be greater than 0.")
     if efficiency <= 0:
-        raise ValueError("Efficiency (km/L) must be greater than 0.")
+        raise ValueError("Efficiency must be greater than 0.")
 
     # Calculate base fuel cost
     liters_needed = distance / efficiency

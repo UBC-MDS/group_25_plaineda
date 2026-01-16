@@ -6,7 +6,7 @@ method/ class. Others prefer to write tests for each module. That decision
 is up to you. This test example provides a single test for the example.py
 module.
 """
-
+import pytest
 from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
 
 def test_general_cost():
@@ -29,6 +29,6 @@ def test_invalid_fuel_price():
 
 def test_invalid_efficiency():
     """Test a invalid efficiency case."""    
-    with pytest.raises(ValueError, match="Efficiency (km/L) must be greater than 0."):
-        estimate_trip_cost(100, -2, 4)
+    with pytest.raises(ValueError, match="Efficiency must be greater than 0."):
+        estimate_trip_cost(100, 2, -4)
         
