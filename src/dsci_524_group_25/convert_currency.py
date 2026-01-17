@@ -31,4 +31,18 @@ def convert_currency(amount, rate):
     >>> convert_currency(150.0, 1.2)
     180.0
     """
-    pass
+    # Input Validation
+    if amount <= 0:
+        raise ValueError("Amount must be greater than 0 dollars.")
+    if rate <= 0:
+        raise ValueError("Rate must be greater than 0.")
+    
+    # Convert monetary amount
+    converted_amount = amount * rate
+
+    # Apply service fee
+    if amount < 100:
+        converted_amount =- 5
+
+    # Return final amount
+    return converted_amount
