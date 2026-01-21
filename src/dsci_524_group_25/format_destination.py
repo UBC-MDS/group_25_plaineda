@@ -25,6 +25,16 @@ def format_destination(city, country_code):
         If inputs are empty after stripping or country_code is invalid.
     TypeError
         If inputs are not strings.
+
+    Examples
+    --------
+    >>> from dsci_524_group_25.format_destination import format_destination
+    >>> format_destination("vancouver", "ca")
+    'Vancouver, CA'
+    >>> format_destination("  paris ", " fr ")
+    'Paris, FR'
+    >>> format_destination("TOKYO", "jp")
+    'Tokyo, JP'
     """
     if not isinstance(city, str):
         raise TypeError("city must be a string.")
@@ -41,9 +51,3 @@ def format_destination(city, country_code):
         raise ValueError("country_code must be exactly two letters (A-Z).")
 
     return f"{city_clean.title()}, {code_clean.upper()}"
-    pass
-
-
-
-
-
