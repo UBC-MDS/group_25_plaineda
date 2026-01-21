@@ -15,7 +15,7 @@ TravelPy is a lightweight Python package that provides a simplified way for stud
 Install from TestPyPI:
 
 ```bash
-pip install -i https://test.pypi.org/simple/dsci_524_group_25
+pip install -i https://test.pypi.org/simple/ dsci_524_group_25
 ```
 
 ## Functions
