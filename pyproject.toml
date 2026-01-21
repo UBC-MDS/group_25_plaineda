@@ -7,7 +7,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 ################################################################################
-# Project Configuration
+# Project Configuration.
 ################################################################################
 
 [project]
