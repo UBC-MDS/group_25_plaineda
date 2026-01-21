@@ -64,7 +64,6 @@ jobs:
         run: |
           pip install -e .
 
-      # Milestone 3: Style checker (non-blocking to avoid CI failures)
       - name: Run style checker
         run: |
           pip install ruff
