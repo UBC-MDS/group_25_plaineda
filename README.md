@@ -8,14 +8,14 @@
 
 ## Overview
 
-TravelPy is a lightweight Python package for travel planning that combines trip budgeting, currency conversion, packing list generation, and destination formatting into one simple toolkit for students and casual travelers.
+TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit.
 
 ## Installation
 
 Install from TestPyPI:
 
 ```bash
-pip install -i https://test.pypi.org/simple/ dsci_524_group_25
+pip install -i https://test.pypi.org/simple/dsci_524_group_25
 ```
 
 ## Functions
@@ -30,7 +30,7 @@ Calculates total fuel cost for a trip in Canada (metric units), including a 15% 
 | `fuel_price` | float | Price of fuel per liter (CAD/L) |
 | `efficiency` | float | Fuel efficiency in km/L |
 
-**Returns:** `float` — Estimated cost rounded to 2 decimal places.
+**Returns:** `float`, Estimated cost rounded to 2 decimal places.
 
 ```python
 from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
@@ -50,7 +50,7 @@ Converts a monetary amount using a provided exchange rate. Applies a $5 service 
 | `amount` | float | Original amount to convert (must be positive) |
 | `rate` | float | Exchange rate (must be positive) |
 
-**Returns:** `float` — Converted amount after fees.
+**Returns:** `float`, Converted amount after fees.
 
 ```python
 from dsci_524_group_25.convert_currency import convert_currency
@@ -70,7 +70,7 @@ Generates a packing checklist based on weather conditions and trip duration.
 | `weather` | str | Expected conditions: "cold", "warm", or "rainy" |
 | `duration` | int | Number of days for the trip |
 
-**Returns:** `list` — Packing items based on conditions.
+**Returns:** `list`, Packing items based on conditions.
 
 ```python
 from dsci_524_group_25.get_packing_list import get_packing_list
@@ -91,7 +91,7 @@ Normalizes destination names into "City, COUNTRY_CODE" format.
 | `city` | str | City name |
 | `country_code` | str | Two-letter country code |
 
-**Returns:** `str` — Formatted destination string.
+**Returns:** `str`, Formatted destination string.
 
 ```python
 from dsci_524_group_25.format_destination import format_destination
@@ -146,9 +146,9 @@ Documentation is automatically deployed to GitHub Pages on push to `main` via Gi
 
 TravelPy complements existing Python utilities:
 
-- [forex-python](https://pypi.org/project/forex-python/) — Currency conversion
-- [currencyconverter](https://pypi.org/project/currencyconverter/) — Offline conversion
-- [pycountry](https://pypi.org/project/pycountry/) — Country code lookup
+- [forex-python](https://pypi.org/project/forex-python/) : Currency conversion
+- [currencyconverter](https://pypi.org/project/currencyconverter/) : Offline conversion
+- [pycountry](https://pypi.org/project/pycountry/) : Country code lookup
 
 Unlike single-purpose libraries, TravelPy bundles multiple travel-planning tools in one package.
 
