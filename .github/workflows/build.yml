@@ -1,5 +1,5 @@
-name: Run Tests
-# Run the test suite on pull requests and pushes to main branch
+name: CI Build
+# Milestone 3: Run the test suite and style checkers on pull requests and pushes to main branch
 on:
   pull_request:
   push:
@@ -39,6 +39,15 @@ jobs:
     - name: Install package (Milestone 2)
       run: |
         pip install -e .
+
+    # ================================
+    # Milestone 3: Added style checker (syllabus requirement)
+    # "runs the test suite and style checkers"
+    # ================================
+    - name: Run style checker
+      run: |
+        pip install ruff
+        ruff check src/
 
     - name: Run test suite
       run: |
