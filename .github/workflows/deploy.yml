@@ -1,11 +1,12 @@
-name: Publish to TestPyPI
+name: Deploy to TestPyPI
 
 # ============================================================================
 # Milestone 3: Updated workflow for continuous deployment to TestPyPI
 # Changes made:
-# - Fixed repository_owner from 'DSCI_524_group_25' to 'UBC-MDS' (line 82)
-# - Changed deployment target from PyPI to TestPyPI (as per syllabus requirement)
-# - Added test job to run test suite before publishing (syllabus requirement)
+# - Renamed from release.yml to deploy.yml (syllabus requirement)
+# - Fixed repository_owner from 'DSCI_524_group_25' to 'UBC-MDS'
+# - Changed deployment target from PyPI to TestPyPI (syllabus requirement)
+# - Added test job to run test suite and style checkers before publishing
 # - Updated environment URL to test.pypi.org
 # ============================================================================
 
@@ -54,7 +55,7 @@ jobs:
           if-no-files-found: error
 
   # ============================================================================
-  # Milestone 3: Run tests before publishing (as per syllabus requirement)
+  # Milestone 3: Run tests and style checkers before publishing (syllabus requirement)
   # "workflow runs the test suite, style checkers and deploys to package to test PyPI"
   # ============================================================================
   test:
@@ -75,6 +76,12 @@ jobs:
       - name: Install package
         run: |
           pip install -e .
+
+      # Milestone 3: Added style checker (syllabus requirement)
+      - name: Run style checker
+        run: |
+          pip install ruff
+          ruff check src/
 
       - name: Run test suite
         run: |
