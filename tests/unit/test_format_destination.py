@@ -20,7 +20,7 @@ def test_non_string():
         format_destination(123, "US")
 
 
-# Milestone 3: Added 4 more unit tests (rubric requirement)
+# Milestone 3: Added 4 more unit tests (rubric requirement).
 
 def test_uppercase_city_input():
     """Milestone 3: Test that uppercase city input is properly title-cased."""
