@@ -1,162 +1,27 @@
-# TravelPy
+# Welcome to TravelPy
 
-[![CI Build](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/build.yml)
-[![Deploy to TestPyPI](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/deploy.yml)
-[![Documentation](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/docs.yml/badge.svg)](https://ubc-mds.github.io/DSCI_524_group_25/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+|        |        |
+|--------|--------|
+| Package | [![Latest PyPI Version](https://img.shields.io/pypi/v/travelpy.svg)](https://pypi.org/project/travelpy/) [![Supported Python Versions](https://img.shields.io/pypi/pyversions/travelpy.svg)](https://pypi.org/project/travelpy/)  |
+| Meta   | [![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) |
+
+*TODO: the above badges that indicate python version and package version will only work if your package is on PyPI.
+If you don't plan to publish to PyPI, you can remove them.*
 
 ## Overview
 
 TravelPy is a lightweight Python package for travel planning that combines trip budgeting, currency conversion, packing list generation, and destination formatting into one simple toolkit for students and casual travelers.
 
-## Installation
-
-Install from TestPyPI:
-
-```bash
-pip install -i https://test.pypi.org/simple/ dsci_524_group_25
-```
-
 ## Functions
 
-### `estimate_trip_cost(distance, fuel_price, efficiency)`
-
-Calculates total fuel cost for a trip in Canada (metric units), including a 15% contingency fee for trips over 500 km.
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `distance` | float | Distance of the trip in kilometers |
-| `fuel_price` | float | Price of fuel per liter (CAD/L) |
-| `efficiency` | float | Fuel efficiency in km/L |
-
-**Returns:** `float` — Estimated cost rounded to 2 decimal places.
-
-```python
-from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
-
-estimate_trip_cost(150, 1.7, 12)   # Returns: 21.25
-estimate_trip_cost(900, 1.7, 12)   # Returns: 146.62 (includes 15% contingency)
-```
-
----
-
-### `convert_currency(amount, rate)`
-
-Converts a monetary amount using a provided exchange rate. Applies a $5 service fee for transactions under $100.
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `amount` | float | Original amount to convert (must be positive) |
-| `rate` | float | Exchange rate (must be positive) |
-
-**Returns:** `float` — Converted amount after fees.
-
-```python
-from dsci_524_group_25.convert_currency import convert_currency
-
-convert_currency(150, 1.2)  # Returns: 180.0
-convert_currency(50, 1.2)   # Returns: 55.0 (fee applied)
-```
-
----
-
-### `get_packing_list(weather, duration)`
-
-Generates a packing checklist based on weather conditions and trip duration.
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `weather` | str | Expected conditions: "cold", "warm", or "rainy" |
-| `duration` | int | Number of days for the trip |
-
-**Returns:** `list` — Packing items based on conditions.
-
-```python
-from dsci_524_group_25.get_packing_list import get_packing_list
-
-get_packing_list("cold", 3)   # Returns: ["Passport", "Toothbrush", "Heavy Jacket", "Gloves"]
-get_packing_list("warm", 10)  # Returns: ["Passport", "Toothbrush", "Sunscreen", "Laundry kit"]
-get_packing_list("rainy", 5)  # Returns: ["Passport", "Toothbrush", "Umbrella"]
-```
-
----
-
-### `format_destination(city, country_code)`
-
-Normalizes destination names into "City, COUNTRY_CODE" format.
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `city` | str | City name |
-| `country_code` | str | Two-letter country code |
-
-**Returns:** `str` — Formatted destination string.
-
-```python
-from dsci_524_group_25.format_destination import format_destination
-
-format_destination("vancouver", "ca")    # Returns: "Vancouver, CA"
-format_destination("  paris ", " fr ")   # Returns: "Paris, FR"
-format_destination("TOKYO", "jp")        # Returns: "Tokyo, JP"
-```
-
----
-
-## Documentation
-
-Full documentation: **https://ubc-mds.github.io/DSCI_524_group_25/**
-
----
-
-## Developer Guide
-
-### Set up the development environment
-
-```bash
-conda env create -f environment.yml
-conda activate dsci_524_group_25
-```
-
-### Install the package
-
-```bash
-pip install -e .
-```
-
-### Run tests
-
-```bash
-hatch run test:run
-```
-
-### Build documentation
-
-```bash
-hatch run docs:build
-```
-
-### Deploy documentation
-
-Documentation is automatically deployed to GitHub Pages on push to `main` via GitHub Actions.
-
----
+- `estimate_trip_cost(distance, fuel_price, efficiency)`: Calculates total fuel cost for a trip and adds a long-haul contingency fee for trips over 500 miles, returning a rounded total.
+- `convert_currency(amount, rate)`: Converts a monetary amount using a provided exchange rate and applies a flat service fee for transactions under $100.
+- `get_packing_list(weather, duration)`: Generates a customized packing checklist based on expected weather conditions and trip length, with clear validation for short trips.
+- `format_destination(city, country_code)`: Normalizes destination names into a standard "City, COUNTRY_CODE" format, handling empty inputs and validating country codes.
 
 ## Python Ecosystem
 
-TravelPy complements existing Python utilities:
-
-- [forex-python](https://pypi.org/project/forex-python/) — Currency conversion
-- [currencyconverter](https://pypi.org/project/currencyconverter/) — Offline conversion
-- [pycountry](https://pypi.org/project/pycountry/) — Country code lookup
-
-Unlike single-purpose libraries, TravelPy bundles multiple travel-planning tools in one package.
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).
+TravelPy fits into the Python ecosystem alongside focused utilities such as `forex-python` (currency conversion, https://pypi.org/project/forex-python/), `currencyconverter` (offline conversion, https://pypi.org/project/currencyconverter/), and `pycountry` (country code lookup, https://pypi.org/project/pycountry/). Unlike these single-purpose libraries, TravelPy bundles several travel-planning helpers in one place for quick, everyday use.
 
 ## Contributors
 
@@ -165,6 +30,22 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. This project follows a [C
 - Jaskiel Derrick
 - Rebecca Rosette Nanfuka
 
-## License
+## Get started
 
-MIT License © 2026 Kwok Hoi Hin, Esteki Hooman, Jaskiel Derrick, Rebecca Rosette Nanfuka.
+You can install this package into your preferred Python environment using pip:
+
+```bash
+$ pip install travelpy
+```
+
+To use travelpy in your code:
+
+```python
+>>> import travelpy
+>>> travelpy.hello_world()
+```
+
+## Copyright
+
+- Copyright © 2026 Kwok Hoi Hin, Esteki Hooman, Jaskiel Derrick, Rebecca Rosette Nanfuka.
+- Free software distributed under the [MIT License](./LICENSE).
