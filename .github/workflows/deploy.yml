@@ -25,14 +25,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install hatch
+      - name: Install build tools
         run: |
             python -m pip install --upgrade pip
-            python -m pip install hatch
+            python -m pip install build
 
-      - name: Build package using Hatch
+      - name: Build package
         run: |
-            hatch run build:check
+            python -m build
 
             echo ""
             echo "Generated files:"
