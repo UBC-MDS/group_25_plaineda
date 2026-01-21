@@ -1,7 +1,7 @@
 name: Deploy to TestPyPI
 
 # ============================================================================
-# Milestone 3: Updated workflow for continuous deployment to TestPyPI
+# Milestone 3: Updated workflow for continuous deployment to TestPyPI.
 # ============================================================================
 
 on:
