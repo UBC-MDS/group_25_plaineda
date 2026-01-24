@@ -23,7 +23,7 @@ quartodoc:
     - title: Travel Planning Functions
       desc: Functions to help you plan your trips.
       contents:
-        - estimate_trip_cost
-        - convert_currency
-        - get_packing_list
-        - format_destination
+        - estimate_trip_cost.estimate_trip_cost
+        - convert_currency.convert_currency
+        - get_packing_list.get_packing_list
+        - format_destination.format_destination
