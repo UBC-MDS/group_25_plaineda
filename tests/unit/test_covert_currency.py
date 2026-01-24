@@ -1,5 +1,5 @@
 import pytest
-from dsci_524_group_25.convert_currency import convert_currency
+from travelpy.convert_currency import convert_currency
 
 def test_invalid_rate():
     """Test that a rate below 0 raises a value error."""
