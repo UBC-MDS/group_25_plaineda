@@ -1,4 +1,4 @@
-name: dsci_524_group_25
+name: travelpy
 channels:
   - conda-forge
 dependencies:
