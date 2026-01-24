@@ -1,5 +1,4 @@
 import pytest
-
 from travelpy.get_packing_list import get_packing_list
 
 
@@ -30,4 +29,3 @@ def test_get_packing_list_warm_long_trip():
     """Test that warm weather and long duration add sunscreen and laundry kit."""
     out = get_packing_list("warm", 10)
     assert out == ["Passport", "Toothbrush", "Sunscreen", "Laundry kit"]
-```

@@ -28,10 +28,10 @@ This package provides tools for students and travelers to plan their trips
 by considering budgeting, currency conversion, and packing preparation.
 """
 
-from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
-from dsci_524_group_25.convert_currency import convert_currency
-from dsci_524_group_25.get_packing_list import get_packing_list
-from dsci_524_group_25.format_destination import format_destination
+from travelpy.estimate_trip_cost import estimate_trip_cost
+from travelpy.convert_currency import convert_currency
+from travelpy.get_packing_list import get_packing_list
+from travelpy.format_destination import format_destination
 
 __all__ = [
     "estimate_trip_cost",

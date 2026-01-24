@@ -1,13 +1,8 @@
 """
-A test module that tests your example module.
-
-Some people prefer to write tests in a test file for each function or
-method/ class. Others prefer to write tests for each module. That decision
-is up to you. This test example provides a single test for the example.py
-module.
+A test module that tests the estimate_trip_cost module.
 """
 import pytest
-from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
+from travelpy.estimate_trip_cost import estimate_trip_cost
 
 def test_general_cost():
     """Test a valid, non-negative input."""
@@ -31,4 +26,3 @@ def test_invalid_efficiency():
     """Test a invalid efficiency case."""
     with pytest.raises(ValueError, match="Efficiency must be greater than 0."):
         estimate_trip_cost(100, 2, -4)
-        
