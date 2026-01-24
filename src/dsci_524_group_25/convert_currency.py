@@ -42,7 +42,7 @@ def convert_currency(amount, rate):
 
     # Apply service fee
     if amount < 100:
-        converted_amount =- 5
+        converted_amount -= 5
 
     # Return final amount
     return converted_amount
