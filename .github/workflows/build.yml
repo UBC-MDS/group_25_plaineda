@@ -47,5 +47,7 @@ jobs:
       if: runner.os == 'macOS' && matrix.python-version == '3.13'
       uses: codecov/codecov-action@v4
       with:
-        verbose: true
+        token: ${{ secrets.CODECOV }}
         files: ./coverage.xml
+        verbose: true
+        fail_ci_if_error: false
