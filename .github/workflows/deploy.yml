@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4
+        uses: actions/checkout@v4
         with:
           fetch-tags: true
 
       - name: Setup Python
-        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v5.1.0
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
@@ -35,7 +35,7 @@ jobs:
             ls -lh dist/
 
       - name: Store the distribution packages
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        uses: actions/upload-artifact@v4
         with:
           name: python-package-distributions
           path: dist/
@@ -44,10 +44,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v4
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v5.1.0
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
@@ -70,8 +70,7 @@ jobs:
           hatch run test:run
 
   publish:
-    name: >-
-      Publish Python distribution to TestPyPI
+    name: Publish Python distribution to TestPyPI
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs:
       - build
@@ -79,13 +78,13 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/dsci_524_group_25
+      url: https://test.pypi.org/p/travelpy
     permissions:
       id-token: write
 
     steps:
       - name: Download dists
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v4
+        uses: actions/download-artifact@v4
         with:
           name: python-package-distributions
           path: dist/
