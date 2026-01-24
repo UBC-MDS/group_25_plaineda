@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "TravelPy"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Reference"
+        href: reference/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+quartodoc:
+  package: dsci_524_group_25
+  dir: reference
+  sections:
+    - title: Travel Planning Functions
+      desc: Functions to help you plan your trips.
+      contents:
+        - estimate_trip_cost
+        - convert_currency
+        - get_packing_list
+        - format_destination

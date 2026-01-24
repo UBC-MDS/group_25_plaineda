@@ -1,0 +1,131 @@
+---
+title: "TravelPy"
+---
+
+## Overview
+
+TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit.
+
+## Installation
+
+```bash
+pip install -i https://test.pypi.org/simple/ dsci_524_group_25
+```
+
+## Quick Start
+
+```python
+from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
+from dsci_524_group_25.convert_currency import convert_currency
+from dsci_524_group_25.get_packing_list import get_packing_list
+from dsci_524_group_25.format_destination import format_destination
+```
+
+## Usage Examples
+
+### Estimate Trip Cost
+
+Calculate the fuel cost for a road trip in Canada:
+
+```python
+from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
+
+# Short trip (150 km)
+cost = estimate_trip_cost(distance=150, fuel_price=1.7, efficiency=12)
+print(f"Short trip cost: ${cost}")  # Output: $21.25
+
+# Long trip (900 km) - includes 15% contingency
+cost = estimate_trip_cost(distance=900, fuel_price=1.7, efficiency=12)
+print(f"Long trip cost: ${cost}")  # Output: $146.62
+```
+
+### Convert Currency
+
+Convert money between currencies with automatic fee handling:
+
+```python
+from dsci_524_group_25.convert_currency import convert_currency
+
+# Large amount (no service fee)
+result = convert_currency(amount=150, rate=1.2)
+print(f"Converted: ${result}")  # Output: $180.0
+
+# Small amount (includes $5 service fee)
+result = convert_currency(amount=50, rate=1.2)
+print(f"Converted: ${result}")  # Output: $55.0
+```
+
+### Get Packing List
+
+Generate a packing checklist based on weather and trip duration:
+
+```python
+from dsci_524_group_25.get_packing_list import get_packing_list
+
+# Cold weather trip
+items = get_packing_list(weather="cold", duration=3)
+print(items)  # ['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']
+
+# Warm long trip
+items = get_packing_list(weather="warm", duration=10)
+print(items)  # ['Passport', 'Toothbrush', 'Sunscreen', 'Laundry kit']
+
+# Rainy weather
+items = get_packing_list(weather="rainy", duration=5)
+print(items)  # ['Passport', 'Toothbrush', 'Umbrella']
+```
+
+### Format Destination
+
+Normalize destination names into a standard format:
+
+```python
+from dsci_524_group_25.format_destination import format_destination
+
+# Basic usage
+dest = format_destination(city="vancouver", country_code="ca")
+print(dest)  # Output: "Vancouver, CA"
+
+# Handles whitespace
+dest = format_destination(city="  paris ", country_code=" fr ")
+print(dest)  # Output: "Paris, FR"
+
+# Handles case
+dest = format_destination(city="TOKYO", country_code="jp")
+print(dest)  # Output: "Tokyo, JP"
+```
+
+## Complete Trip Planning Example
+
+Here's how you might use all functions together to plan a trip:
+
+```python
+from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
+from dsci_524_group_25.convert_currency import convert_currency
+from dsci_524_group_25.get_packing_list import get_packing_list
+from dsci_524_group_25.format_destination import format_destination
+
+# Plan a trip to Paris
+destination = format_destination("paris", "fr")
+print(f"Destination: {destination}")
+
+# Estimate driving cost (500 km)
+fuel_cost = estimate_trip_cost(distance=500, fuel_price=1.8, efficiency=10)
+print(f"Estimated fuel cost: ${fuel_cost} CAD")
+
+# Convert budget to Euros (rate: 0.68)
+budget_eur = convert_currency(amount=500, rate=0.68)
+print(f"Budget in EUR: €{budget_eur}")
+
+# Get packing list for 7-day trip in cold weather
+packing = get_packing_list(weather="cold", duration=7)
+print(f"Packing list: {packing}")
+```
+
+## API Reference
+
+See the [Reference](reference/index.qmd) section for complete API documentation.
+
+## License
+
+MIT License © 2026 Kwok Hoi Hin, Esteki Hooman, Jaskiel Derrick, Rebecca Rosette Nanfuka.

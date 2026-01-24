@@ -133,6 +133,13 @@ hatch run test:run
 ### Build documentation
 
 ```bash
+quartodoc build
+quarto render
+```
+
+Or using hatch:
+
+```bash
 hatch run docs:build
 ```
 
