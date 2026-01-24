@@ -1,5 +1,5 @@
 import pytest
-from dsci_524_group_25.format_destination import format_destination
+from travelpy.format_destination import format_destination
 
 def test_basic():
     assert format_destination("vancouver", "ca") == "Vancouver, CA"

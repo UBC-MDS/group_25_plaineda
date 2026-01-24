@@ -7,18 +7,16 @@ title: "TravelPy"
 TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit.
 
 ## Installation
-
 ```bash
-pip install -i https://test.pypi.org/simple/ dsci_524_group_25
+pip install -i https://test.pypi.org/simple/ travelpy
 ```
 
 ## Quick Start
-
 ```python
-from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
-from dsci_524_group_25.convert_currency import convert_currency
-from dsci_524_group_25.get_packing_list import get_packing_list
-from dsci_524_group_25.format_destination import format_destination
+from travelpy.estimate_trip_cost import estimate_trip_cost
+from travelpy.convert_currency import convert_currency
+from travelpy.get_packing_list import get_packing_list
+from travelpy.format_destination import format_destination
 ```
 
 ## Usage Examples
@@ -26,9 +24,8 @@ from dsci_524_group_25.format_destination import format_destination
 ### Estimate Trip Cost
 
 Calculate the fuel cost for a road trip in Canada:
-
 ```python
-from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
+from travelpy.estimate_trip_cost import estimate_trip_cost
 
 # Short trip (150 km)
 cost = estimate_trip_cost(distance=150, fuel_price=1.7, efficiency=12)
@@ -42,9 +39,8 @@ print(f"Long trip cost: ${cost}")  # Output: $146.62
 ### Convert Currency
 
 Convert money between currencies with automatic fee handling:
-
 ```python
-from dsci_524_group_25.convert_currency import convert_currency
+from travelpy.convert_currency import convert_currency
 
 # Large amount (no service fee)
 result = convert_currency(amount=150, rate=1.2)
@@ -58,9 +54,8 @@ print(f"Converted: ${result}")  # Output: $55.0
 ### Get Packing List
 
 Generate a packing checklist based on weather and trip duration:
-
 ```python
-from dsci_524_group_25.get_packing_list import get_packing_list
+from travelpy.get_packing_list import get_packing_list
 
 # Cold weather trip
 items = get_packing_list(weather="cold", duration=3)
@@ -78,9 +73,8 @@ print(items)  # ['Passport', 'Toothbrush', 'Umbrella']
 ### Format Destination
 
 Normalize destination names into a standard format:
-
 ```python
-from dsci_524_group_25.format_destination import format_destination
+from travelpy.format_destination import format_destination
 
 # Basic usage
 dest = format_destination(city="vancouver", country_code="ca")
@@ -98,12 +92,11 @@ print(dest)  # Output: "Tokyo, JP"
 ## Complete Trip Planning Example
 
 Here's how you might use all functions together to plan a trip:
-
 ```python
-from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
-from dsci_524_group_25.convert_currency import convert_currency
-from dsci_524_group_25.get_packing_list import get_packing_list
-from dsci_524_group_25.format_destination import format_destination
+from travelpy.estimate_trip_cost import estimate_trip_cost
+from travelpy.convert_currency import convert_currency
+from travelpy.get_packing_list import get_packing_list
+from travelpy.format_destination import format_destination
 
 # Plan a trip to Paris
 destination = format_destination("paris", "fr")

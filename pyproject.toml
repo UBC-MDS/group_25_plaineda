@@ -11,12 +11,15 @@ requires = ["hatchling"]
 ################################################################################
 
 [project]
-name = "dsci_524_group_25"
-version = "0.1.9"
+name = "travelpy"
+version = "0.2.0"
 
 description = "A lightweight Python package for travel planning"
 authors = [
-    { name = "1", email = "esteki.net@gmail.com" },
+    { name = "Kwok Hoi Hin" },
+    { name = "Esteki Hooman", email = "esteki.net@gmail.com" },
+    { name = "Jaskiel Derrick" },
+    { name = "Rebecca Rosette Nanfuka" },
 ]
 license = "MIT"
 requires-python = ">= 3.10"
@@ -28,7 +31,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3 :: Only",
 ]
-keywords = []
+keywords = ["travel", "planning", "currency", "packing"]
 dependencies = []
 
 [project.urls]
@@ -36,7 +39,7 @@ Homepage = "https://github.com/UBC-MDS/DSCI_524_group_25"
 "Source Code" = "https://github.com/UBC-MDS/DSCI_524_group_25"
 "Bug Tracker" = "https://github.com/UBC-MDS/DSCI_524_group_25/issues"
 Documentation = "https://ubc-mds.github.io/DSCI_524_group_25/"
-Download = "https://pypi.org/project/dsci_524_group_25/#files"
+Download = "https://test.pypi.org/project/travelpy/#files"
 
 [project.optional-dependencies]
 dev = [
@@ -69,7 +72,7 @@ tests = [
 only-packages = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/dsci_524_group_25"]
+packages = ["src/travelpy"]
 
 
 
@@ -80,8 +83,8 @@ markers = ["raises"]
 
 [tool.coverage.paths]
 source = [
-    "src/dsci_524_group_25",
-    "*/site-packages/dsci_524_group_25",
+    "src/travelpy",
+    "*/site-packages/travelpy",
 ]
 
 [tool.coverage.run]
@@ -126,7 +129,7 @@ features = [
 python = ["3.10", "3.13"]
 
 [tool.hatch.envs.test.scripts]
-run = "pytest {args:--cov=dsci_524_group_25 --cov-report=term-missing --cov-report=xml}"
+run = "pytest {args:--cov=travelpy --cov-report=term-missing --cov-report=xml}"
 
 #--------------- Build and preview your documentation ---------------#
 

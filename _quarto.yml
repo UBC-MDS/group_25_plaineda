@@ -17,7 +17,7 @@ format:
     toc: true
 
 quartodoc:
-  package: dsci_524_group_25
+  package: travelpy
   dir: reference
   sections:
     - title: Travel Planning Functions
