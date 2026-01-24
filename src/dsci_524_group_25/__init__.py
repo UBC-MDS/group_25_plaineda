@@ -1,6 +1,6 @@
 # MIT License
 #
-# Copyright (c) 2026 1
+# Copyright (c) 2026 Kwok Hoi Hin, Esteki Hooman, Jaskiel Derrick, Rebecca Rosette Nanfuka
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,20 @@
 # SOFTWARE.
 
 """
-Add a docstring here for the init module.
+TravelPy - A lightweight Python package for travel planning.
 
-This might include a very brief description of the package,
-its purpose, and any important notes.
+This package provides tools for students and travelers to plan their trips
+by considering budgeting, currency conversion, and packing preparation.
 """
+
+from dsci_524_group_25.estimate_trip_cost import estimate_trip_cost
+from dsci_524_group_25.convert_currency import convert_currency
+from dsci_524_group_25.get_packing_list import get_packing_list
+from dsci_524_group_25.format_destination import format_destination
+
+__all__ = [
+    "estimate_trip_cost",
+    "convert_currency",
+    "get_packing_list",
+    "format_destination",
+]
