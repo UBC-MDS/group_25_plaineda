@@ -1,0 +1,41 @@
+# get_packing_list.get_packing_list { #travelpy.get_packing_list.get_packing_list }
+
+```python
+get_packing_list.get_packing_list(weather, duration)
+```
+
+Create a packing list from weather and trip duration.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name     | Type   | Description                                          | Default    |
+|----------|--------|------------------------------------------------------|------------|
+| weather  | str    | Expected conditions (e.g., "cold", "warm", "rainy"). | _required_ |
+| duration | int    | Total number of days for the trip.                   | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                                        |
+|--------|--------|--------------------------------------------------------------------|
+|        | list   | Base items first, then additions based on weather and trip length. |
+
+## Raises {.doc-section .doc-section-raises}
+
+| Name   | Type       | Description                                                                      |
+|--------|------------|----------------------------------------------------------------------------------|
+|        | ValueError | If duration is less than 1 with message "Trip duration must be at least 1 day.". |
+
+## Notes {.doc-section .doc-section-notes}
+
+Base items are ["Passport", "Toothbrush"]. Add "Heavy Jacket" and "Gloves"
+for cold, "Umbrella" for rainy, "Sunscreen" for warm, and "Laundry kit" if
+duration > 7.
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> get_packing_list("cold", 3)
+["Heavy Jacket", "Gloves"]
+>>> get_packing_list("rainy", 10)
+["Umbrella", "Laundry kit"]
+```
