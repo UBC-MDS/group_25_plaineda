@@ -159,11 +159,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. This project follows a [C
 
 ## Contributors
 
-- Kwok Hoi Hin
-- Esteki Hooman
-- Jaskiel Derrick
+- Hoi Hin Kwok 
+- Hooman Esteki 
+- Derrick Jaskiel 
 - Rebecca Rosette Nanfuka
 
 ## License
 
-MIT License © 2026 Kwok Hoi Hin, Esteki Hooman, Jaskiel Derrick, Rebecca Rosette Nanfuka.
+MIT License © 2026 Hoi Hin Kwok , Hooman Esteki, Derrick Jaskiel and Rebecca Rosette Nanfuka.
