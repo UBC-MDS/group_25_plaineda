@@ -166,4 +166,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. This project follows a [C
 
 ## License
 
-MIT License © 2026 Hoi Hin Kwok , Hooman Esteki, Derrick Jaskiel and Rebecca Rosette Nanfuka.
+MIT License © 2026 Hoi Hin Kwok, Hooman Esteki, Derrick Jaskiel and Rebecca Rosette Nanfuka.
