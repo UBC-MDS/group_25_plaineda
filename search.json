@@ -107,56 +107,63 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "",
-    "text": "TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit."
+    "text": "TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, currency conversion, generating packing lists in a single, easy-to-use toolkit."
   },
   {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "TravelPy",
+    "objectID": "index.html#package-summary",
+    "href": "index.html#package-summary",
+    "title": "Welcome to TravelPy",
     "section": "",
-    "text": "TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit."
+    "text": "TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, currency conversion, generating packing lists in a single, easy-to-use toolkit."
   },
   {
     "objectID": "index.html#installation",
     "href": "index.html#installation",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "Installation",
-    "text": "Installation\npip install -i https://test.pypi.org/simple/ travelpy"
+    "text": "Installation\nYou can install this package from TestPyPI into your preferred Python environment\npip install -i https://test.pypi.org/simple/ travelpy"
   },
   {
     "objectID": "index.html#quick-start",
     "href": "index.html#quick-start",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "Quick Start",
     "text": "Quick Start\nfrom travelpy.estimate_trip_cost import estimate_trip_cost\nfrom travelpy.convert_currency import convert_currency\nfrom travelpy.get_packing_list import get_packing_list\nfrom travelpy.format_destination import format_destination"
   },
   {
     "objectID": "index.html#usage-examples",
     "href": "index.html#usage-examples",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "Usage Examples",
     "text": "Usage Examples\n\nEstimate Trip Cost\nCalculate the fuel cost for a road trip in Canada:\nfrom travelpy.estimate_trip_cost import estimate_trip_cost\n\n# Short trip (150 km)\ncost = estimate_trip_cost(distance=150, fuel_price=1.7, efficiency=12)\nprint(f\"Short trip cost: ${cost}\")  # Output: $21.25\n\n# Long trip (900 km) - includes 15% contingency\ncost = estimate_trip_cost(distance=900, fuel_price=1.7, efficiency=12)\nprint(f\"Long trip cost: ${cost}\")  # Output: $146.62\n\n\nConvert Currency\nConvert money between currencies with automatic fee handling:\nfrom travelpy.convert_currency import convert_currency\n\n# Large amount (no service fee)\nresult = convert_currency(amount=150, rate=1.2)\nprint(f\"Converted: ${result}\")  # Output: $180.0\n\n# Small amount (includes $5 service fee)\nresult = convert_currency(amount=50, rate=1.2)\nprint(f\"Converted: ${result}\")  # Output: $55.0\n\n\nGet Packing List\nGenerate a packing checklist based on weather and trip duration:\nfrom travelpy.get_packing_list import get_packing_list\n\n# Cold weather trip\nitems = get_packing_list(weather=\"cold\", duration=3)\nprint(items)  # ['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n\n# Warm long trip\nitems = get_packing_list(weather=\"warm\", duration=10)\nprint(items)  # ['Passport', 'Toothbrush', 'Sunscreen', 'Laundry kit']\n\n# Rainy weather\nitems = get_packing_list(weather=\"rainy\", duration=5)\nprint(items)  # ['Passport', 'Toothbrush', 'Umbrella']\n\n\nFormat Destination\nNormalize destination names into a standard format:\nfrom travelpy.format_destination import format_destination\n\n# Basic usage\ndest = format_destination(city=\"vancouver\", country_code=\"ca\")\nprint(dest)  # Output: \"Vancouver, CA\"\n\n# Handles whitespace\ndest = format_destination(city=\"  paris \", country_code=\" fr \")\nprint(dest)  # Output: \"Paris, FR\"\n\n# Handles case\ndest = format_destination(city=\"TOKYO\", country_code=\"jp\")\nprint(dest)  # Output: \"Tokyo, JP\""
   },
   {
     "objectID": "index.html#complete-trip-planning-example",
     "href": "index.html#complete-trip-planning-example",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "Complete Trip Planning Example",
     "text": "Complete Trip Planning Example\nHere’s how you might use all functions together to plan a trip:\nfrom travelpy.estimate_trip_cost import estimate_trip_cost\nfrom travelpy.convert_currency import convert_currency\nfrom travelpy.get_packing_list import get_packing_list\nfrom travelpy.format_destination import format_destination\n\n# Plan a trip to Paris\ndestination = format_destination(\"paris\", \"fr\")\nprint(f\"Destination: {destination}\")\n\n# Estimate driving cost (500 km)\nfuel_cost = estimate_trip_cost(distance=500, fuel_price=1.8, efficiency=10)\nprint(f\"Estimated fuel cost: ${fuel_cost} CAD\")\n\n# Convert budget to Euros (rate: 0.68)\nbudget_eur = convert_currency(amount=500, rate=0.68)\nprint(f\"Budget in EUR: €{budget_eur}\")\n\n# Get packing list for 7-day trip in cold weather\npacking = get_packing_list(weather=\"cold\", duration=7)\nprint(f\"Packing list: {packing}\")"
   },
   {
     "objectID": "index.html#api-reference",
     "href": "index.html#api-reference",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "API Reference",
     "text": "API Reference\nSee the Reference section for complete API documentation."
   },
   {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Welcome to TravelPy",
+    "section": "Contributors",
+    "text": "Contributors\n\nKwok Hoi Hin\nEsteki Hooman\nJaskiel Derrick\nRebecca Rosette Nanfuka"
+  },
+  {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "TravelPy",
+    "title": "Welcome to TravelPy",
     "section": "License",
     "text": "License\nMIT License © 2026 Kwok Hoi Hin, Esteki Hooman, Jaskiel Derrick, Rebecca Rosette Nanfuka."
   },
