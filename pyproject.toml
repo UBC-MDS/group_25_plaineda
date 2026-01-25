@@ -12,7 +12,7 @@ requires = ["hatchling"]
 
 [project]
 name = "travelpy"
-version = "0.2.3"
+version = "0.2.4"
 
 description = "A lightweight Python package for travel planning"
 authors = [
