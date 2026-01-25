@@ -263,7 +263,7 @@
     "href": "reference/get_packing_list.get_packing_list.html",
     "title": "get_packing_list.get_packing_list",
     "section": "",
-    "text": "get_packing_list.get_packing_list(weather, duration)\nCreate a packing list from weather and trip duration.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”.\n\n\n\n\n\n\nBase items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7."
+    "text": "get_packing_list.get_packing_list(weather, duration)\nCreate a packing list from weather and trip duration.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”.\n\n\n\n\n\n\nBase items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7.\n\n\n\n&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n[\"Heavy Jacket\", \"Gloves\"]\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n[\"Umbrella\", \"Laundry kit\"]"
   },
   {
     "objectID": "reference/get_packing_list.get_packing_list.html#parameters",
@@ -292,6 +292,13 @@
     "title": "get_packing_list.get_packing_list",
     "section": "",
     "text": "Base items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7."
+  },
+  {
+    "objectID": "reference/get_packing_list.get_packing_list.html#examples",
+    "href": "reference/get_packing_list.get_packing_list.html#examples",
+    "title": "get_packing_list.get_packing_list",
+    "section": "",
+    "text": "&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n[\"Heavy Jacket\", \"Gloves\"]\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n[\"Umbrella\", \"Laundry kit\"]"
   },
   {
     "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html",
