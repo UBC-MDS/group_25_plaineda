@@ -1,12 +1,13 @@
 ---
-title: "TravelPy"
+title: "Welcome to TravelPy"
 ---
 
-## Overview
+## Package Summary
 
-TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit.
+TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, currency conversion, generating packing lists in a single, easy-to-use toolkit.
 
 ## Installation
+You can install this package from [TestPyPI](https://test.pypi.org/project/travelpy/) into your preferred Python environment
 ```bash
 pip install -i https://test.pypi.org/simple/ travelpy
 ```
@@ -118,6 +119,13 @@ print(f"Packing list: {packing}")
 ## API Reference
 
 See the [Reference](reference/index.qmd) section for complete API documentation.
+
+## Contributors
+
+- Kwok Hoi Hin
+- Esteki Hooman
+- Jaskiel Derrick
+- Rebecca Rosette Nanfuka
 
 ## License
 

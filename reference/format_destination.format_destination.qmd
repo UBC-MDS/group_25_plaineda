@@ -1,0 +1,44 @@
+# format_destination.format_destination { #travelpy.format_destination.format_destination }
+
+```python
+format_destination.format_destination(city, country_code)
+```
+
+Normalize destination names into the format: "City, COUNTRY_CODE".
+
+Rules:
+  - city and country_code must be non-empty strings after stripping
+  - country_code must be exactly 2 alphabetic letters
+  - city is title-cased; country_code is upper-cased
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name         | Type   | Description                                 | Default    |
+|--------------|--------|---------------------------------------------|------------|
+| city         | str    | City name (e.g., "vancouver").              | _required_ |
+| country_code | str    | Two-letter country code (e.g., "ca", "FR"). | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type   | Description                                         |
+|--------|--------|-----------------------------------------------------|
+|        | str    | Formatted destination string: "City, COUNTRY_CODE". |
+
+## Raises {.doc-section .doc-section-raises}
+
+| Name   | Type       | Description                                                     |
+|--------|------------|-----------------------------------------------------------------|
+|        | ValueError | If inputs are empty after stripping or country_code is invalid. |
+|        | TypeError  | If inputs are not strings.                                      |
+
+## Examples {.doc-section .doc-section-examples}
+
+```python
+>>> from dsci_524_group_25.format_destination import format_destination
+>>> format_destination("vancouver", "ca")
+'Vancouver, CA'
+>>> format_destination("  paris ", " fr ")
+'Paris, FR'
+>>> format_destination("TOKYO", "jp")
+'Tokyo, JP'
+```

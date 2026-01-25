@@ -1,0 +1,12 @@
+# Function reference {.doc .doc-index}
+
+## Travel Planning Functions
+
+Functions to help you plan your trips.
+
+| | |
+| --- | --- |
+| [estimate_trip_cost.estimate_trip_cost](estimate_trip_cost.estimate_trip_cost.qmd#travelpy.estimate_trip_cost.estimate_trip_cost) | Calculate the total fuel cost of a trip in Canada (Metric units),  |
+| [convert_currency.convert_currency](convert_currency.convert_currency.qmd#travelpy.convert_currency.convert_currency) | Convert a monetary amount between currencies with a specified exchange rate, |
+| [get_packing_list.get_packing_list](get_packing_list.get_packing_list.qmd#travelpy.get_packing_list.get_packing_list) | Create a packing list from weather and trip duration. |
+| [format_destination.format_destination](format_destination.format_destination.qmd#travelpy.format_destination.format_destination) | Normalize destination names into the format: "City, COUNTRY_CODE". |
