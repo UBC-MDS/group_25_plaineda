@@ -12,7 +12,7 @@ TravelPy is a lightweight Python package that provides a simplified way for stud
 
 ## Installation
 
-Install from TestPyPI:
+Run in terminal to install travelpy package from TestPyPI:
 ```bash
 pip install -i https://test.pypi.org/simple/ travelpy
 ```
@@ -105,6 +105,8 @@ Full documentation: **https://ubc-mds.github.io/DSCI_524_group_25/**
 ---
 
 ## Developer Guide
+
+The following commands can be run in terminal to set configure the project locally.
 
 ### Set up the development environment
 ```bash

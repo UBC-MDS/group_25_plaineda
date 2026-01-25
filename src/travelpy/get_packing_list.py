@@ -24,6 +24,13 @@ def get_packing_list(weather, duration):
     Base items are ["Passport", "Toothbrush"]. Add "Heavy Jacket" and "Gloves"
     for cold, "Umbrella" for rainy, "Sunscreen" for warm, and "Laundry kit" if
     duration > 7.
+
+    Examples
+    --------
+    >>> get_packing_list("cold", 3)
+    ["Heavy Jacket", "Gloves"]
+    >>> get_packing_list("rainy", 10)
+    ["Umbrella", "Laundry kit"]
     """
     if duration < 1:
         raise ValueError("Trip duration must be at least 1 day.")
