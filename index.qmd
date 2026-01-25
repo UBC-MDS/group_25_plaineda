@@ -129,4 +129,4 @@ See the [Reference](reference/index.qmd) section for complete API documentation.
 
 ## License
 
-MIT License © 2026 Hoi Hin Kwok , Hooman Esteki, Derrick Jaskiel and Rebecca Rosette Nanfuka.
+MIT License © 2026 Hoi Hin Kwok, Hooman Esteki, Derrick Jaskiel and Rebecca Rosette Nanfuka.
