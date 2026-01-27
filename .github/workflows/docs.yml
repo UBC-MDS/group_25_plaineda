@@ -10,6 +10,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  pull-requests: write
 
 concurrency:
   group: "pages"
@@ -45,6 +46,26 @@ jobs:
       - name: Render Quarto site
         run: |
           quarto render
+
+      - name: Upload docs artifact for PR preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-preview-${{ github.event.pull_request.number }}
+          path: ./docs
+          retention-days: 7
+
+      - name: Comment PR with preview info
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '📚 **Documentation Preview**\n\nDocs have been built successfully! Download the artifact `docs-preview-${{ github.event.pull_request.number }}` from the Actions tab to preview locally.\n\nOnce merged to main, docs will be deployed to: https://ubc-mds.github.io/DSCI_524_group_25/'
+            })
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
