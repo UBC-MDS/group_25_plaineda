@@ -1,0 +1,113 @@
+name: Peer Review Request
+description: Request a peer review for this package
+title: "[PEER REVIEW] Package Review Request for TravelPy"
+labels: [peer-review]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to review our package!
+
+  - type: input
+    id: package-name
+    attributes:
+      label: Package Name
+      description: Name of the package being reviewed
+      value: "TravelPy"
+    validations:
+      required: true
+
+  - type: input
+    id: repo-url
+    attributes:
+      label: Repository URL
+      description: Link to the GitHub repository
+      value: "https://github.com/UBC-MDS/DSCI_524_group_25"
+    validations:
+      required: true
+
+  - type: input
+    id: docs-url
+    attributes:
+      label: Documentation URL
+      description: Link to the package documentation
+      value: "https://ubc-mds.github.io/DSCI_524_group_25/"
+    validations:
+      required: true
+
+  - type: input
+    id: pypi-url
+    attributes:
+      label: TestPyPI URL
+      description: Link to the package on TestPyPI
+      value: "https://test.pypi.org/project/travelpy/"
+    validations:
+      required: true
+
+  - type: textarea
+    id: review-areas
+    attributes:
+      label: Areas to Review
+      description: Specific areas you would like feedback on
+      value: |
+        - [ ] Documentation clarity
+        - [ ] Code quality and style
+        - [ ] Test coverage
+        - [ ] Installation instructions
+        - [ ] Function usability
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Any other information for the reviewer
+    validations:
+      required: false
+```
+
+6. Scroll down and commit:
+   - **Commit message**: `docs: add peer review request issue template`
+   - Select **"Commit directly to the main branch"** or create a branch if you prefer
+   - Click **Commit new file**
+
+---
+
+## Step 3: Verify Your Changes
+
+1. Go to repository main page: `https://github.com/UBC-MDS/DSCI_524_group_25`
+
+2. Check the **About** section (top right) now shows:
+   - Description with "2025-26 DSCI-524 Group 25"
+   - Website link to your docs
+
+3. Click on **Issues** tab
+
+4. Click **New issue**
+
+5. You should now see two templates:
+   - Bug report
+   - Peer Review Request (if you added it)
+
+---
+
+## Summary Checklist
+
+| Task | Action |
+|------|--------|
+| Repository Description | Add "2025-26 DSCI-524 Group 25" + package blurb |
+| Repository Website URL | Add `https://ubc-mds.github.io/DSCI_524_group_25/` |
+| Peer Review Template | Create `02-peer-review-request.yml` (optional) |
+
+---
+
+## What It Should Look Like After
+
+Your repository "About" section (top right of repo page) should display:
+```
+2025-26 DSCI-524 Group 25 | A lightweight Python package for travel 
+planning including trip cost estimation, currency conversion, packing 
+lists, and destination formatting.
+
+🔗 ubc-mds.github.io/DSCI_524_group_25/
