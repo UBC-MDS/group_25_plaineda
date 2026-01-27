@@ -28,9 +28,9 @@ def get_packing_list(weather, duration):
     Examples
     --------
     >>> get_packing_list("cold", 3)
-    ["Heavy Jacket", "Gloves"]
+    ['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']
     >>> get_packing_list("rainy", 10)
-    ["Umbrella", "Laundry kit"]
+    ['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']
     """
     if duration < 1:
         raise ValueError("Trip duration must be at least 1 day.")
