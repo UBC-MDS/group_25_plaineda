@@ -60,7 +60,7 @@
     "href": "reference/format_destination.format_destination.html",
     "title": "format_destination.format_destination",
     "section": "",
-    "text": "format_destination.format_destination(city, country_code)\nNormalize destination names into the format: “City, COUNTRY_CODE”.\nRules: - city and country_code must be non-empty strings after stripping - country_code must be exactly 2 alphabetic letters - city is title-cased; country_code is upper-cased\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncity\nstr\nCity name (e.g., “vancouver”).\nrequired\n\n\ncountry_code\nstr\nTwo-letter country code (e.g., “ca”, “FR”).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nstr\nFormatted destination string: “City, COUNTRY_CODE”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf inputs are empty after stripping or country_code is invalid.\n\n\n\nTypeError\nIf inputs are not strings.\n\n\n\n\n\n\n&gt;&gt;&gt; from dsci_524_group_25.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
+    "text": "format_destination.format_destination(city, country_code)\nNormalize destination names into the format: “City, COUNTRY_CODE”.\nRules: - city and country_code must be non-empty strings after stripping - country_code must be exactly 2 alphabetic letters - city is title-cased; country_code is upper-cased\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncity\nstr\nCity name (e.g., “vancouver”).\nrequired\n\n\ncountry_code\nstr\nTwo-letter country code (e.g., “ca”, “FR”).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nstr\nFormatted destination string: “City, COUNTRY_CODE”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf inputs are empty after stripping or country_code is invalid.\n\n\n\nTypeError\nIf inputs are not strings.\n\n\n\n\n\n\n&gt;&gt;&gt; from travelpy.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
   },
   {
     "objectID": "reference/format_destination.format_destination.html#parameters",
@@ -88,7 +88,7 @@
     "href": "reference/format_destination.format_destination.html#examples",
     "title": "format_destination.format_destination",
     "section": "",
-    "text": "&gt;&gt;&gt; from dsci_524_group_25.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
+    "text": "&gt;&gt;&gt; from travelpy.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
   },
   {
     "objectID": "reference/index.html",
@@ -270,7 +270,7 @@
     "href": "reference/get_packing_list.get_packing_list.html",
     "title": "get_packing_list.get_packing_list",
     "section": "",
-    "text": "get_packing_list.get_packing_list(weather, duration)\nCreate a packing list from weather and trip duration.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”.\n\n\n\n\n\n\nBase items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7.\n\n\n\n&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n[\"Heavy Jacket\", \"Gloves\"]\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n[\"Umbrella\", \"Laundry kit\"]"
+    "text": "get_packing_list.get_packing_list(weather, duration)\nCreate a packing list from weather and trip duration.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”.\n\n\n\n\n\n\nBase items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7.\n\n\n\n&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']"
   },
   {
     "objectID": "reference/get_packing_list.get_packing_list.html#parameters",
@@ -305,7 +305,7 @@
     "href": "reference/get_packing_list.get_packing_list.html#examples",
     "title": "get_packing_list.get_packing_list",
     "section": "",
-    "text": "&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n[\"Heavy Jacket\", \"Gloves\"]\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n[\"Umbrella\", \"Laundry kit\"]"
+    "text": "&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']"
   },
   {
     "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html",
