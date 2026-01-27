@@ -56,53 +56,179 @@
     "text": "This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
   },
   {
-    "objectID": "reference/format_destination.format_destination.html",
-    "href": "reference/format_destination.format_destination.html",
-    "title": "format_destination.format_destination",
+    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html",
+    "href": "reference/estimate_trip_cost.estimate_trip_cost.html",
+    "title": "estimate_trip_cost.estimate_trip_cost",
     "section": "",
-    "text": "format_destination.format_destination(city, country_code)\nNormalize destination names into the format: “City, COUNTRY_CODE”.\nRules: - city and country_code must be non-empty strings after stripping - country_code must be exactly 2 alphabetic letters - city is title-cased; country_code is upper-cased\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncity\nstr\nCity name (e.g., “vancouver”).\nrequired\n\n\ncountry_code\nstr\nTwo-letter country code (e.g., “ca”, “FR”).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nstr\nFormatted destination string: “City, COUNTRY_CODE”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf inputs are empty after stripping or country_code is invalid.\n\n\n\nTypeError\nIf inputs are not strings.\n\n\n\n\n\n\n&gt;&gt;&gt; from travelpy.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
+    "text": "estimate_trip_cost.estimate_trip_cost(distance, fuel_price, efficiency)\nCalculate the total fuel cost of a trip in Canada (Metric units), including a contingency fee for long trips.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndistance\nfloat\nThe distance of the trip in kilometers (km).\nrequired\n\n\nfuel_price\nfloat\nThe price of fuel per liter (CAD/L).\nrequired\n\n\nefficiency\nfloat\nThe fuel efficiency of the vehicle in kilometers per liter (km/L).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe estimated cost of the trip rounded to 2 decimal places.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf distance, fuel_price, or efficiency are less than or equal to zero.\n\n\n\n\n\n\n&gt;&gt;&gt; estimate_trip_cost(150, 1.7, 12)\n21.25\n&gt;&gt;&gt; estimate_trip_cost(900, 1.7, 12)\n146.62"
   },
   {
-    "objectID": "reference/format_destination.format_destination.html#parameters",
-    "href": "reference/format_destination.format_destination.html#parameters",
-    "title": "format_destination.format_destination",
+    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#parameters",
+    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#parameters",
+    "title": "estimate_trip_cost.estimate_trip_cost",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncity\nstr\nCity name (e.g., “vancouver”).\nrequired\n\n\ncountry_code\nstr\nTwo-letter country code (e.g., “ca”, “FR”).\nrequired"
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndistance\nfloat\nThe distance of the trip in kilometers (km).\nrequired\n\n\nfuel_price\nfloat\nThe price of fuel per liter (CAD/L).\nrequired\n\n\nefficiency\nfloat\nThe fuel efficiency of the vehicle in kilometers per liter (km/L).\nrequired"
   },
   {
-    "objectID": "reference/format_destination.format_destination.html#returns",
-    "href": "reference/format_destination.format_destination.html#returns",
-    "title": "format_destination.format_destination",
+    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#returns",
+    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#returns",
+    "title": "estimate_trip_cost.estimate_trip_cost",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nstr\nFormatted destination string: “City, COUNTRY_CODE”."
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe estimated cost of the trip rounded to 2 decimal places."
   },
   {
-    "objectID": "reference/format_destination.format_destination.html#raises",
-    "href": "reference/format_destination.format_destination.html#raises",
-    "title": "format_destination.format_destination",
+    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#raises",
+    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#raises",
+    "title": "estimate_trip_cost.estimate_trip_cost",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf inputs are empty after stripping or country_code is invalid.\n\n\n\nTypeError\nIf inputs are not strings."
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf distance, fuel_price, or efficiency are less than or equal to zero."
   },
   {
-    "objectID": "reference/format_destination.format_destination.html#examples",
-    "href": "reference/format_destination.format_destination.html#examples",
-    "title": "format_destination.format_destination",
+    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#examples",
+    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#examples",
+    "title": "estimate_trip_cost.estimate_trip_cost",
     "section": "",
-    "text": "&gt;&gt;&gt; from travelpy.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
+    "text": "&gt;&gt;&gt; estimate_trip_cost(150, 1.7, 12)\n21.25\n&gt;&gt;&gt; estimate_trip_cost(900, 1.7, 12)\n146.62"
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "Function reference",
+    "objectID": "reference/get_packing_list.get_packing_list.html",
+    "href": "reference/get_packing_list.get_packing_list.html",
+    "title": "get_packing_list.get_packing_list",
     "section": "",
-    "text": "Functions to help you plan your trips.\n\n\n\nestimate_trip_cost.estimate_trip_cost\nCalculate the total fuel cost of a trip in Canada (Metric units),\n\n\nconvert_currency.convert_currency\nConvert a monetary amount between currencies with a specified exchange rate,\n\n\nget_packing_list.get_packing_list\nCreate a packing list from weather and trip duration.\n\n\nformat_destination.format_destination\nNormalize destination names into the format: “City, COUNTRY_CODE”."
+    "text": "get_packing_list.get_packing_list(weather, duration)\nCreate a packing list from weather and trip duration.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”.\n\n\n\n\n\n\nBase items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7.\n\n\n\n&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']"
   },
   {
-    "objectID": "reference/index.html#travel-planning-functions",
-    "href": "reference/index.html#travel-planning-functions",
-    "title": "Function reference",
+    "objectID": "reference/get_packing_list.get_packing_list.html#parameters",
+    "href": "reference/get_packing_list.get_packing_list.html#parameters",
+    "title": "get_packing_list.get_packing_list",
     "section": "",
-    "text": "Functions to help you plan your trips.\n\n\n\nestimate_trip_cost.estimate_trip_cost\nCalculate the total fuel cost of a trip in Canada (Metric units),\n\n\nconvert_currency.convert_currency\nConvert a monetary amount between currencies with a specified exchange rate,\n\n\nget_packing_list.get_packing_list\nCreate a packing list from weather and trip duration.\n\n\nformat_destination.format_destination\nNormalize destination names into the format: “City, COUNTRY_CODE”."
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired"
+  },
+  {
+    "objectID": "reference/get_packing_list.get_packing_list.html#returns",
+    "href": "reference/get_packing_list.get_packing_list.html#returns",
+    "title": "get_packing_list.get_packing_list",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length."
+  },
+  {
+    "objectID": "reference/get_packing_list.get_packing_list.html#raises",
+    "href": "reference/get_packing_list.get_packing_list.html#raises",
+    "title": "get_packing_list.get_packing_list",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”."
+  },
+  {
+    "objectID": "reference/get_packing_list.get_packing_list.html#notes",
+    "href": "reference/get_packing_list.get_packing_list.html#notes",
+    "title": "get_packing_list.get_packing_list",
+    "section": "",
+    "text": "Base items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7."
+  },
+  {
+    "objectID": "reference/get_packing_list.get_packing_list.html#examples",
+    "href": "reference/get_packing_list.get_packing_list.html#examples",
+    "title": "get_packing_list.get_packing_list",
+    "section": "",
+    "text": "&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']"
+  },
+  {
+    "objectID": "reference/convert_currency.convert_currency.html",
+    "href": "reference/convert_currency.convert_currency.html",
+    "title": "convert_currency.convert_currency",
+    "section": "",
+    "text": "convert_currency.convert_currency(amount, rate)\nConvert a monetary amount between currencies with a specified exchange rate, deducting a $5 service fee if the inital amount is not at least $100.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\namount\nfloat\nThe original monetary amount to be converted. Must be a positive number.\nrequired\n\n\nrate\nfloat\nThe currency exchange rate used to convert the amount. Must be a positive number.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe final converted amount after the exchange rate and potential service fee are applied.\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf amount is not a positive number.\n\n\n\nValueError\nIf rate is not a positive number.\n\n\n\n\n\n\n&gt;&gt;&gt; convert_currency(50.0, 1.2)\n55.0\n&gt;&gt;&gt; convert_currency(150.0, 1.2)\n180.0"
+  },
+  {
+    "objectID": "reference/convert_currency.convert_currency.html#parameters",
+    "href": "reference/convert_currency.convert_currency.html#parameters",
+    "title": "convert_currency.convert_currency",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\namount\nfloat\nThe original monetary amount to be converted. Must be a positive number.\nrequired\n\n\nrate\nfloat\nThe currency exchange rate used to convert the amount. Must be a positive number.\nrequired"
+  },
+  {
+    "objectID": "reference/convert_currency.convert_currency.html#returns",
+    "href": "reference/convert_currency.convert_currency.html#returns",
+    "title": "convert_currency.convert_currency",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe final converted amount after the exchange rate and potential service fee are applied."
+  },
+  {
+    "objectID": "reference/convert_currency.convert_currency.html#raises",
+    "href": "reference/convert_currency.convert_currency.html#raises",
+    "title": "convert_currency.convert_currency",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf amount is not a positive number.\n\n\n\nValueError\nIf rate is not a positive number."
+  },
+  {
+    "objectID": "reference/convert_currency.convert_currency.html#examples",
+    "href": "reference/convert_currency.convert_currency.html#examples",
+    "title": "convert_currency.convert_currency",
+    "section": "",
+    "text": "&gt;&gt;&gt; convert_currency(50.0, 1.2)\n55.0\n&gt;&gt;&gt; convert_currency(150.0, 1.2)\n180.0"
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.\n\n\nAll tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project.\n\n\n\nDue to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks.\n\n\n\nAs general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#milestone-tasks",
+    "href": "CONTRIBUTING.html#milestone-tasks",
+    "title": "Contributing",
+    "section": "",
+    "text": "All tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#bug-fixes",
+    "href": "CONTRIBUTING.html#bug-fixes",
+    "title": "Contributing",
+    "section": "",
+    "text": "Due to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#incrimentalmiscellaneous-improvements",
+    "href": "CONTRIBUTING.html#incrimentalmiscellaneous-improvements",
+    "title": "Contributing",
+    "section": "",
+    "text": "As general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow."
+  },
+  {
+    "objectID": "CHANGELOG.html",
+    "href": "CHANGELOG.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\n\n\nUpcoming features and fixes\n\n\n\n\n\nFirst release"
+  },
+  {
+    "objectID": "CHANGELOG.html#unreleased",
+    "href": "CHANGELOG.html#unreleased",
+    "title": "Changelog",
+    "section": "",
+    "text": "Upcoming features and fixes"
+  },
+  {
+    "objectID": "CHANGELOG.html#section",
+    "href": "CHANGELOG.html#section",
+    "title": "Changelog",
+    "section": "",
+    "text": "First release"
+  },
+  {
+    "objectID": "DEVELOPMENT.html",
+    "href": "DEVELOPMENT.html",
+    "title": "Development Guide",
+    "section": "",
+    "text": "Welcome to your shiny new package. This page will help you get started with using Hatch to manage your package.\nIf you look at your project, you will see that a pyproject.toml file. This file stores both your package configuration and settings for development tools like Hatch that you will use to work on your package.\nThis file is written using a .toml format. You can learn more about toml here. Here’s the TL&DR:\n\nEach [] section in the toml file is called a table.\nYou can nest tables with double brackets like this[[]]\nTables contain information about a element that you want to configure.\n\nWe are using Hatch as the default packaging tool. Hatch allows you to configure and run environments and scripts similar to workflow tools like tox or nox.\nHach, by default, uses virtual environments (venv) to manage environments. But you can configure it to use other environment tools.Read the hatch documentation to learn more about environments.\nFor this template, we have set up Hatch environments for you to use. At the bottom of your pyproject.toml file, notice a hatch environment section that looks like this:\n########################################\n# Hatch Environments\n########################################\nBelow is the Hatch environment to install your package. Notice that it defines pip and twine as two packages that the environment needs.\n[tool.hatch.envs.build]\ndescription = \"\"\"Test the installation the package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\nThe table below defines the scripts that you will run build and check your package.\n[tool.hatch.envs.build.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\ndetached = true\nYou can enter that environment to check it out:\n$ hatch shell build\nIf you run pip list, in the environment, twine will be there:\n$ pip list\nHatch by default, installs your package in editable mode (-e) into its virtual environments. But if detached=True is set, then it will skip installing your package into the virtual enviornment.\n\n\nBelow you see the Hatch environment test table.\ntool.hatch.envs says, “Hey, Hatch, this is the definition for an environment.” test is the name of the environment.\nThe environment below defines the dependencies that Hatch needs to install into the environment named test.\n[tool.hatch.envs.test]\ndescription = \"\"\"Run the test suite.\"\"\"\ndependencies = [\n    \"pytest\",\n    \"pytest-cov\",\n    \"pytest-raises\",\n    \"pytest-randomly\",\n    \"pytest-xdist\",\n]\nTo enter a Hatch environment use:\nhatch shell environmentname\nSo you can enter the test environment above with:\nhatch shell test\n\n\n\nIf the environment has a matrix associated with it, that tells Hatch to run the test scripts across different Python versions.\n[[tool.hatch.envs.test.matrix]]\npython = [\"3.10\", \"3.11\", \"3.12\", \"3.13\"]\nIf you run hatch shell test, you will see the output below. To enter an environment with a matrix attached to it, you need to pick the Python environment version that you want to open.\n$ hatch shell test                           \nEnvironment `test` defines a matrix, choose one of the following instead:\n\ntest.py3.10\ntest.py3.11\ntest.py3.12\ntest.py3.13\nOpen the Python 3.13 environment like this:\n$ hatch shell test.py3.13\nTo leave an environment use:\n$ deactivate\n\n\n\nIn the tests section of your pyproject.toml, you will see a tool.hatch.envs.test.scripts table.\nThis table defines the commands that you want Hatch to run in the test environment. Notice that the script has one command called run.\n[tool.hatch.envs.test.scripts]\nrun = \"pytest {args:--cov=greatproject --cov-report=term-missing}\"\nTo run this script , use:\nhatch run test:run\n\nhatch run: calls Hatch and tells it that it will be running a command\ntest:run: defines the environment you want it to run (test) and defines the name of the “script” to berun.\n\nIf you have a Hatch matrix setup for tests, it will both install the necessary Python version using UV and run your tests on each version of the Python versions that you declare in the matrix table. In this case, there are 4 Python versions in the environment, so your tests will run 4 times, once in each Python version listed in the matrix table.\n@lwasser ➜ /workspaces/pyopensci-scipy25-create-python-package (main) $ hatch run test:run\n──────────────────────────────────────────────────────────────────────── test.py3.10 ────────────────────────────────────────────────────────────────────────\n==================================================================== test session starts ====================================================================\nplatform linux -- Python 3.10.16, pytest-8.4.1, pluggy-1.6.0\nUsing --randomly-seed=1490740387\nrootdir: /workspaces/pyopensci-scipy25-create-python-package\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1\ncollected 2 items                                                                                                                                           \n\ntests/system/test_import.py .                                                                                                                         [ 50%]\ntests/unit/test_example.py .                                                                                                                          [100%]\n\n====================================================================== tests coverage =======================================================================\n_____________________________________________________ coverage: platform linux, python 3.10.16-final-0 ______________________________________________________\n\nName                           Stmts   Miss Branch BrPart    Cover   Missing\n----------------------------------------------------------------------------\nsrc/greatproject/__init__.py       0      0      0      0  100.00%\nsrc/greatproject/example.py        2      0      0      0  100.00%\n----------------------------------------------------------------------------\nTOTAL                              2      0      0      0  100.00%\n===================================================================== 2 passed in 0.05s =====================================================================\n──────────────────────────────────────────────────────────────────────── test.py3.11 ────────────────────────────────────────────────────────────────────────\n==================================================================== test session starts ====================================================================\nplatform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0\nUsing --randomly-seed=1596865075\nrootdir: /workspaces/pyopensci-scipy25-create-python-package\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1\ncollected 2 items                                                                                                                                           \n\ntests/system/test_import.py .                                                                                                                         [ 50%]\ntests/unit/test_example.py .                                                                                                                          [100%]\n\n====================================================================== tests coverage =======================================================================\n_____________________________________________________ coverage: platform linux, python 3.11.12-final-0 ______________________________________________________\n\nName                           Stmts   Miss Branch BrPart    Cover   Missing\n----------------------------------------------------------------------------\nsrc/greatproject/__init__.py       0      0      0      0  100.00%\nsrc/greatproject/example.py        2      0      0      0  100.00%\n----------------------------------------------------------------------------\nTOTAL                              2      0      0      0  100.00%\n===================================================================== 2 passed in 0.05s =====================================================================\n\n\n\nYou can build your package using the environment and scripts defined in the build tables:\nhatch run build:check\nThis script builds and checks the output distribution files of your package.\nThis build environment table declares that pip and twine should be added to that environment. Adding pip to the environment ensures that it is a current, up-to-date version.\n[tool.hatch.envs.build]\ndescription = \"\"\"Build and test your package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\ndetached = true\n# This table installs created the command hatch run install:check which will build and check your package.\n[tool.hatch.envs.install.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\nThis uses the above environment and tells hatch to run\n\npip check, # verifies your dependencies\nhatch build --clean\n\ntwine check dist/* # this checks your distribution for metadata and other potential issues. to build and test your package."
+  },
+  {
+    "objectID": "DEVELOPMENT.html#build-your-package",
+    "href": "DEVELOPMENT.html#build-your-package",
+    "title": "Development Guide",
+    "section": "",
+    "text": "You can build your package using the environment and scripts defined in the build tables:\nhatch run build:check\nThis script builds and checks the output distribution files of your package.\nThis build environment table declares that pip and twine should be added to that environment. Adding pip to the environment ensures that it is a current, up-to-date version.\n[tool.hatch.envs.build]\ndescription = \"\"\"Build and test your package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\ndetached = true\n# This table installs created the command hatch run install:check which will build and check your package.\n[tool.hatch.envs.install.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\nThis uses the above environment and tells hatch to run\n\npip check, # verifies your dependencies\nhatch build --clean\n\ntwine check dist/* # this checks your distribution for metadata and other potential issues. to build and test your package."
   },
   {
     "objectID": "index.html",
@@ -168,178 +294,108 @@
     "text": "License\nMIT License © 2026 Hoi Hin Kwok, Hooman Esteki, Derrick Jaskiel and Rebecca Rosette Nanfuka."
   },
   {
-    "objectID": "DEVELOPMENT.html",
-    "href": "DEVELOPMENT.html",
-    "title": "Development Guide",
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
     "section": "",
-    "text": "Welcome to your shiny new package. This page will help you get started with using Hatch to manage your package.\nIf you look at your project, you will see that a pyproject.toml file. This file stores both your package configuration and settings for development tools like Hatch that you will use to work on your package.\nThis file is written using a .toml format. You can learn more about toml here. Here’s the TL&DR:\n\nEach [] section in the toml file is called a table.\nYou can nest tables with double brackets like this[[]]\nTables contain information about a element that you want to configure.\n\nWe are using Hatch as the default packaging tool. Hatch allows you to configure and run environments and scripts similar to workflow tools like tox or nox.\nHach, by default, uses virtual environments (venv) to manage environments. But you can configure it to use other environment tools.Read the hatch documentation to learn more about environments.\nFor this template, we have set up Hatch environments for you to use. At the bottom of your pyproject.toml file, notice a hatch environment section that looks like this:\n########################################\n# Hatch Environments\n########################################\nBelow is the Hatch environment to install your package. Notice that it defines pip and twine as two packages that the environment needs.\n[tool.hatch.envs.build]\ndescription = \"\"\"Test the installation the package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\nThe table below defines the scripts that you will run build and check your package.\n[tool.hatch.envs.build.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\ndetached = true\nYou can enter that environment to check it out:\n$ hatch shell build\nIf you run pip list, in the environment, twine will be there:\n$ pip list\nHatch by default, installs your package in editable mode (-e) into its virtual environments. But if detached=True is set, then it will skip installing your package into the virtual enviornment.\n\n\nBelow you see the Hatch environment test table.\ntool.hatch.envs says, “Hey, Hatch, this is the definition for an environment.” test is the name of the environment.\nThe environment below defines the dependencies that Hatch needs to install into the environment named test.\n[tool.hatch.envs.test]\ndescription = \"\"\"Run the test suite.\"\"\"\ndependencies = [\n    \"pytest\",\n    \"pytest-cov\",\n    \"pytest-raises\",\n    \"pytest-randomly\",\n    \"pytest-xdist\",\n]\nTo enter a Hatch environment use:\nhatch shell environmentname\nSo you can enter the test environment above with:\nhatch shell test\n\n\n\nIf the environment has a matrix associated with it, that tells Hatch to run the test scripts across different Python versions.\n[[tool.hatch.envs.test.matrix]]\npython = [\"3.10\", \"3.11\", \"3.12\", \"3.13\"]\nIf you run hatch shell test, you will see the output below. To enter an environment with a matrix attached to it, you need to pick the Python environment version that you want to open.\n$ hatch shell test                           \nEnvironment `test` defines a matrix, choose one of the following instead:\n\ntest.py3.10\ntest.py3.11\ntest.py3.12\ntest.py3.13\nOpen the Python 3.13 environment like this:\n$ hatch shell test.py3.13\nTo leave an environment use:\n$ deactivate\n\n\n\nIn the tests section of your pyproject.toml, you will see a tool.hatch.envs.test.scripts table.\nThis table defines the commands that you want Hatch to run in the test environment. Notice that the script has one command called run.\n[tool.hatch.envs.test.scripts]\nrun = \"pytest {args:--cov=greatproject --cov-report=term-missing}\"\nTo run this script , use:\nhatch run test:run\n\nhatch run: calls Hatch and tells it that it will be running a command\ntest:run: defines the environment you want it to run (test) and defines the name of the “script” to berun.\n\nIf you have a Hatch matrix setup for tests, it will both install the necessary Python version using UV and run your tests on each version of the Python versions that you declare in the matrix table. In this case, there are 4 Python versions in the environment, so your tests will run 4 times, once in each Python version listed in the matrix table.\n@lwasser ➜ /workspaces/pyopensci-scipy25-create-python-package (main) $ hatch run test:run\n──────────────────────────────────────────────────────────────────────── test.py3.10 ────────────────────────────────────────────────────────────────────────\n==================================================================== test session starts ====================================================================\nplatform linux -- Python 3.10.16, pytest-8.4.1, pluggy-1.6.0\nUsing --randomly-seed=1490740387\nrootdir: /workspaces/pyopensci-scipy25-create-python-package\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1\ncollected 2 items                                                                                                                                           \n\ntests/system/test_import.py .                                                                                                                         [ 50%]\ntests/unit/test_example.py .                                                                                                                          [100%]\n\n====================================================================== tests coverage =======================================================================\n_____________________________________________________ coverage: platform linux, python 3.10.16-final-0 ______________________________________________________\n\nName                           Stmts   Miss Branch BrPart    Cover   Missing\n----------------------------------------------------------------------------\nsrc/greatproject/__init__.py       0      0      0      0  100.00%\nsrc/greatproject/example.py        2      0      0      0  100.00%\n----------------------------------------------------------------------------\nTOTAL                              2      0      0      0  100.00%\n===================================================================== 2 passed in 0.05s =====================================================================\n──────────────────────────────────────────────────────────────────────── test.py3.11 ────────────────────────────────────────────────────────────────────────\n==================================================================== test session starts ====================================================================\nplatform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0\nUsing --randomly-seed=1596865075\nrootdir: /workspaces/pyopensci-scipy25-create-python-package\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1\ncollected 2 items                                                                                                                                           \n\ntests/system/test_import.py .                                                                                                                         [ 50%]\ntests/unit/test_example.py .                                                                                                                          [100%]\n\n====================================================================== tests coverage =======================================================================\n_____________________________________________________ coverage: platform linux, python 3.11.12-final-0 ______________________________________________________\n\nName                           Stmts   Miss Branch BrPart    Cover   Missing\n----------------------------------------------------------------------------\nsrc/greatproject/__init__.py       0      0      0      0  100.00%\nsrc/greatproject/example.py        2      0      0      0  100.00%\n----------------------------------------------------------------------------\nTOTAL                              2      0      0      0  100.00%\n===================================================================== 2 passed in 0.05s =====================================================================\n\n\n\nYou can build your package using the environment and scripts defined in the build tables:\nhatch run build:check\nThis script builds and checks the output distribution files of your package.\nThis build environment table declares that pip and twine should be added to that environment. Adding pip to the environment ensures that it is a current, up-to-date version.\n[tool.hatch.envs.build]\ndescription = \"\"\"Build and test your package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\ndetached = true\n# This table installs created the command hatch run install:check which will build and check your package.\n[tool.hatch.envs.install.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\nThis uses the above environment and tells hatch to run\n\npip check, # verifies your dependencies\nhatch build --clean\n\ntwine check dist/* # this checks your distribution for metadata and other potential issues. to build and test your package."
+    "text": "Functions to help you plan your trips.\n\n\n\nestimate_trip_cost.estimate_trip_cost\nCalculate the total fuel cost of a trip in Canada (Metric units),\n\n\nconvert_currency.convert_currency\nConvert a monetary amount between currencies with a specified exchange rate,\n\n\nget_packing_list.get_packing_list\nCreate a packing list from weather and trip duration.\n\n\nformat_destination.format_destination\nNormalize destination names into the format: “City, COUNTRY_CODE”."
   },
   {
-    "objectID": "DEVELOPMENT.html#build-your-package",
-    "href": "DEVELOPMENT.html#build-your-package",
-    "title": "Development Guide",
+    "objectID": "reference/index.html#travel-planning-functions",
+    "href": "reference/index.html#travel-planning-functions",
+    "title": "Function reference",
     "section": "",
-    "text": "You can build your package using the environment and scripts defined in the build tables:\nhatch run build:check\nThis script builds and checks the output distribution files of your package.\nThis build environment table declares that pip and twine should be added to that environment. Adding pip to the environment ensures that it is a current, up-to-date version.\n[tool.hatch.envs.build]\ndescription = \"\"\"Build and test your package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\ndetached = true\n# This table installs created the command hatch run install:check which will build and check your package.\n[tool.hatch.envs.install.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\nThis uses the above environment and tells hatch to run\n\npip check, # verifies your dependencies\nhatch build --clean\n\ntwine check dist/* # this checks your distribution for metadata and other potential issues. to build and test your package."
+    "text": "Functions to help you plan your trips.\n\n\n\nestimate_trip_cost.estimate_trip_cost\nCalculate the total fuel cost of a trip in Canada (Metric units),\n\n\nconvert_currency.convert_currency\nConvert a monetary amount between currencies with a specified exchange rate,\n\n\nget_packing_list.get_packing_list\nCreate a packing list from weather and trip duration.\n\n\nformat_destination.format_destination\nNormalize destination names into the format: “City, COUNTRY_CODE”."
   },
   {
-    "objectID": "CHANGELOG.html",
-    "href": "CHANGELOG.html",
-    "title": "Changelog",
+    "objectID": "reference/format_destination.format_destination.html",
+    "href": "reference/format_destination.format_destination.html",
+    "title": "format_destination.format_destination",
     "section": "",
-    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\n\n\nUpcoming features and fixes\n\n\n\n\n\nFirst release"
+    "text": "format_destination.format_destination(city, country_code)\nNormalize destination names into the format: “City, COUNTRY_CODE”.\nRules: - city and country_code must be non-empty strings after stripping - country_code must be exactly 2 alphabetic letters - city is title-cased; country_code is upper-cased\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncity\nstr\nCity name (e.g., “vancouver”).\nrequired\n\n\ncountry_code\nstr\nTwo-letter country code (e.g., “ca”, “FR”).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nstr\nFormatted destination string: “City, COUNTRY_CODE”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf inputs are empty after stripping or country_code is invalid.\n\n\n\nTypeError\nIf inputs are not strings.\n\n\n\n\n\n\n&gt;&gt;&gt; from travelpy.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
   },
   {
-    "objectID": "CHANGELOG.html#unreleased",
-    "href": "CHANGELOG.html#unreleased",
-    "title": "Changelog",
+    "objectID": "reference/format_destination.format_destination.html#parameters",
+    "href": "reference/format_destination.format_destination.html#parameters",
+    "title": "format_destination.format_destination",
     "section": "",
-    "text": "Upcoming features and fixes"
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncity\nstr\nCity name (e.g., “vancouver”).\nrequired\n\n\ncountry_code\nstr\nTwo-letter country code (e.g., “ca”, “FR”).\nrequired"
   },
   {
-    "objectID": "CHANGELOG.html#section",
-    "href": "CHANGELOG.html#section",
-    "title": "Changelog",
+    "objectID": "reference/format_destination.format_destination.html#returns",
+    "href": "reference/format_destination.format_destination.html#returns",
+    "title": "format_destination.format_destination",
     "section": "",
-    "text": "First release"
+    "text": "Name\nType\nDescription\n\n\n\n\n\nstr\nFormatted destination string: “City, COUNTRY_CODE”."
   },
   {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing",
+    "objectID": "reference/format_destination.format_destination.html#raises",
+    "href": "reference/format_destination.format_destination.html#raises",
+    "title": "format_destination.format_destination",
     "section": "",
-    "text": "Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.\n\n\nAll tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project.\n\n\n\nDue to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks.\n\n\n\nAs general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow."
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf inputs are empty after stripping or country_code is invalid.\n\n\n\nTypeError\nIf inputs are not strings."
   },
   {
-    "objectID": "CONTRIBUTING.html#milestone-tasks",
-    "href": "CONTRIBUTING.html#milestone-tasks",
-    "title": "Contributing",
+    "objectID": "reference/format_destination.format_destination.html#examples",
+    "href": "reference/format_destination.format_destination.html#examples",
+    "title": "format_destination.format_destination",
     "section": "",
-    "text": "All tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project."
+    "text": "&gt;&gt;&gt; from travelpy.format_destination import format_destination\n&gt;&gt;&gt; format_destination(\"vancouver\", \"ca\")\n'Vancouver, CA'\n&gt;&gt;&gt; format_destination(\"  paris \", \" fr \")\n'Paris, FR'\n&gt;&gt;&gt; format_destination(\"TOKYO\", \"jp\")\n'Tokyo, JP'"
   },
   {
-    "objectID": "CONTRIBUTING.html#bug-fixes",
-    "href": "CONTRIBUTING.html#bug-fixes",
-    "title": "Contributing",
+    "objectID": "retrospective.html",
+    "href": "retrospective.html",
+    "title": "Project Retrospective",
     "section": "",
-    "text": "Due to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks."
+    "text": "This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524."
   },
   {
-    "objectID": "CONTRIBUTING.html#incrimentalmiscellaneous-improvements",
-    "href": "CONTRIBUTING.html#incrimentalmiscellaneous-improvements",
-    "title": "Contributing",
+    "objectID": "retrospective.html#overview",
+    "href": "retrospective.html#overview",
+    "title": "Project Retrospective",
     "section": "",
-    "text": "As general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow."
+    "text": "This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524."
   },
   {
-    "objectID": "reference/convert_currency.convert_currency.html",
-    "href": "reference/convert_currency.convert_currency.html",
-    "title": "convert_currency.convert_currency",
-    "section": "",
-    "text": "convert_currency.convert_currency(amount, rate)\nConvert a monetary amount between currencies with a specified exchange rate, deducting a $5 service fee if the inital amount is not at least $100.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\namount\nfloat\nThe original monetary amount to be converted. Must be a positive number.\nrequired\n\n\nrate\nfloat\nThe currency exchange rate used to convert the amount. Must be a positive number.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe final converted amount after the exchange rate and potential service fee are applied.\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf amount is not a positive number.\n\n\n\nValueError\nIf rate is not a positive number.\n\n\n\n\n\n\n&gt;&gt;&gt; convert_currency(50.0, 1.2)\n55.0\n&gt;&gt;&gt; convert_currency(150.0, 1.2)\n180.0"
+    "objectID": "retrospective.html#development-tools",
+    "href": "retrospective.html#development-tools",
+    "title": "Project Retrospective",
+    "section": "Development Tools",
+    "text": "Development Tools\n\nPackage Management: Hatch\nWe used Hatch as our Python project manager and build tool.\nWhat worked well:\n\nEasy environment management with hatch shell\nMatrix testing across Python versions (3.10, 3.13)\nSimple script definitions in pyproject.toml\nBuilt-in support for editable installs\n\nChallenges:\n\nInitial learning curve for team members unfamiliar with Hatch\nSome confusion between Hatch environments and conda environments\n\n\n\nTesting: Pytest\nWe used pytest with several plugins for our test suite.\nPlugins used:\n\npytest-cov: Code coverage reporting\npytest-raises: Exception testing\npytest-randomly: Randomized test order\npytest-xdist: Parallel test execution\n\nWhat worked well:\n\nEasy to write and organize tests\nCoverage reports helped identify untested code\nIntegration with Codecov for tracking coverage over time\n\n\n\nCode Quality: Ruff\nWe used Ruff as our linter and style checker.\nWhat worked well:\n\nExtremely fast compared to other linters\nCatches common Python issues\nEasy CI integration\n\n\n\nDocumentation: Quartodoc + Quarto\nWe used Quartodoc to generate API documentation from docstrings and Quarto to build our documentation website.\nWhat worked well:\n\nAutomatic generation of function reference pages\nNice integration with NumPy-style docstrings\nEasy to add custom pages (like this one)\n\nChallenges:\n\nRequired careful attention to docstring formatting\nInitial setup took some time to configure correctly"
   },
   {
-    "objectID": "reference/convert_currency.convert_currency.html#parameters",
-    "href": "reference/convert_currency.convert_currency.html#parameters",
-    "title": "convert_currency.convert_currency",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\namount\nfloat\nThe original monetary amount to be converted. Must be a positive number.\nrequired\n\n\nrate\nfloat\nThe currency exchange rate used to convert the amount. Must be a positive number.\nrequired"
+    "objectID": "retrospective.html#github-infrastructure",
+    "href": "retrospective.html#github-infrastructure",
+    "title": "Project Retrospective",
+    "section": "GitHub Infrastructure",
+    "text": "GitHub Infrastructure\n\nGitHub Actions (CI/CD)\nWe implemented three workflows:\n\n\n\n\n\n\n\n\nWorkflow\nPurpose\nTrigger\n\n\n\n\nbuild.yml\nRun tests on multiple OS/Python versions\nPush, PR, Weekly\n\n\ndeploy.yml\nBuild and publish to TestPyPI\nPush to main\n\n\ndocs.yml\nBuild and deploy documentation\nPush, PR\n\n\n\nWhat worked well:\n\nAutomated testing caught bugs before merging\nAutomatic deployment reduced manual work\nMatrix testing ensured cross-platform compatibility\n\nChallenges:\n\nDebugging failed workflows required reading logs carefully\nSecret management (CODECOV token) needed coordination\n\n\n\nGitHub Issues\nWe used Issues to track:\n\nBug reports\nFeature requests\nDocumentation tasks\nMilestone requirements\n\nWhat worked well:\n\nIssue templates standardized bug reports\nLabels helped categorize and filter issues\nLinking issues to PRs provided traceability\n\n\n\nGitHub Project Board\nWe used a Project Board to visualize and manage work.\nViews created:\n\nBy Status (To Do, In Progress, Done)\nBy Assignee (work distribution)\nBy Milestone (progress tracking)\n\nWhat worked well:\n\nClear visibility of project status\nEasy to identify blocked or stale items\nHelped balance workload across team members\n\n\n\nPull Requests & Code Review\nWe followed a branch-based workflow with code reviews.\nWhat worked well:\n\nCode reviews caught errors and improved quality\nPR templates ensured consistent descriptions\nBranch protection prevented direct pushes to main"
   },
   {
-    "objectID": "reference/convert_currency.convert_currency.html#returns",
-    "href": "reference/convert_currency.convert_currency.html#returns",
-    "title": "convert_currency.convert_currency",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe final converted amount after the exchange rate and potential service fee are applied."
+    "objectID": "retrospective.html#organizational-practices",
+    "href": "retrospective.html#organizational-practices",
+    "title": "Project Retrospective",
+    "section": "Organizational Practices",
+    "text": "Organizational Practices\n\nBranching Strategy\nWe used a modified Git Flow approach:\nmain (stable)\n  └── develop (staging)\n       ├── feature/function-name\n       ├── fix/bug-description\n       └── docs/documentation-updates\nWhat worked well:\n\nClear separation between stable and development code\nFeature branches allowed parallel work\nDevelop branch provided integration testing before main\n\n\n\nCommunication\n\nGitHub Issues: Task tracking and technical discussions\nPull Request comments: Code-specific feedback\nWeekly meetings: Coordination and planning\n\n\n\nWork Distribution\nEach team member was responsible for:\n\nOne core function implementation\nCorresponding unit tests\nDocumentation for their function"
   },
   {
-    "objectID": "reference/convert_currency.convert_currency.html#raises",
-    "href": "reference/convert_currency.convert_currency.html#raises",
-    "title": "convert_currency.convert_currency",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf amount is not a positive number.\n\n\n\nValueError\nIf rate is not a positive number."
+    "objectID": "retrospective.html#scaling-recommendations",
+    "href": "retrospective.html#scaling-recommendations",
+    "title": "Project Retrospective",
+    "section": "Scaling Recommendations",
+    "text": "Scaling Recommendations\nIf we were to scale this project (or start a new larger project), we would recommend:\n\nTools\n\n\n\n\n\n\n\n\nTool\nPurpose\nWhy\n\n\n\n\nHatch\nPackage management\nExcellent environment and build management\n\n\npytest\nTesting\nIndustry standard, extensive plugin ecosystem\n\n\nRuff\nLinting\nFast, comprehensive, replaces multiple tools\n\n\npre-commit\nGit hooks\nEnforce standards before commits\n\n\nCodecov\nCoverage tracking\nVisual coverage trends over time\n\n\n\n\n\nInfrastructure\n\n\n\n\n\n\n\n\nInfrastructure\nPurpose\nWhy\n\n\n\n\nGitHub Actions\nCI/CD\nFree for public repos, excellent GitHub integration\n\n\nGitHub Projects\nTask management\nIntegrated with issues and PRs\n\n\nBranch protection\nCode quality\nRequire reviews and passing CI\n\n\nDependabot\nSecurity\nAutomatic dependency updates\n\n\n\n\n\nPractices\n\nRequire PR reviews: At least one approval before merging\nEnforce CI passing: No merging with failed tests\nUse conventional commits: Standardized commit messages\nDocument decisions: Keep ADRs (Architecture Decision Records)\nRegular retrospectives: Continuous improvement"
   },
   {
-    "objectID": "reference/convert_currency.convert_currency.html#examples",
-    "href": "reference/convert_currency.convert_currency.html#examples",
-    "title": "convert_currency.convert_currency",
-    "section": "",
-    "text": "&gt;&gt;&gt; convert_currency(50.0, 1.2)\n55.0\n&gt;&gt;&gt; convert_currency(150.0, 1.2)\n180.0"
+    "objectID": "retrospective.html#lessons-learned",
+    "href": "retrospective.html#lessons-learned",
+    "title": "Project Retrospective",
+    "section": "Lessons Learned",
+    "text": "Lessons Learned\n\nStart documentation early: Writing docstrings during development is easier than adding them later\nTest edge cases: Many bugs were found by testing boundary conditions\nAutomate everything: CI/CD saved significant time and caught issues early\nCommunicate often: Regular check-ins prevented duplicate work and blockers\nKeep PRs small: Smaller PRs were easier to review and had fewer conflicts"
   },
   {
-    "objectID": "reference/get_packing_list.get_packing_list.html",
-    "href": "reference/get_packing_list.get_packing_list.html",
-    "title": "get_packing_list.get_packing_list",
-    "section": "",
-    "text": "get_packing_list.get_packing_list(weather, duration)\nCreate a packing list from weather and trip duration.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”.\n\n\n\n\n\n\nBase items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7.\n\n\n\n&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']"
-  },
-  {
-    "objectID": "reference/get_packing_list.get_packing_list.html#parameters",
-    "href": "reference/get_packing_list.get_packing_list.html#parameters",
-    "title": "get_packing_list.get_packing_list",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\nweather\nstr\nExpected conditions (e.g., “cold”, “warm”, “rainy”).\nrequired\n\n\nduration\nint\nTotal number of days for the trip.\nrequired"
-  },
-  {
-    "objectID": "reference/get_packing_list.get_packing_list.html#returns",
-    "href": "reference/get_packing_list.get_packing_list.html#returns",
-    "title": "get_packing_list.get_packing_list",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nlist\nBase items first, then additions based on weather and trip length."
-  },
-  {
-    "objectID": "reference/get_packing_list.get_packing_list.html#raises",
-    "href": "reference/get_packing_list.get_packing_list.html#raises",
-    "title": "get_packing_list.get_packing_list",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf duration is less than 1 with message “Trip duration must be at least 1 day.”."
-  },
-  {
-    "objectID": "reference/get_packing_list.get_packing_list.html#notes",
-    "href": "reference/get_packing_list.get_packing_list.html#notes",
-    "title": "get_packing_list.get_packing_list",
-    "section": "",
-    "text": "Base items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7."
-  },
-  {
-    "objectID": "reference/get_packing_list.get_packing_list.html#examples",
-    "href": "reference/get_packing_list.get_packing_list.html#examples",
-    "title": "get_packing_list.get_packing_list",
-    "section": "",
-    "text": "&gt;&gt;&gt; get_packing_list(\"cold\", 3)\n['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']\n&gt;&gt;&gt; get_packing_list(\"rainy\", 10)\n['Passport', 'Toothbrush', 'Umbrella', 'Laundry kit']"
-  },
-  {
-    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html",
-    "href": "reference/estimate_trip_cost.estimate_trip_cost.html",
-    "title": "estimate_trip_cost.estimate_trip_cost",
-    "section": "",
-    "text": "estimate_trip_cost.estimate_trip_cost(distance, fuel_price, efficiency)\nCalculate the total fuel cost of a trip in Canada (Metric units), including a contingency fee for long trips.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndistance\nfloat\nThe distance of the trip in kilometers (km).\nrequired\n\n\nfuel_price\nfloat\nThe price of fuel per liter (CAD/L).\nrequired\n\n\nefficiency\nfloat\nThe fuel efficiency of the vehicle in kilometers per liter (km/L).\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nfloat\nThe estimated cost of the trip rounded to 2 decimal places.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf distance, fuel_price, or efficiency are less than or equal to zero.\n\n\n\n\n\n\n&gt;&gt;&gt; estimate_trip_cost(150, 1.7, 12)\n21.25\n&gt;&gt;&gt; estimate_trip_cost(900, 1.7, 12)\n146.62"
-  },
-  {
-    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#parameters",
-    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#parameters",
-    "title": "estimate_trip_cost.estimate_trip_cost",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndistance\nfloat\nThe distance of the trip in kilometers (km).\nrequired\n\n\nfuel_price\nfloat\nThe price of fuel per liter (CAD/L).\nrequired\n\n\nefficiency\nfloat\nThe fuel efficiency of the vehicle in kilometers per liter (km/L).\nrequired"
-  },
-  {
-    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#returns",
-    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#returns",
-    "title": "estimate_trip_cost.estimate_trip_cost",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nfloat\nThe estimated cost of the trip rounded to 2 decimal places."
-  },
-  {
-    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#raises",
-    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#raises",
-    "title": "estimate_trip_cost.estimate_trip_cost",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf distance, fuel_price, or efficiency are less than or equal to zero."
-  },
-  {
-    "objectID": "reference/estimate_trip_cost.estimate_trip_cost.html#examples",
-    "href": "reference/estimate_trip_cost.estimate_trip_cost.html#examples",
-    "title": "estimate_trip_cost.estimate_trip_cost",
-    "section": "",
-    "text": "&gt;&gt;&gt; estimate_trip_cost(150, 1.7, 12)\n21.25\n&gt;&gt;&gt; estimate_trip_cost(900, 1.7, 12)\n146.62"
+    "objectID": "retrospective.html#conclusion",
+    "href": "retrospective.html#conclusion",
+    "title": "Project Retrospective",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.\n\nDSCI 524 - Group 25 | January 2026"
   }
 ]

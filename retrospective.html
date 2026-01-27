@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>get_packing_list.get_packing_list – TravelPy</title>
+<title>Project Retrospective – TravelPy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,62 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">TravelPy</span>
     </a>
   </div>
@@ -125,15 +90,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reference/index.html"> 
+    <a class="nav-link" href="./reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../retrospective.html"> 
+    <a class="nav-link active" href="./retrospective.html" aria-current="page"> 
 <span class="menu-text">Retrospective</span></a>
   </li>  
 </ul>
@@ -152,121 +117,365 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#travelpy.get_packing_list.get_packing_list" id="toc-travelpy.get_packing_list.get_packing_list" class="nav-link active" data-scroll-target="#travelpy.get_packing_list.get_packing_list">get_packing_list.get_packing_list</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#development-tools" id="toc-development-tools" class="nav-link" data-scroll-target="#development-tools">Development Tools</a>
   <ul class="collapse">
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
-  <li><a href="#raises" id="toc-raises" class="nav-link" data-scroll-target="#raises">Raises</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#package-management-hatch" id="toc-package-management-hatch" class="nav-link" data-scroll-target="#package-management-hatch">Package Management: Hatch</a></li>
+  <li><a href="#testing-pytest" id="toc-testing-pytest" class="nav-link" data-scroll-target="#testing-pytest">Testing: Pytest</a></li>
+  <li><a href="#code-quality-ruff" id="toc-code-quality-ruff" class="nav-link" data-scroll-target="#code-quality-ruff">Code Quality: Ruff</a></li>
+  <li><a href="#documentation-quartodoc-quarto" id="toc-documentation-quartodoc-quarto" class="nav-link" data-scroll-target="#documentation-quartodoc-quarto">Documentation: Quartodoc + Quarto</a></li>
   </ul></li>
+  <li><a href="#github-infrastructure" id="toc-github-infrastructure" class="nav-link" data-scroll-target="#github-infrastructure">GitHub Infrastructure</a>
+  <ul class="collapse">
+  <li><a href="#github-actions-cicd" id="toc-github-actions-cicd" class="nav-link" data-scroll-target="#github-actions-cicd">GitHub Actions (CI/CD)</a></li>
+  <li><a href="#github-issues" id="toc-github-issues" class="nav-link" data-scroll-target="#github-issues">GitHub Issues</a></li>
+  <li><a href="#github-project-board" id="toc-github-project-board" class="nav-link" data-scroll-target="#github-project-board">GitHub Project Board</a></li>
+  <li><a href="#pull-requests-code-review" id="toc-pull-requests-code-review" class="nav-link" data-scroll-target="#pull-requests-code-review">Pull Requests &amp; Code Review</a></li>
+  </ul></li>
+  <li><a href="#organizational-practices" id="toc-organizational-practices" class="nav-link" data-scroll-target="#organizational-practices">Organizational Practices</a>
+  <ul class="collapse">
+  <li><a href="#branching-strategy" id="toc-branching-strategy" class="nav-link" data-scroll-target="#branching-strategy">Branching Strategy</a></li>
+  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication">Communication</a></li>
+  <li><a href="#work-distribution" id="toc-work-distribution" class="nav-link" data-scroll-target="#work-distribution">Work Distribution</a></li>
+  </ul></li>
+  <li><a href="#scaling-recommendations" id="toc-scaling-recommendations" class="nav-link" data-scroll-target="#scaling-recommendations">Scaling Recommendations</a>
+  <ul class="collapse">
+  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools">Tools</a></li>
+  <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure">Infrastructure</a></li>
+  <li><a href="#practices" id="toc-practices" class="nav-link" data-scroll-target="#practices">Practices</a></li>
+  </ul></li>
+  <li><a href="#lessons-learned" id="toc-lessons-learned" class="nav-link" data-scroll-target="#lessons-learned">Lessons Learned</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project Retrospective</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="travelpy.get_packing_list.get_packing_list" class="level1">
-<h1>get_packing_list.get_packing_list</h1>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>get_packing_list.get_packing_list(weather, duration)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create a packing list from weather and trip duration.</p>
-<section id="parameters" class="level2 doc-section doc-section-parameters">
-<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524.</p>
+</section>
+<section id="development-tools" class="level2">
+<h2 class="anchored" data-anchor-id="development-tools">Development Tools</h2>
+<section id="package-management-hatch" class="level3">
+<h3 class="anchored" data-anchor-id="package-management-hatch">Package Management: Hatch</h3>
+<p>We used <strong>Hatch</strong> as our Python project manager and build tool.</p>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Easy environment management with <code>hatch shell</code></li>
+<li>Matrix testing across Python versions (3.10, 3.13)</li>
+<li>Simple script definitions in <code>pyproject.toml</code></li>
+<li>Built-in support for editable installs</li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Initial learning curve for team members unfamiliar with Hatch</li>
+<li>Some confusion between Hatch environments and conda environments</li>
+</ul>
+</section>
+<section id="testing-pytest" class="level3">
+<h3 class="anchored" data-anchor-id="testing-pytest">Testing: Pytest</h3>
+<p>We used <strong>pytest</strong> with several plugins for our test suite.</p>
+<p><strong>Plugins used:</strong></p>
+<ul>
+<li><code>pytest-cov</code>: Code coverage reporting</li>
+<li><code>pytest-raises</code>: Exception testing</li>
+<li><code>pytest-randomly</code>: Randomized test order</li>
+<li><code>pytest-xdist</code>: Parallel test execution</li>
+</ul>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Easy to write and organize tests</li>
+<li>Coverage reports helped identify untested code</li>
+<li>Integration with Codecov for tracking coverage over time</li>
+</ul>
+</section>
+<section id="code-quality-ruff" class="level3">
+<h3 class="anchored" data-anchor-id="code-quality-ruff">Code Quality: Ruff</h3>
+<p>We used <strong>Ruff</strong> as our linter and style checker.</p>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Extremely fast compared to other linters</li>
+<li>Catches common Python issues</li>
+<li>Easy CI integration</li>
+</ul>
+</section>
+<section id="documentation-quartodoc-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-quartodoc-quarto">Documentation: Quartodoc + Quarto</h3>
+<p>We used <strong>Quartodoc</strong> to generate API documentation from docstrings and <strong>Quarto</strong> to build our documentation website.</p>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Automatic generation of function reference pages</li>
+<li>Nice integration with NumPy-style docstrings</li>
+<li>Easy to add custom pages (like this one)</li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Required careful attention to docstring formatting</li>
+<li>Initial setup took some time to configure correctly</li>
+</ul>
+</section>
+</section>
+<section id="github-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="github-infrastructure">GitHub Infrastructure</h2>
+<section id="github-actions-cicd" class="level3">
+<h3 class="anchored" data-anchor-id="github-actions-cicd">GitHub Actions (CI/CD)</h3>
+<p>We implemented three workflows:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 9%">
-<col style="width: 64%">
-<col style="width: 14%">
+<col style="width: 35%">
+<col style="width: 32%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
+<th>Workflow</th>
+<th>Purpose</th>
+<th>Trigger</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>weather</td>
-<td>str</td>
-<td>Expected conditions (e.g., “cold”, “warm”, “rainy”).</td>
-<td><em>required</em></td>
+<td><code>build.yml</code></td>
+<td>Run tests on multiple OS/Python versions</td>
+<td>Push, PR, Weekly</td>
 </tr>
 <tr class="even">
-<td>duration</td>
-<td>int</td>
-<td>Total number of days for the trip.</td>
-<td><em>required</em></td>
+<td><code>deploy.yml</code></td>
+<td>Build and publish to TestPyPI</td>
+<td>Push to main</td>
+</tr>
+<tr class="odd">
+<td><code>docs.yml</code></td>
+<td>Build and deploy documentation</td>
+<td>Push, PR</td>
 </tr>
 </tbody>
 </table>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Automated testing caught bugs before merging</li>
+<li>Automatic deployment reduced manual work</li>
+<li>Matrix testing ensured cross-platform compatibility</li>
+</ul>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Debugging failed workflows required reading logs carefully</li>
+<li>Secret management (CODECOV token) needed coordination</li>
+</ul>
 </section>
-<section id="returns" class="level2 doc-section doc-section-returns">
-<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
+<section id="github-issues" class="level3">
+<h3 class="anchored" data-anchor-id="github-issues">GitHub Issues</h3>
+<p>We used Issues to track:</p>
+<ul>
+<li>Bug reports</li>
+<li>Feature requests</li>
+<li>Documentation tasks</li>
+<li>Milestone requirements</li>
+</ul>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Issue templates standardized bug reports</li>
+<li>Labels helped categorize and filter issues</li>
+<li>Linking issues to PRs provided traceability</li>
+</ul>
+</section>
+<section id="github-project-board" class="level3">
+<h3 class="anchored" data-anchor-id="github-project-board">GitHub Project Board</h3>
+<p>We used a Project Board to visualize and manage work.</p>
+<p><strong>Views created:</strong></p>
+<ul>
+<li>By Status (To Do, In Progress, Done)</li>
+<li>By Assignee (work distribution)</li>
+<li>By Milestone (progress tracking)</li>
+</ul>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Clear visibility of project status</li>
+<li>Easy to identify blocked or stale items</li>
+<li>Helped balance workload across team members</li>
+</ul>
+</section>
+<section id="pull-requests-code-review" class="level3">
+<h3 class="anchored" data-anchor-id="pull-requests-code-review">Pull Requests &amp; Code Review</h3>
+<p>We followed a branch-based workflow with code reviews.</p>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Code reviews caught errors and improved quality</li>
+<li>PR templates ensured consistent descriptions</li>
+<li>Branch protection prevented direct pushes to main</li>
+</ul>
+</section>
+</section>
+<section id="organizational-practices" class="level2">
+<h2 class="anchored" data-anchor-id="organizational-practices">Organizational Practices</h2>
+<section id="branching-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="branching-strategy">Branching Strategy</h3>
+<p>We used a modified <strong>Git Flow</strong> approach:</p>
+<pre><code>main (stable)
+  └── develop (staging)
+       ├── feature/function-name
+       ├── fix/bug-description
+       └── docs/documentation-updates</code></pre>
+<p><strong>What worked well:</strong></p>
+<ul>
+<li>Clear separation between stable and development code</li>
+<li>Feature branches allowed parallel work</li>
+<li>Develop branch provided integration testing before main</li>
+</ul>
+</section>
+<section id="communication" class="level3">
+<h3 class="anchored" data-anchor-id="communication">Communication</h3>
+<ul>
+<li><strong>GitHub Issues</strong>: Task tracking and technical discussions</li>
+<li><strong>Pull Request comments</strong>: Code-specific feedback</li>
+<li><strong>Weekly meetings</strong>: Coordination and planning</li>
+</ul>
+</section>
+<section id="work-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="work-distribution">Work Distribution</h3>
+<p>Each team member was responsible for:</p>
+<ul>
+<li>One core function implementation</li>
+<li>Corresponding unit tests</li>
+<li>Documentation for their function</li>
+</ul>
+</section>
+</section>
+<section id="scaling-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="scaling-recommendations">Scaling Recommendations</h2>
+<p>If we were to scale this project (or start a new larger project), we would recommend:</p>
+<section id="tools" class="level3">
+<h3 class="anchored" data-anchor-id="tools">Tools</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 80%">
+<col style="width: 30%">
+<col style="width: 45%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
+<th>Tool</th>
+<th>Purpose</th>
+<th>Why</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td>list</td>
-<td>Base items first, then additions based on weather and trip length.</td>
+<td><strong>Hatch</strong></td>
+<td>Package management</td>
+<td>Excellent environment and build management</td>
+</tr>
+<tr class="even">
+<td><strong>pytest</strong></td>
+<td>Testing</td>
+<td>Industry standard, extensive plugin ecosystem</td>
+</tr>
+<tr class="odd">
+<td><strong>Ruff</strong></td>
+<td>Linting</td>
+<td>Fast, comprehensive, replaces multiple tools</td>
+</tr>
+<tr class="even">
+<td><strong>pre-commit</strong></td>
+<td>Git hooks</td>
+<td>Enforce standards before commits</td>
+</tr>
+<tr class="odd">
+<td><strong>Codecov</strong></td>
+<td>Coverage tracking</td>
+<td>Visual coverage trends over time</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="raises" class="level2 doc-section doc-section-raises">
-<h2 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h2>
+<section id="infrastructure" class="level3">
+<h3 class="anchored" data-anchor-id="infrastructure">Infrastructure</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 11%">
-<col style="width: 80%">
+<col style="width: 53%">
+<col style="width: 30%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
+<th>Infrastructure</th>
+<th>Purpose</th>
+<th>Why</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td>ValueError</td>
-<td>If duration is less than 1 with message “Trip duration must be at least 1 day.”.</td>
+<td><strong>GitHub Actions</strong></td>
+<td>CI/CD</td>
+<td>Free for public repos, excellent GitHub integration</td>
+</tr>
+<tr class="even">
+<td><strong>GitHub Projects</strong></td>
+<td>Task management</td>
+<td>Integrated with issues and PRs</td>
+</tr>
+<tr class="odd">
+<td><strong>Branch protection</strong></td>
+<td>Code quality</td>
+<td>Require reviews and passing CI</td>
+</tr>
+<tr class="even">
+<td><strong>Dependabot</strong></td>
+<td>Security</td>
+<td>Automatic dependency updates</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="notes" class="level2 doc-section doc-section-notes">
-<h2 class="doc-section doc-section-notes anchored" data-anchor-id="notes">Notes</h2>
-<p>Base items are [“Passport”, “Toothbrush”]. Add “Heavy Jacket” and “Gloves” for cold, “Umbrella” for rainy, “Sunscreen” for warm, and “Laundry kit” if duration &gt; 7.</p>
+<section id="practices" class="level3">
+<h3 class="anchored" data-anchor-id="practices">Practices</h3>
+<ol type="1">
+<li><strong>Require PR reviews</strong>: At least one approval before merging</li>
+<li><strong>Enforce CI passing</strong>: No merging with failed tests</li>
+<li><strong>Use conventional commits</strong>: Standardized commit messages</li>
+<li><strong>Document decisions</strong>: Keep ADRs (Architecture Decision Records)</li>
+<li><strong>Regular retrospectives</strong>: Continuous improvement</li>
+</ol>
 </section>
-<section id="examples" class="level2 doc-section doc-section-examples">
-<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> get_packing_list(<span class="st">"cold"</span>, <span class="dv">3</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Passport'</span>, <span class="st">'Toothbrush'</span>, <span class="st">'Heavy Jacket'</span>, <span class="st">'Gloves'</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> get_packing_list(<span class="st">"rainy"</span>, <span class="dv">10</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>[<span class="st">'Passport'</span>, <span class="st">'Toothbrush'</span>, <span class="st">'Umbrella'</span>, <span class="st">'Laundry kit'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lessons-learned" class="level2">
+<h2 class="anchored" data-anchor-id="lessons-learned">Lessons Learned</h2>
+<ol type="1">
+<li><p><strong>Start documentation early</strong>: Writing docstrings during development is easier than adding them later</p></li>
+<li><p><strong>Test edge cases</strong>: Many bugs were found by testing boundary conditions</p></li>
+<li><p><strong>Automate everything</strong>: CI/CD saved significant time and caught issues early</p></li>
+<li><p><strong>Communicate often</strong>: Regular check-ins prevented duplicate work and blockers</p></li>
+<li><p><strong>Keep PRs small</strong>: Smaller PRs were easier to review and had fewer conflicts</p></li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.</p>
+<hr>
+<p><em>DSCI 524 - Group 25 | January 2026</em></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
