@@ -1,0 +1,216 @@
+---
+title: "Project Retrospective"
+---
+
+## Overview
+
+This page documents our team's reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524.
+
+## Development Tools
+
+### Package Management: Hatch
+
+We used **Hatch** as our Python project manager and build tool.
+
+**What worked well:**
+
+- Easy environment management with `hatch shell`
+- Matrix testing across Python versions (3.10, 3.13)
+- Simple script definitions in `pyproject.toml`
+- Built-in support for editable installs
+
+**Challenges:**
+
+- Initial learning curve for team members unfamiliar with Hatch
+- Some confusion between Hatch environments and conda environments
+
+### Testing: Pytest
+
+We used **pytest** with several plugins for our test suite.
+
+**Plugins used:**
+
+- `pytest-cov`: Code coverage reporting
+- `pytest-raises`: Exception testing
+- `pytest-randomly`: Randomized test order
+- `pytest-xdist`: Parallel test execution
+
+**What worked well:**
+
+- Easy to write and organize tests
+- Coverage reports helped identify untested code
+- Integration with Codecov for tracking coverage over time
+
+### Code Quality: Ruff
+
+We used **Ruff** as our linter and style checker.
+
+**What worked well:**
+
+- Extremely fast compared to other linters
+- Catches common Python issues
+- Easy CI integration
+
+### Documentation: Quartodoc + Quarto
+
+We used **Quartodoc** to generate API documentation from docstrings and **Quarto** to build our documentation website.
+
+**What worked well:**
+
+- Automatic generation of function reference pages
+- Nice integration with NumPy-style docstrings
+- Easy to add custom pages (like this one)
+
+**Challenges:**
+
+- Required careful attention to docstring formatting
+- Initial setup took some time to configure correctly
+
+## GitHub Infrastructure
+
+### GitHub Actions (CI/CD)
+
+We implemented three workflows:
+
+| Workflow | Purpose | Trigger |
+|----------|---------|---------|
+| `build.yml` | Run tests on multiple OS/Python versions | Push, PR, Weekly |
+| `deploy.yml` | Build and publish to TestPyPI | Push to main |
+| `docs.yml` | Build and deploy documentation | Push, PR |
+
+**What worked well:**
+
+- Automated testing caught bugs before merging
+- Automatic deployment reduced manual work
+- Matrix testing ensured cross-platform compatibility
+
+**Challenges:**
+
+- Debugging failed workflows required reading logs carefully
+- Secret management (CODECOV token) needed coordination
+
+### GitHub Issues
+
+We used Issues to track:
+
+- Bug reports
+- Feature requests
+- Documentation tasks
+- Milestone requirements
+
+**What worked well:**
+
+- Issue templates standardized bug reports
+- Labels helped categorize and filter issues
+- Linking issues to PRs provided traceability
+
+### GitHub Project Board
+
+We used a Project Board to visualize and manage work.
+
+**Views created:**
+
+- By Status (To Do, In Progress, Done)
+- By Assignee (work distribution)
+- By Milestone (progress tracking)
+
+**What worked well:**
+
+- Clear visibility of project status
+- Easy to identify blocked or stale items
+- Helped balance workload across team members
+
+### Pull Requests & Code Review
+
+We followed a branch-based workflow with code reviews.
+
+**What worked well:**
+
+- Code reviews caught errors and improved quality
+- PR templates ensured consistent descriptions
+- Branch protection prevented direct pushes to main
+
+## Organizational Practices
+
+### Branching Strategy
+
+We used a modified **Git Flow** approach:
+
+```
+main (stable)
+  └── develop (staging)
+       ├── feature/function-name
+       ├── fix/bug-description
+       └── docs/documentation-updates
+```
+
+**What worked well:**
+
+- Clear separation between stable and development code
+- Feature branches allowed parallel work
+- Develop branch provided integration testing before main
+
+### Communication
+
+- **GitHub Issues**: Task tracking and technical discussions
+- **Pull Request comments**: Code-specific feedback
+- **Weekly meetings**: Coordination and planning
+
+### Work Distribution
+
+Each team member was responsible for:
+
+- One core function implementation
+- Corresponding unit tests
+- Documentation for their function
+
+## Scaling Recommendations
+
+If we were to scale this project (or start a new larger project), we would recommend:
+
+### Tools
+
+| Tool | Purpose | Why |
+|------|---------|-----|
+| **Hatch** | Package management | Excellent environment and build management |
+| **pytest** | Testing | Industry standard, extensive plugin ecosystem |
+| **Ruff** | Linting | Fast, comprehensive, replaces multiple tools |
+| **pre-commit** | Git hooks | Enforce standards before commits |
+| **Codecov** | Coverage tracking | Visual coverage trends over time |
+
+### Infrastructure
+
+| Infrastructure | Purpose | Why |
+|----------------|---------|-----|
+| **GitHub Actions** | CI/CD | Free for public repos, excellent GitHub integration |
+| **GitHub Projects** | Task management | Integrated with issues and PRs |
+| **Branch protection** | Code quality | Require reviews and passing CI |
+| **Dependabot** | Security | Automatic dependency updates |
+
+### Practices
+
+1. **Require PR reviews**: At least one approval before merging
+2. **Enforce CI passing**: No merging with failed tests
+3. **Use conventional commits**: Standardized commit messages
+4. **Document decisions**: Keep ADRs (Architecture Decision Records)
+5. **Regular retrospectives**: Continuous improvement
+
+## Lessons Learned
+
+1. **Start documentation early**: Writing docstrings during development is easier than adding them later
+
+2. **Test edge cases**: Many bugs were found by testing boundary conditions
+
+3. **Automate everything**: CI/CD saved significant time and caught issues early
+
+4. **Communicate often**: Regular check-ins prevented duplicate work and blockers
+
+5. **Keep PRs small**: Smaller PRs were easier to review and had fewer conflicts
+
+## Conclusion
+
+The tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.
+
+---
+
+*DSCI 524 - Group 25 | January 2026*

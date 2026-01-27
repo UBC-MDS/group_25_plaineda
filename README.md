@@ -3,6 +3,7 @@
 [![CI Build](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/build.yml)
 [![Deploy to TestPyPI](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/deploy.yml)
 [![Documentation](https://github.com/UBC-MDS/DSCI_524_group_25/actions/workflows/docs.yml/badge.svg)](https://ubc-mds.github.io/DSCI_524_group_25/)
+[![codecov](https://codecov.io/gh/UBC-MDS/DSCI_524_group_25/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/DSCI_524_group_25)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
