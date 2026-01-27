@@ -28,7 +28,7 @@ def format_destination(city, country_code):
 
     Examples
     --------
-    >>> from dsci_524_group_25.format_destination import format_destination
+    >>> from travelpy.format_destination import format_destination
     >>> format_destination("vancouver", "ca")
     'Vancouver, CA'
     >>> format_destination("  paris ", " fr ")
