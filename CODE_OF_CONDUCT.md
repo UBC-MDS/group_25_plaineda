@@ -60,10 +60,7 @@ representative at an online or offline event.
 
 [//]: # (TODO: You need to choose whom and how to contact them.)
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-\[INSERT CONTACT METHOD\].
-All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening a confidential issue at [GitHub Issues](https://github.com/UBC-MDS/DSCI_524_group_25/issues) with the label "conduct" or by contacting the repository maintainers directly through GitHub.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
