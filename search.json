@@ -256,7 +256,7 @@
     "href": "CHANGELOG.html",
     "title": "Changelog",
     "section": "",
-    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\n\n\nUpcoming features and fixes\n\n\n\n\n\nFirst release"
+    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\n\n\nUpcoming features and fixes\n\n\n\n\n\nInitial public release\nAdded estimate_trip_cost(), convert_currency(), get_packing_list(), format_destination() functions\nFull documentation website with usage examples\nCI/CD pipeline with automated testing and deployment\nSemantic versioning with hatch-vcs"
   },
   {
     "objectID": "CHANGELOG.html#unreleased",
@@ -270,7 +270,7 @@
     "href": "CHANGELOG.html#section",
     "title": "Changelog",
     "section": "",
-    "text": "First release"
+    "text": "Initial public release\nAdded estimate_trip_cost(), convert_currency(), get_packing_list(), format_destination() functions\nFull documentation website with usage examples\nCI/CD pipeline with automated testing and deployment\nSemantic versioning with hatch-vcs"
   },
   {
     "objectID": "DEVELOPMENT.html",
