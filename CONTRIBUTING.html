@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -117,11 +152,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#contributing" id="toc-contributing" class="nav-link active" data-scroll-target="#contributing">Contributing</a>
+  <li><a href="#contributing-to-travelpy" id="toc-contributing-to-travelpy" class="nav-link active" data-scroll-target="#contributing-to-travelpy">Contributing to TravelPy</a>
   <ul class="collapse">
-  <li><a href="#milestone-tasks" id="toc-milestone-tasks" class="nav-link" data-scroll-target="#milestone-tasks">Milestone Tasks</a></li>
-  <li><a href="#bug-fixes" id="toc-bug-fixes" class="nav-link" data-scroll-target="#bug-fixes">Bug Fixes</a></li>
-  <li><a href="#incrimentalmiscellaneous-improvements" id="toc-incrimentalmiscellaneous-improvements" class="nav-link" data-scroll-target="#incrimentalmiscellaneous-improvements">Incrimental/Miscellaneous Improvements</a></li>
+  <li><a href="#types-of-contributions" id="toc-types-of-contributions" class="nav-link" data-scroll-target="#types-of-contributions">Types of Contributions</a>
+  <ul class="collapse">
+  <li><a href="#report-bugs" id="toc-report-bugs" class="nav-link" data-scroll-target="#report-bugs">Report Bugs</a></li>
+  <li><a href="#fix-bugs" id="toc-fix-bugs" class="nav-link" data-scroll-target="#fix-bugs">Fix Bugs</a></li>
+  <li><a href="#implement-features" id="toc-implement-features" class="nav-link" data-scroll-target="#implement-features">Implement Features</a></li>
+  <li><a href="#write-documentation" id="toc-write-documentation" class="nav-link" data-scroll-target="#write-documentation">Write Documentation</a></li>
+  </ul></li>
+  <li><a href="#developer-installation" id="toc-developer-installation" class="nav-link" data-scroll-target="#developer-installation">Developer Installation</a>
+  <ul class="collapse">
+  <li><a href="#option-1-using-conda-recommended" id="toc-option-1-using-conda-recommended" class="nav-link" data-scroll-target="#option-1-using-conda-recommended">Option 1: Using Conda (Recommended)</a></li>
+  <li><a href="#option-2-using-pip-and-venv" id="toc-option-2-using-pip-and-venv" class="nav-link" data-scroll-target="#option-2-using-pip-and-venv">Option 2: Using pip and venv</a></li>
+  <li><a href="#option-3-using-hatch" id="toc-option-3-using-hatch" class="nav-link" data-scroll-target="#option-3-using-hatch">Option 3: Using Hatch</a></li>
+  </ul></li>
+  <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests">Running Tests</a></li>
+  <li><a href="#code-style" id="toc-code-style" class="nav-link" data-scroll-target="#code-style">Code Style</a></li>
+  <li><a href="#building-documentation" id="toc-building-documentation" class="nav-link" data-scroll-target="#building-documentation">Building Documentation</a></li>
+  <li><a href="#pull-request-guidelines" id="toc-pull-request-guidelines" class="nav-link" data-scroll-target="#pull-request-guidelines">Pull Request Guidelines</a>
+  <ul class="collapse">
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <li><a href="#before-submitting" id="toc-before-submitting" class="nav-link" data-scroll-target="#before-submitting">Before Submitting</a></li>
+  <li><a href="#code-review" id="toc-code-review" class="nav-link" data-scroll-target="#code-review">Code Review</a></li>
+  </ul></li>
+  <li><a href="#commit-message-convention" id="toc-commit-message-convention" class="nav-link" data-scroll-target="#commit-message-convention">Commit Message Convention</a></li>
+  <li><a href="#milestone-tasks-for-team-members" id="toc-milestone-tasks-for-team-members" class="nav-link" data-scroll-target="#milestone-tasks-for-team-members">Milestone Tasks (For Team Members)</a></li>
+  <li><a href="#bug-fixes-for-team-members" id="toc-bug-fixes-for-team-members" class="nav-link" data-scroll-target="#bug-fixes-for-team-members">Bug Fixes (For Team Members)</a></li>
+  <li><a href="#code-of-conduct" id="toc-code-of-conduct" class="nav-link" data-scroll-target="#code-of-conduct">Code of Conduct</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -132,20 +191,197 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="contributing" class="level1">
-<h1>Contributing</h1>
+<section id="contributing-to-travelpy" class="level1">
+<h1>Contributing to TravelPy</h1>
 <p>Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.</p>
-<section id="milestone-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="milestone-tasks">Milestone Tasks</h2>
-<p>All tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project.</p>
+<section id="types-of-contributions" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-contributions">Types of Contributions</h2>
+<section id="report-bugs" class="level3">
+<h3 class="anchored" data-anchor-id="report-bugs">Report Bugs</h3>
+<p>Report bugs by opening a <a href="https://github.com/UBC-MDS/DSCI_524_group_25/issues">GitHub issue</a>.</p>
+<p>Please include: - Your operating system name and version - Python version - Detailed steps to reproduce the bug - Any error messages or tracebacks</p>
 </section>
-<section id="bug-fixes" class="level2">
-<h2 class="anchored" data-anchor-id="bug-fixes">Bug Fixes</h2>
-<p>Due to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks.</p>
+<section id="fix-bugs" class="level3">
+<h3 class="anchored" data-anchor-id="fix-bugs">Fix Bugs</h3>
+<p>Look through the GitHub issues for bugs. Anything tagged with “bug” is open to whoever wants to implement it.</p>
 </section>
-<section id="incrimentalmiscellaneous-improvements" class="level2">
-<h2 class="anchored" data-anchor-id="incrimentalmiscellaneous-improvements">Incrimental/Miscellaneous Improvements</h2>
-<p>As general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow.</p>
+<section id="implement-features" class="level3">
+<h3 class="anchored" data-anchor-id="implement-features">Implement Features</h3>
+<p>Look through the GitHub issues for features. Anything tagged with “enhancement” is open to whoever wants to implement it.</p>
+</section>
+<section id="write-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="write-documentation">Write Documentation</h3>
+<p>TravelPy can always use more documentation, whether as part of the official docs, in docstrings, or even on the web in blog posts and articles.</p>
+</section>
+</section>
+<section id="developer-installation" class="level2">
+<h2 class="anchored" data-anchor-id="developer-installation">Developer Installation</h2>
+<p>To set up TravelPy for local development:</p>
+<section id="option-1-using-conda-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="option-1-using-conda-recommended">Option 1: Using Conda (Recommended)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UBC-MDS/DSCI_524_group_25.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> DSCI_524_group_25</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and activate conda environment</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate travelpy</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Install package in development mode</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="option-2-using-pip-and-venv" class="level3">
+<h3 class="anchored" data-anchor-id="option-2-using-pip-and-venv">Option 2: Using pip and venv</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UBC-MDS/DSCI_524_group_25.git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> DSCI_524_group_25</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create virtual environment</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> venv/bin/activate  <span class="co"># On Windows: venv\Scripts\activate</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Install package with development dependencies</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[dev,tests,docs]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="option-3-using-hatch" class="level3">
+<h3 class="anchored" data-anchor-id="option-3-using-hatch">Option 3: Using Hatch</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UBC-MDS/DSCI_524_group_25.git</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> DSCI_524_group_25</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Enter the default Hatch environment</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> shell</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="running-tests" class="level2">
+<h2 class="anchored" data-anchor-id="running-tests">Running Tests</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using pytest directly</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">--cov</span><span class="op">=</span>travelpy <span class="at">--cov-report</span><span class="op">=</span>term-missing</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Hatch</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run test:run</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="code-style" class="level2">
+<h2 class="anchored" data-anchor-id="code-style">Code Style</h2>
+<p>We use <a href="https://github.com/astral-sh/ruff">Ruff</a> for linting and style checking.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check code style</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> check src/</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Auto-fix issues</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> check src/ <span class="at">--fix</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="building-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="building-documentation">Building Documentation</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build docs</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quartodoc</span> build</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Or using Hatch</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run docs:build</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Preview docs locally</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run docs:serve</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pull-request-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request-guidelines">Pull Request Guidelines</h2>
+<section id="workflow" class="level3">
+<h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
+<ol type="1">
+<li><p>Fork the repository (external contributors) or create a branch (team members)</p></li>
+<li><p>Create a feature branch from <code>main</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> feature/your-feature-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Make your changes and commit with meaningful messages:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"feat: add new feature description"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Push to your branch:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin feature/your-feature-name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Open a Pull Request against <code>main</code></p></li>
+</ol>
+</section>
+<section id="before-submitting" class="level3">
+<h3 class="anchored" data-anchor-id="before-submitting">Before Submitting</h3>
+<p>Please ensure your PR:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Includes tests for new functionality</label></li>
+<li><label><input type="checkbox">All tests pass (<code>hatch run test:run</code>)</label></li>
+<li><label><input type="checkbox">Code passes style checks (<code>ruff check src/</code>)</label></li>
+<li><label><input type="checkbox">Documentation is updated if needed</label></li>
+<li><label><input type="checkbox">Includes an entry in <code>CHANGELOG.md</code></label></li>
+<li><label><input type="checkbox">Has a clear description of changes</label></li>
+</ul>
+</section>
+<section id="code-review" class="level3">
+<h3 class="anchored" data-anchor-id="code-review">Code Review</h3>
+<ul>
+<li>All PRs require at least one approving review before merging</li>
+<li>Address all feedback from reviewers</li>
+<li>Keep PRs focused and reasonably sized</li>
+</ul>
+</section>
+</section>
+<section id="commit-message-convention" class="level2">
+<h2 class="anchored" data-anchor-id="commit-message-convention">Commit Message Convention</h2>
+<p>We follow <a href="https://www.conventionalcommits.org/">Conventional Commits</a>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Prefix</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>feat:</code></td>
+<td>New feature</td>
+</tr>
+<tr class="even">
+<td><code>fix:</code></td>
+<td>Bug fix</td>
+</tr>
+<tr class="odd">
+<td><code>docs:</code></td>
+<td>Documentation changes</td>
+</tr>
+<tr class="even">
+<td><code>test:</code></td>
+<td>Adding or updating tests</td>
+</tr>
+<tr class="odd">
+<td><code>ci:</code></td>
+<td>CI/CD changes</td>
+</tr>
+<tr class="even">
+<td><code>refactor:</code></td>
+<td>Code refactoring</td>
+</tr>
+<tr class="odd">
+<td><code>style:</code></td>
+<td>Code style/formatting</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<pre><code>feat: add currency conversion fee calculation
+fix: handle negative distance in estimate_trip_cost
+docs: update installation instructions
+test: add edge case tests for get_packing_list</code></pre>
+</section>
+<section id="milestone-tasks-for-team-members" class="level2">
+<h2 class="anchored" data-anchor-id="milestone-tasks-for-team-members">Milestone Tasks (For Team Members)</h2>
+<p>All tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group.</p>
+</section>
+<section id="bug-fixes-for-team-members" class="level2">
+<h2 class="anchored" data-anchor-id="bug-fixes-for-team-members">Bug Fixes (For Team Members)</h2>
+<p>Due to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason, the group will deliberate over who is best suited to fulfill the task.</p>
+</section>
+<section id="code-of-conduct" class="level2">
+<h2 class="anchored" data-anchor-id="code-of-conduct">Code of Conduct</h2>
+<p>Please note that this project follows a <a href="./CODE_OF_CONDUCT.html">Code of Conduct</a>. By participating, you are expected to uphold this code.</p>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions?</h2>
+<p>Feel free to open a <a href="https://github.com/UBC-MDS/DSCI_524_group_25/discussions">GitHub Discussion</a> or contact the maintainers.</p>
+<hr>
+<p>Thank you for contributing to TravelPy!</p>
 
 
 </section>

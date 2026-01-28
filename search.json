@@ -170,30 +170,86 @@
   {
     "objectID": "CONTRIBUTING.html",
     "href": "CONTRIBUTING.html",
-    "title": "Contributing",
+    "title": "Contributing to TravelPy",
     "section": "",
-    "text": "Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.\n\n\nAll tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project.\n\n\n\nDue to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks.\n\n\n\nAs general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow."
+    "text": "Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.\n\n\n\n\nReport bugs by opening a GitHub issue.\nPlease include: - Your operating system name and version - Python version - Detailed steps to reproduce the bug - Any error messages or tracebacks\n\n\n\nLook through the GitHub issues for bugs. Anything tagged with “bug” is open to whoever wants to implement it.\n\n\n\nLook through the GitHub issues for features. Anything tagged with “enhancement” is open to whoever wants to implement it.\n\n\n\nTravelPy can always use more documentation, whether as part of the official docs, in docstrings, or even on the web in blog posts and articles.\n\n\n\n\nTo set up TravelPy for local development:\n\n\n# Clone the repository\ngit clone https://github.com/UBC-MDS/DSCI_524_group_25.git\ncd DSCI_524_group_25\n\n# Create and activate conda environment\nconda env create -f environment.yml\nconda activate travelpy\n\n# Install package in development mode\npip install -e .\n\n\n\n# Clone the repository\ngit clone https://github.com/UBC-MDS/DSCI_524_group_25.git\ncd DSCI_524_group_25\n\n# Create virtual environment\npython -m venv venv\nsource venv/bin/activate  # On Windows: venv\\Scripts\\activate\n\n# Install package with development dependencies\npip install -e \".[dev,tests,docs]\"\n\n\n\n# Clone the repository\ngit clone https://github.com/UBC-MDS/DSCI_524_group_25.git\ncd DSCI_524_group_25\n\n# Enter the default Hatch environment\nhatch shell\n\n\n\n\n# Using pytest directly\npytest --cov=travelpy --cov-report=term-missing\n\n# Using Hatch\nhatch run test:run\n\n\n\nWe use Ruff for linting and style checking.\n# Check code style\nruff check src/\n\n# Auto-fix issues\nruff check src/ --fix\n\n\n\n# Build docs\nquartodoc build\nquarto render\n\n# Or using Hatch\nhatch run docs:build\n\n# Preview docs locally\nhatch run docs:serve\n\n\n\n\n\n\nFork the repository (external contributors) or create a branch (team members)\nCreate a feature branch from main:\ngit checkout -b feature/your-feature-name\nMake your changes and commit with meaningful messages:\ngit commit -m \"feat: add new feature description\"\nPush to your branch:\ngit push origin feature/your-feature-name\nOpen a Pull Request against main\n\n\n\n\nPlease ensure your PR:\n\nIncludes tests for new functionality\nAll tests pass (hatch run test:run)\nCode passes style checks (ruff check src/)\nDocumentation is updated if needed\nIncludes an entry in CHANGELOG.md\nHas a clear description of changes\n\n\n\n\n\nAll PRs require at least one approving review before merging\nAddress all feedback from reviewers\nKeep PRs focused and reasonably sized\n\n\n\n\n\nWe follow Conventional Commits:\n\n\n\nPrefix\nPurpose\n\n\n\n\nfeat:\nNew feature\n\n\nfix:\nBug fix\n\n\ndocs:\nDocumentation changes\n\n\ntest:\nAdding or updating tests\n\n\nci:\nCI/CD changes\n\n\nrefactor:\nCode refactoring\n\n\nstyle:\nCode style/formatting\n\n\n\nExamples:\nfeat: add currency conversion fee calculation\nfix: handle negative distance in estimate_trip_cost\ndocs: update installation instructions\ntest: add edge case tests for get_packing_list\n\n\n\nAll tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group.\n\n\n\nDue to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason, the group will deliberate over who is best suited to fulfill the task.\n\n\n\nPlease note that this project follows a Code of Conduct. By participating, you are expected to uphold this code.\n\n\n\nFeel free to open a GitHub Discussion or contact the maintainers.\n\nThank you for contributing to TravelPy!"
   },
   {
-    "objectID": "CONTRIBUTING.html#milestone-tasks",
-    "href": "CONTRIBUTING.html#milestone-tasks",
-    "title": "Contributing",
+    "objectID": "CONTRIBUTING.html#types-of-contributions",
+    "href": "CONTRIBUTING.html#types-of-contributions",
+    "title": "Contributing to TravelPy",
     "section": "",
-    "text": "All tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group. Fellow group members will provide feedback on pull requests, determining whether or not to immediately accept the changes to the project."
+    "text": "Report bugs by opening a GitHub issue.\nPlease include: - Your operating system name and version - Python version - Detailed steps to reproduce the bug - Any error messages or tracebacks\n\n\n\nLook through the GitHub issues for bugs. Anything tagged with “bug” is open to whoever wants to implement it.\n\n\n\nLook through the GitHub issues for features. Anything tagged with “enhancement” is open to whoever wants to implement it.\n\n\n\nTravelPy can always use more documentation, whether as part of the official docs, in docstrings, or even on the web in blog posts and articles."
   },
   {
-    "objectID": "CONTRIBUTING.html#bug-fixes",
-    "href": "CONTRIBUTING.html#bug-fixes",
-    "title": "Contributing",
+    "objectID": "CONTRIBUTING.html#developer-installation",
+    "href": "CONTRIBUTING.html#developer-installation",
+    "title": "Contributing to TravelPy",
     "section": "",
-    "text": "Due to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason (time, ability, illness, etc), the group will deliberate over who is best suited to fulfill the task. Any and all fixes should be implemented using the same branch/pull request workflow outlined for Milestone Tasks."
+    "text": "To set up TravelPy for local development:\n\n\n# Clone the repository\ngit clone https://github.com/UBC-MDS/DSCI_524_group_25.git\ncd DSCI_524_group_25\n\n# Create and activate conda environment\nconda env create -f environment.yml\nconda activate travelpy\n\n# Install package in development mode\npip install -e .\n\n\n\n# Clone the repository\ngit clone https://github.com/UBC-MDS/DSCI_524_group_25.git\ncd DSCI_524_group_25\n\n# Create virtual environment\npython -m venv venv\nsource venv/bin/activate  # On Windows: venv\\Scripts\\activate\n\n# Install package with development dependencies\npip install -e \".[dev,tests,docs]\"\n\n\n\n# Clone the repository\ngit clone https://github.com/UBC-MDS/DSCI_524_group_25.git\ncd DSCI_524_group_25\n\n# Enter the default Hatch environment\nhatch shell"
   },
   {
-    "objectID": "CONTRIBUTING.html#incrimentalmiscellaneous-improvements",
-    "href": "CONTRIBUTING.html#incrimentalmiscellaneous-improvements",
-    "title": "Contributing",
+    "objectID": "CONTRIBUTING.html#running-tests",
+    "href": "CONTRIBUTING.html#running-tests",
+    "title": "Contributing to TravelPy",
     "section": "",
-    "text": "As general areas of potential improvement are identified, group members will communicate proposed changes to the group to allow for feedback. If it is decided that changes are to be made, then the group will decide how to organize the completion of said changes. Again, all changes to the project should follow a branch/pull request workflow."
+    "text": "# Using pytest directly\npytest --cov=travelpy --cov-report=term-missing\n\n# Using Hatch\nhatch run test:run"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-style",
+    "href": "CONTRIBUTING.html#code-style",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "We use Ruff for linting and style checking.\n# Check code style\nruff check src/\n\n# Auto-fix issues\nruff check src/ --fix"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#building-documentation",
+    "href": "CONTRIBUTING.html#building-documentation",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "# Build docs\nquartodoc build\nquarto render\n\n# Or using Hatch\nhatch run docs:build\n\n# Preview docs locally\nhatch run docs:serve"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#pull-request-guidelines",
+    "href": "CONTRIBUTING.html#pull-request-guidelines",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "Fork the repository (external contributors) or create a branch (team members)\nCreate a feature branch from main:\ngit checkout -b feature/your-feature-name\nMake your changes and commit with meaningful messages:\ngit commit -m \"feat: add new feature description\"\nPush to your branch:\ngit push origin feature/your-feature-name\nOpen a Pull Request against main\n\n\n\n\nPlease ensure your PR:\n\nIncludes tests for new functionality\nAll tests pass (hatch run test:run)\nCode passes style checks (ruff check src/)\nDocumentation is updated if needed\nIncludes an entry in CHANGELOG.md\nHas a clear description of changes\n\n\n\n\n\nAll PRs require at least one approving review before merging\nAddress all feedback from reviewers\nKeep PRs focused and reasonably sized"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#commit-message-convention",
+    "href": "CONTRIBUTING.html#commit-message-convention",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "We follow Conventional Commits:\n\n\n\nPrefix\nPurpose\n\n\n\n\nfeat:\nNew feature\n\n\nfix:\nBug fix\n\n\ndocs:\nDocumentation changes\n\n\ntest:\nAdding or updating tests\n\n\nci:\nCI/CD changes\n\n\nrefactor:\nCode refactoring\n\n\nstyle:\nCode style/formatting\n\n\n\nExamples:\nfeat: add currency conversion fee calculation\nfix: handle negative distance in estimate_trip_cost\ndocs: update installation instructions\ntest: add edge case tests for get_packing_list"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#milestone-tasks-for-team-members",
+    "href": "CONTRIBUTING.html#milestone-tasks-for-team-members",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "All tasks directly pertaining to project milestone instructions will be partitioned among group members during weekly meetings and assigned via GitHub issues within the project repository. Once assigned, group members will complete tasks locally before pushing progress to new branches designated for their respective task(s). As tasks are completed, group members will then create pull requests for their task branch, allowing progress and potential merge conflicts to be evaluated by the remainder of the group."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#bug-fixes-for-team-members",
+    "href": "CONTRIBUTING.html#bug-fixes-for-team-members",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "Due to the time-sensitive nature of this project, debugging may occur on a case-by-case basis. In the case that an issue is identified, the group member who uncovers it is encouraged to communicate it to the rest of the group. They are also permitted to begin implementing the fix locally, time permitting. If they are unable to complete the fix for any reason, the group will deliberate over who is best suited to fulfill the task."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-of-conduct",
+    "href": "CONTRIBUTING.html#code-of-conduct",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "Please note that this project follows a Code of Conduct. By participating, you are expected to uphold this code."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#questions",
+    "href": "CONTRIBUTING.html#questions",
+    "title": "Contributing to TravelPy",
+    "section": "",
+    "text": "Feel free to open a GitHub Discussion or contact the maintainers.\n\nThank you for contributing to TravelPy!"
   },
   {
     "objectID": "CHANGELOG.html",
