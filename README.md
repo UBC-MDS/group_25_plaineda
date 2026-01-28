@@ -6,17 +6,70 @@
 [![codecov](https://codecov.io/gh/UBC-MDS/DSCI_524_group_25/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/DSCI_524_group_25)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![TestPyPI](https://img.shields.io/badge/TestPyPI-v0.2.7-blue)](https://test.pypi.org/project/travelpy/)
 
 ## Overview
 
 TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit.
 
+## Why TravelPy?
+
+Planning a trip often involves juggling multiple tools and websites: one for estimating fuel costs, another for currency conversion, and yet another for creating packing lists. **TravelPy solves this problem by bundling these common travel-planning tasks into a single, easy-to-use Python package.**
+
+### The Problem
+
+When planning a road trip or international travel, you typically need to:
+- Calculate fuel costs using distance, gas prices, and vehicle efficiency
+- Convert your budget to foreign currencies with realistic fee expectations
+- Create weather-appropriate packing lists based on trip duration
+- Format destination names consistently for itineraries or documents
+
+Each of these tasks individually is simple arithmetic or string manipulation, but **the value of TravelPy is integration and convenience**. Instead of writing custom code or using multiple websites, TravelPy provides tested, documented functions that handle edge cases (like long-trip contingencies, small-transaction fees, and input validation).
+
+### Who Should Use TravelPy?
+
+- **Students** learning Python who want practical, real-world examples
+- **Travelers** who prefer programmatic trip planning over web tools
+- **Developers** building travel-related applications who need utility functions
+- **Data scientists** analyzing travel costs or patterns
+
+### How TravelPy Complements the Python Ecosystem
+
+| Existing Package | Purpose | TravelPy Difference |
+|------------------|---------|---------------------|
+| [forex-python](https://pypi.org/project/forex-python/) | Real-time currency rates via API | TravelPy uses user-provided rates (works offline, includes fee logic) |
+| [currencyconverter](https://pypi.org/project/currencyconverter/) | Historical exchange rates | TravelPy focuses on trip budgeting with service fees |
+| [pycountry](https://pypi.org/project/pycountry/) | Country/language codes | TravelPy formats destinations for display, not lookup |
+
+**TravelPy is intentionally simple and dependency-free**, making it ideal for learning, lightweight scripts, or embedding in larger applications without bloating dependencies.
+
+---
+
 ## Installation
 
-Run in terminal to install travelpy package from TestPyPI:
+Install from TestPyPI:
 ```bash
 pip install -i https://test.pypi.org/simple/ travelpy
 ```
+
+---
+
+## Quick Start
+
+```python
+from travelpy.estimate_trip_cost import estimate_trip_cost
+from travelpy.convert_currency import convert_currency
+from travelpy.get_packing_list import get_packing_list
+from travelpy.format_destination import format_destination
+
+# Plan a trip to Paris
+destination = format_destination("paris", "fr")  # "Paris, FR"
+fuel_cost = estimate_trip_cost(500, 1.8, 10)     # $103.5 CAD
+budget_eur = convert_currency(500, 0.68)          # €340.0
+packing = get_packing_list("cold", 7)             # ['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']
+```
+
+---
 
 ## Functions
 
@@ -107,25 +160,34 @@ Full documentation: **https://ubc-mds.github.io/DSCI_524_group_25/**
 
 ## Developer Guide
 
-The following commands can be run in terminal to set configure the project locally.
+### Clone the Repository
 
-### Set up the development environment
+```bash
+git clone https://github.com/UBC-MDS/DSCI_524_group_25.git
+cd DSCI_524_group_25
+```
+
+### Set up the Development Environment
+
 ```bash
 conda env create -f environment.yml
 conda activate travelpy
 ```
 
-### Install the package
+### Install the Package in Development Mode
+
 ```bash
 pip install -e .
 ```
 
-### Run tests
+### Run Tests
+
 ```bash
 hatch run test:run
 ```
 
-### Build documentation
+### Build Documentation
+
 ```bash
 quartodoc build
 quarto render
@@ -136,21 +198,9 @@ Or using hatch:
 hatch run docs:build
 ```
 
-### Deploy documentation
+### Deploy Documentation
 
 Documentation is automatically deployed to GitHub Pages on push to `main` via GitHub Actions.
-
----
-
-## Python Ecosystem
-
-TravelPy complements existing Python utilities:
-
-- [forex-python](https://pypi.org/project/forex-python/) : Currency conversion
-- [currencyconverter](https://pypi.org/project/currencyconverter/) : Offline conversion
-- [pycountry](https://pypi.org/project/pycountry/) : Country code lookup
-
-Unlike single-purpose libraries, TravelPy bundles multiple travel-planning tools in one package.
 
 ---
 
@@ -164,6 +214,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. This project follows a [C
 - Hooman Esteki 
 - Derrick Jaskiel 
 - Rebecca Rosette Nanfuka
+
+## Citation
+
+If you use TravelPy in your work, please cite:
+
+```
+Kwok, H.H., Esteki, H., Jaskiel, D., & Nanfuka, R.R. (2026). TravelPy: A Python package for travel planning. 
+https://github.com/UBC-MDS/DSCI_524_group_25
+```
 
 ## License
 
