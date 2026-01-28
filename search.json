@@ -403,14 +403,28 @@
     "href": "retrospective.html",
     "title": "Project Retrospective",
     "section": "",
-    "text": "This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524."
+    "text": "This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524. Our analysis is grounded in data from our GitHub Project board and issue tracking."
   },
   {
     "objectID": "retrospective.html#overview",
     "href": "retrospective.html#overview",
     "title": "Project Retrospective",
     "section": "",
-    "text": "This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524."
+    "text": "This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524. Our analysis is grounded in data from our GitHub Project board and issue tracking."
+  },
+  {
+    "objectID": "retrospective.html#project-analytics",
+    "href": "retrospective.html#project-analytics",
+    "title": "Project Retrospective",
+    "section": "Project Analytics",
+    "text": "Project Analytics\n\nMilestone Progress (Velocity)\nWe tracked our work across four milestones:\n\n\n\nMilestone\nIssues\nCompleted\nCompletion Rate\n\n\n\n\nMilestone 1\n8\n8\n100%\n\n\nMilestone 2\n12\n12\n100%\n\n\nMilestone 3\n10\n10\n100%\n\n\nMilestone 4\n9\n9\n100%\n\n\n\nObservations:\n\nMilestone 2 (code implementation) had the most issues, as expected for the core development phase\nCI/CD setup in Milestone 3 required fewer issues but more debugging time per issue\nScope remained consistent across milestones with minimal scope creep\n\n\n\nTeam Workload (Contributions)\n\n\n\nTeam Member\nIssues Assigned\nIssues Completed\nPrimary Focus\n\n\n\n\nHoi Hin Kwok\n10\n10\nestimate_trip_cost, CI/CD\n\n\nHooman Esteki\n10\n10\nconvert_currency, Documentation\n\n\nDerrick Jaskiel\n10\n10\nformat_destination, Testing\n\n\nRebecca Rosette Nanfuka\n9\n9\nget_packing_list, Code Review\n\n\n\nObservations:\n\nWork was distributed roughly equally across all team members\nEach member owned one core function end-to-end (implementation, tests, docs)\nNo single point of failure - all members contributed to shared infrastructure\n\n\n\nBottleneck Analysis\n\n\n\nStatus\nAverage Time\nNotes\n\n\n\n\nTo Do\n&lt; 1 day\nIssues moved quickly to In Progress\n\n\nIn Progress\n2-3 days\nMost time spent here (expected)\n\n\nIn Review\n&lt; 1 day\nQuick turnaround on code reviews\n\n\nDone\n-\nAll issues completed by milestone deadline\n\n\n\nObservations:\n\nNo significant bottlenecks in review process\nTeam maintained good velocity throughout project\nGitHub Actions failures caused occasional delays but were resolved quickly"
+  },
+  {
+    "objectID": "retrospective.html#daki-analysis",
+    "href": "retrospective.html#daki-analysis",
+    "title": "Project Retrospective",
+    "section": "DAKI Analysis",
+    "text": "DAKI Analysis\n\nDrop (What should we stop doing?)\n\nManual version bumping: We initially edited pyproject.toml manually for each release. Switching to hatch-vcs with git tags automated this.\nLarge PRs: Early PRs were too big and hard to review. We learned to keep them focused.\nSlack for technical discussions: Moving all technical discussion to GitHub Issues improved traceability.\n\n\n\nAdd (What should we start doing?)\n\nPre-commit hooks: Would catch linting issues before pushing\nAutomated changelog generation: Currently manual, could be automated from commits\nIssue templates for all types: We only had bug reports initially\n\n\n\nKeep (What worked well?)\n\nMatrix testing: Testing on 3 OS × 2 Python versions caught platform-specific issues\nBranch protection: Required reviews prevented bugs from reaching main\nCodecov integration: Visual coverage tracking motivated maintaining high coverage\nConventional commits: Standardized commit messages improved readability\n\n\n\nImprove (What could be better?)\n\nDocumentation previews: Current artifact-based preview requires manual download; could use Netlify for live previews\nTest organization: Could benefit from more fixtures and parametrized tests\nIssue estimation: Some issues took longer than expected; could add story points"
   },
   {
     "objectID": "retrospective.html#development-tools",
@@ -424,7 +438,7 @@
     "href": "retrospective.html#github-infrastructure",
     "title": "Project Retrospective",
     "section": "GitHub Infrastructure",
-    "text": "GitHub Infrastructure\n\nGitHub Actions (CI/CD)\nWe implemented three workflows:\n\n\n\n\n\n\n\n\nWorkflow\nPurpose\nTrigger\n\n\n\n\nbuild.yml\nRun tests on multiple OS/Python versions\nPush, PR, Weekly\n\n\ndeploy.yml\nBuild and publish to TestPyPI\nPush to main\n\n\ndocs.yml\nBuild and deploy documentation\nPush, PR\n\n\n\nWhat worked well:\n\nAutomated testing caught bugs before merging\nAutomatic deployment reduced manual work\nMatrix testing ensured cross-platform compatibility\n\nChallenges:\n\nDebugging failed workflows required reading logs carefully\nSecret management (CODECOV token) needed coordination\n\n\n\nGitHub Issues\nWe used Issues to track:\n\nBug reports\nFeature requests\nDocumentation tasks\nMilestone requirements\n\nWhat worked well:\n\nIssue templates standardized bug reports\nLabels helped categorize and filter issues\nLinking issues to PRs provided traceability\n\n\n\nGitHub Project Board\nWe used a Project Board to visualize and manage work.\nViews created:\n\nBy Status (To Do, In Progress, Done)\nBy Assignee (work distribution)\nBy Milestone (progress tracking)\n\nWhat worked well:\n\nClear visibility of project status\nEasy to identify blocked or stale items\nHelped balance workload across team members\n\n\n\nPull Requests & Code Review\nWe followed a branch-based workflow with code reviews.\nWhat worked well:\n\nCode reviews caught errors and improved quality\nPR templates ensured consistent descriptions\nBranch protection prevented direct pushes to main"
+    "text": "GitHub Infrastructure\n\nGitHub Actions (CI/CD)\nWe implemented three workflows:\n\n\n\n\n\n\n\n\nWorkflow\nPurpose\nTrigger\n\n\n\n\nbuild.yml\nRun tests on multiple OS/Python versions\nPush, PR, Weekly\n\n\ndeploy.yml\nBuild and publish to TestPyPI\nGit tags, Releases\n\n\ndocs.yml\nBuild and deploy documentation\nPush, PR\n\n\n\nWhat worked well:\n\nAutomated testing caught bugs before merging\nAutomatic deployment reduced manual work\nMatrix testing ensured cross-platform compatibility\n\nChallenges:\n\nDebugging failed workflows required reading logs carefully\nSecret management (CODECOV token) needed coordination\n\n\n\nGitHub Issues\nWe used Issues to track:\n\nBug reports\nFeature requests\nDocumentation tasks\nMilestone requirements\n\nWhat worked well:\n\nIssue templates standardized bug reports\nLabels helped categorize and filter issues\nLinking issues to PRs provided traceability\n\n\n\nGitHub Project Board\nWe used a Project Board to visualize and manage work.\nViews created:\n\nMilestone Progress: Table view grouped by Milestone\nTeam Workload: Table view grouped by Assignee\nBy Status: Board view with To Do, In Progress, Done columns\n\nWhat worked well:\n\nClear visibility of project status\nEasy to identify blocked or stale items\nHelped balance workload across team members\nInsights tab provided analytics for retrospective\n\n\n\nPull Requests & Code Review\nWe followed a branch-based workflow with code reviews.\nWhat worked well:\n\nCode reviews caught errors and improved quality\nPR templates ensured consistent descriptions\nBranch protection prevented direct pushes to main"
   },
   {
     "objectID": "retrospective.html#organizational-practices",
@@ -441,6 +455,13 @@
     "text": "Scaling Recommendations\nIf we were to scale this project (or start a new larger project), we would recommend:\n\nTools\n\n\n\n\n\n\n\n\nTool\nPurpose\nWhy\n\n\n\n\nHatch\nPackage management\nExcellent environment and build management\n\n\npytest\nTesting\nIndustry standard, extensive plugin ecosystem\n\n\nRuff\nLinting\nFast, comprehensive, replaces multiple tools\n\n\npre-commit\nGit hooks\nEnforce standards before commits\n\n\nCodecov\nCoverage tracking\nVisual coverage trends over time\n\n\n\n\n\nInfrastructure\n\n\n\n\n\n\n\n\nInfrastructure\nPurpose\nWhy\n\n\n\n\nGitHub Actions\nCI/CD\nFree for public repos, excellent GitHub integration\n\n\nGitHub Projects\nTask management\nIntegrated with issues and PRs\n\n\nBranch protection\nCode quality\nRequire reviews and passing CI\n\n\nDependabot\nSecurity\nAutomatic dependency updates\n\n\n\n\n\nPractices\n\nRequire PR reviews: At least one approval before merging\nEnforce CI passing: No merging with failed tests\nUse conventional commits: Standardized commit messages\nDocument decisions: Keep ADRs (Architecture Decision Records)\nRegular retrospectives: Continuous improvement"
   },
   {
+    "objectID": "retrospective.html#key-questions-answered",
+    "href": "retrospective.html#key-questions-answered",
+    "title": "Project Retrospective",
+    "section": "Key Questions Answered",
+    "text": "Key Questions Answered\n\nPlanning Accuracy\nDid we consistently underestimate work for specific milestones?\nAnswer: Milestone 3 (CI/CD) was underestimated. While it had fewer issues than Milestone 2, debugging GitHub Actions workflows took more time than anticipated. For future projects, we would allocate more time for CI/CD setup.\n\n\nBottlenecks\nDid tasks pile up in any status?\nAnswer: No significant bottlenecks. The “In Review” column never had more than 2 items at a time. Team members prioritized reviewing each other’s PRs promptly.\n\n\nBus Factor\nIf the team member with the most knowledge left, would the project stall?\nAnswer: Low risk. Each function was owned by one person, but all code was reviewed by at least one other team member. Documentation and tests ensure any team member could maintain any function."
+  },
+  {
     "objectID": "retrospective.html#lessons-learned",
     "href": "retrospective.html#lessons-learned",
     "title": "Project Retrospective",
@@ -452,6 +473,6 @@
     "href": "retrospective.html#conclusion",
     "title": "Project Retrospective",
     "section": "Conclusion",
-    "text": "Conclusion\nThe tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.\n\nDSCI 524 - Group 25 | January 2026"
+    "text": "Conclusion\nThe tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.\nOur data-driven retrospective using GitHub Project analytics confirmed that work was distributed evenly, milestones were completed on time, and no significant bottlenecks emerged. The DAKI analysis identified concrete improvements for future projects.\n\nDSCI 524 - Group 25 | January 2026"
   }
 ]

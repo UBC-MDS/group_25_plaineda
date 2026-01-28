@@ -118,6 +118,19 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#project-analytics" id="toc-project-analytics" class="nav-link" data-scroll-target="#project-analytics">Project Analytics</a>
+  <ul class="collapse">
+  <li><a href="#milestone-progress-velocity" id="toc-milestone-progress-velocity" class="nav-link" data-scroll-target="#milestone-progress-velocity">Milestone Progress (Velocity)</a></li>
+  <li><a href="#team-workload-contributions" id="toc-team-workload-contributions" class="nav-link" data-scroll-target="#team-workload-contributions">Team Workload (Contributions)</a></li>
+  <li><a href="#bottleneck-analysis" id="toc-bottleneck-analysis" class="nav-link" data-scroll-target="#bottleneck-analysis">Bottleneck Analysis</a></li>
+  </ul></li>
+  <li><a href="#daki-analysis" id="toc-daki-analysis" class="nav-link" data-scroll-target="#daki-analysis">DAKI Analysis</a>
+  <ul class="collapse">
+  <li><a href="#drop-what-should-we-stop-doing" id="toc-drop-what-should-we-stop-doing" class="nav-link" data-scroll-target="#drop-what-should-we-stop-doing">Drop (What should we stop doing?)</a></li>
+  <li><a href="#add-what-should-we-start-doing" id="toc-add-what-should-we-start-doing" class="nav-link" data-scroll-target="#add-what-should-we-start-doing">Add (What should we start doing?)</a></li>
+  <li><a href="#keep-what-worked-well" id="toc-keep-what-worked-well" class="nav-link" data-scroll-target="#keep-what-worked-well">Keep (What worked well?)</a></li>
+  <li><a href="#improve-what-could-be-better" id="toc-improve-what-could-be-better" class="nav-link" data-scroll-target="#improve-what-could-be-better">Improve (What could be better?)</a></li>
+  </ul></li>
   <li><a href="#development-tools" id="toc-development-tools" class="nav-link" data-scroll-target="#development-tools">Development Tools</a>
   <ul class="collapse">
   <li><a href="#package-management-hatch" id="toc-package-management-hatch" class="nav-link" data-scroll-target="#package-management-hatch">Package Management: Hatch</a></li>
@@ -143,6 +156,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools">Tools</a></li>
   <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure">Infrastructure</a></li>
   <li><a href="#practices" id="toc-practices" class="nav-link" data-scroll-target="#practices">Practices</a></li>
+  </ul></li>
+  <li><a href="#key-questions-answered" id="toc-key-questions-answered" class="nav-link" data-scroll-target="#key-questions-answered">Key Questions Answered</a>
+  <ul class="collapse">
+  <li><a href="#planning-accuracy" id="toc-planning-accuracy" class="nav-link" data-scroll-target="#planning-accuracy">Planning Accuracy</a></li>
+  <li><a href="#bottlenecks" id="toc-bottlenecks" class="nav-link" data-scroll-target="#bottlenecks">Bottlenecks</a></li>
+  <li><a href="#bus-factor" id="toc-bus-factor" class="nav-link" data-scroll-target="#bus-factor">Bus Factor</a></li>
   </ul></li>
   <li><a href="#lessons-learned" id="toc-lessons-learned" class="nav-link" data-scroll-target="#lessons-learned">Lessons Learned</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -173,7 +192,177 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524.</p>
+<p>This page documents our team’s reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524. Our analysis is grounded in data from our GitHub Project board and issue tracking.</p>
+</section>
+<section id="project-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="project-analytics">Project Analytics</h2>
+<section id="milestone-progress-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="milestone-progress-velocity">Milestone Progress (Velocity)</h3>
+<p>We tracked our work across four milestones:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Milestone</th>
+<th>Issues</th>
+<th>Completed</th>
+<th>Completion Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Milestone 1</td>
+<td>8</td>
+<td>8</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>Milestone 2</td>
+<td>12</td>
+<td>12</td>
+<td>100%</td>
+</tr>
+<tr class="odd">
+<td>Milestone 3</td>
+<td>10</td>
+<td>10</td>
+<td>100%</td>
+</tr>
+<tr class="even">
+<td>Milestone 4</td>
+<td>9</td>
+<td>9</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>Milestone 2 (code implementation) had the most issues, as expected for the core development phase</li>
+<li>CI/CD setup in Milestone 3 required fewer issues but more debugging time per issue</li>
+<li>Scope remained consistent across milestones with minimal scope creep</li>
+</ul>
+</section>
+<section id="team-workload-contributions" class="level3">
+<h3 class="anchored" data-anchor-id="team-workload-contributions">Team Workload (Contributions)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Team Member</th>
+<th>Issues Assigned</th>
+<th>Issues Completed</th>
+<th>Primary Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hoi Hin Kwok</td>
+<td>10</td>
+<td>10</td>
+<td><code>estimate_trip_cost</code>, CI/CD</td>
+</tr>
+<tr class="even">
+<td>Hooman Esteki</td>
+<td>10</td>
+<td>10</td>
+<td><code>convert_currency</code>, Documentation</td>
+</tr>
+<tr class="odd">
+<td>Derrick Jaskiel</td>
+<td>10</td>
+<td>10</td>
+<td><code>format_destination</code>, Testing</td>
+</tr>
+<tr class="even">
+<td>Rebecca Rosette Nanfuka</td>
+<td>9</td>
+<td>9</td>
+<td><code>get_packing_list</code>, Code Review</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>Work was distributed roughly equally across all team members</li>
+<li>Each member owned one core function end-to-end (implementation, tests, docs)</li>
+<li>No single point of failure - all members contributed to shared infrastructure</li>
+</ul>
+</section>
+<section id="bottleneck-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="bottleneck-analysis">Bottleneck Analysis</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Status</th>
+<th>Average Time</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>To Do</td>
+<td>&lt; 1 day</td>
+<td>Issues moved quickly to In Progress</td>
+</tr>
+<tr class="even">
+<td>In Progress</td>
+<td>2-3 days</td>
+<td>Most time spent here (expected)</td>
+</tr>
+<tr class="odd">
+<td>In Review</td>
+<td>&lt; 1 day</td>
+<td>Quick turnaround on code reviews</td>
+</tr>
+<tr class="even">
+<td>Done</td>
+<td>-</td>
+<td>All issues completed by milestone deadline</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>No significant bottlenecks in review process</li>
+<li>Team maintained good velocity throughout project</li>
+<li>GitHub Actions failures caused occasional delays but were resolved quickly</li>
+</ul>
+</section>
+</section>
+<section id="daki-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="daki-analysis">DAKI Analysis</h2>
+<section id="drop-what-should-we-stop-doing" class="level3">
+<h3 class="anchored" data-anchor-id="drop-what-should-we-stop-doing">Drop (What should we stop doing?)</h3>
+<ul>
+<li><strong>Manual version bumping</strong>: We initially edited <code>pyproject.toml</code> manually for each release. Switching to <code>hatch-vcs</code> with git tags automated this.</li>
+<li><strong>Large PRs</strong>: Early PRs were too big and hard to review. We learned to keep them focused.</li>
+<li><strong>Slack for technical discussions</strong>: Moving all technical discussion to GitHub Issues improved traceability.</li>
+</ul>
+</section>
+<section id="add-what-should-we-start-doing" class="level3">
+<h3 class="anchored" data-anchor-id="add-what-should-we-start-doing">Add (What should we start doing?)</h3>
+<ul>
+<li><strong>Pre-commit hooks</strong>: Would catch linting issues before pushing</li>
+<li><strong>Automated changelog generation</strong>: Currently manual, could be automated from commits</li>
+<li><strong>Issue templates for all types</strong>: We only had bug reports initially</li>
+</ul>
+</section>
+<section id="keep-what-worked-well" class="level3">
+<h3 class="anchored" data-anchor-id="keep-what-worked-well">Keep (What worked well?)</h3>
+<ul>
+<li><strong>Matrix testing</strong>: Testing on 3 OS × 2 Python versions caught platform-specific issues</li>
+<li><strong>Branch protection</strong>: Required reviews prevented bugs from reaching main</li>
+<li><strong>Codecov integration</strong>: Visual coverage tracking motivated maintaining high coverage</li>
+<li><strong>Conventional commits</strong>: Standardized commit messages improved readability</li>
+</ul>
+</section>
+<section id="improve-what-could-be-better" class="level3">
+<h3 class="anchored" data-anchor-id="improve-what-could-be-better">Improve (What could be better?)</h3>
+<ul>
+<li><strong>Documentation previews</strong>: Current artifact-based preview requires manual download; could use Netlify for live previews</li>
+<li><strong>Test organization</strong>: Could benefit from more fixtures and parametrized tests</li>
+<li><strong>Issue estimation</strong>: Some issues took longer than expected; could add story points</li>
+</ul>
+</section>
 </section>
 <section id="development-tools" class="level2">
 <h2 class="anchored" data-anchor-id="development-tools">Development Tools</h2>
@@ -263,7 +452,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><code>deploy.yml</code></td>
 <td>Build and publish to TestPyPI</td>
-<td>Push to main</td>
+<td>Git tags, Releases</td>
 </tr>
 <tr class="odd">
 <td><code>docs.yml</code></td>
@@ -305,15 +494,16 @@ ul.task-list li input[type="checkbox"] {
 <p>We used a Project Board to visualize and manage work.</p>
 <p><strong>Views created:</strong></p>
 <ul>
-<li>By Status (To Do, In Progress, Done)</li>
-<li>By Assignee (work distribution)</li>
-<li>By Milestone (progress tracking)</li>
+<li><strong>Milestone Progress</strong>: Table view grouped by Milestone</li>
+<li><strong>Team Workload</strong>: Table view grouped by Assignee</li>
+<li><strong>By Status</strong>: Board view with To Do, In Progress, Done columns</li>
 </ul>
 <p><strong>What worked well:</strong></p>
 <ul>
 <li>Clear visibility of project status</li>
 <li>Easy to identify blocked or stale items</li>
 <li>Helped balance workload across team members</li>
+<li>Insights tab provided analytics for retrospective</li>
 </ul>
 </section>
 <section id="pull-requests-code-review" class="level3">
@@ -459,6 +649,24 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </section>
 </section>
+<section id="key-questions-answered" class="level2">
+<h2 class="anchored" data-anchor-id="key-questions-answered">Key Questions Answered</h2>
+<section id="planning-accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="planning-accuracy">Planning Accuracy</h3>
+<p>Did we consistently underestimate work for specific milestones?</p>
+<p><strong>Answer</strong>: Milestone 3 (CI/CD) was underestimated. While it had fewer issues than Milestone 2, debugging GitHub Actions workflows took more time than anticipated. For future projects, we would allocate more time for CI/CD setup.</p>
+</section>
+<section id="bottlenecks" class="level3">
+<h3 class="anchored" data-anchor-id="bottlenecks">Bottlenecks</h3>
+<p>Did tasks pile up in any status?</p>
+<p><strong>Answer</strong>: No significant bottlenecks. The “In Review” column never had more than 2 items at a time. Team members prioritized reviewing each other’s PRs promptly.</p>
+</section>
+<section id="bus-factor" class="level3">
+<h3 class="anchored" data-anchor-id="bus-factor">Bus Factor</h3>
+<p>If the team member with the most knowledge left, would the project stall?</p>
+<p><strong>Answer</strong>: Low risk. Each function was owned by one person, but all code was reviewed by at least one other team member. Documentation and tests ensure any team member could maintain any function.</p>
+</section>
+</section>
 <section id="lessons-learned" class="level2">
 <h2 class="anchored" data-anchor-id="lessons-learned">Lessons Learned</h2>
 <ol type="1">
@@ -472,6 +680,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>The tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.</p>
+<p>Our data-driven retrospective using GitHub Project analytics confirmed that work was distributed evenly, milestones were completed on time, and no significant bottlenecks emerged. The DAKI analysis identified concrete improvements for future projects.</p>
 <hr>
 <p><em>DSCI 524 - Group 25 | January 2026</em></p>
 
