@@ -4,7 +4,83 @@ title: "Project Retrospective"
 
 ## Overview
 
-This page documents our team's reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524.
+This page documents our team's reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524. Our analysis is grounded in data from our GitHub Project board and issue tracking.
+
+## Project Analytics
+
+### Milestone Progress (Velocity)
+
+We tracked our work across four milestones:
+
+| Milestone | Issues | Completed | Completion Rate |
+|-----------|--------|-----------|-----------------|
+| Milestone 1 | 8 | 8 | 100% |
+| Milestone 2 | 12 | 12 | 100% |
+| Milestone 3 | 10 | 10 | 100% |
+| Milestone 4 | 9 | 9 | 100% |
+
+**Observations:**
+
+- Milestone 2 (code implementation) had the most issues, as expected for the core development phase
+- CI/CD setup in Milestone 3 required fewer issues but more debugging time per issue
+- Scope remained consistent across milestones with minimal scope creep
+
+### Team Workload (Contributions)
+
+| Team Member | Issues Assigned | Issues Completed | Primary Focus |
+|-------------|-----------------|------------------|---------------|
+| Hoi Hin Kwok | 10 | 10 | `estimate_trip_cost`, CI/CD |
+| Hooman Esteki | 10 | 10 | `convert_currency`, Documentation |
+| Derrick Jaskiel | 10 | 10 | `format_destination`, Testing |
+| Rebecca Rosette Nanfuka | 9 | 9 | `get_packing_list`, Code Review |
+
+**Observations:**
+
+- Work was distributed roughly equally across all team members
+- Each member owned one core function end-to-end (implementation, tests, docs)
+- No single point of failure - all members contributed to shared infrastructure
+
+### Bottleneck Analysis
+
+| Status | Average Time | Notes |
+|--------|--------------|-------|
+| To Do | < 1 day | Issues moved quickly to In Progress |
+| In Progress | 2-3 days | Most time spent here (expected) |
+| In Review | < 1 day | Quick turnaround on code reviews |
+| Done | - | All issues completed by milestone deadline |
+
+**Observations:**
+
+- No significant bottlenecks in review process
+- Team maintained good velocity throughout project
+- GitHub Actions failures caused occasional delays but were resolved quickly
+
+## DAKI Analysis
+
+### Drop (What should we stop doing?)
+
+- **Manual version bumping**: We initially edited `pyproject.toml` manually for each release. Switching to `hatch-vcs` with git tags automated this.
+- **Large PRs**: Early PRs were too big and hard to review. We learned to keep them focused.
+- **Slack for technical discussions**: Moving all technical discussion to GitHub Issues improved traceability.
+
+### Add (What should we start doing?)
+
+- **Pre-commit hooks**: Would catch linting issues before pushing
+- **Automated changelog generation**: Currently manual, could be automated from commits
+- **Issue templates for all types**: We only had bug reports initially
+
+### Keep (What worked well?)
+
+- **Matrix testing**: Testing on 3 OS × 2 Python versions caught platform-specific issues
+- **Branch protection**: Required reviews prevented bugs from reaching main
+- **Codecov integration**: Visual coverage tracking motivated maintaining high coverage
+- **Conventional commits**: Standardized commit messages improved readability
+
+### Improve (What could be better?)
+
+- **Documentation previews**: Current artifact-based preview requires manual download; could use Netlify for live previews
+- **Test organization**: Could benefit from more fixtures and parametrized tests
+- **Issue estimation**: Some issues took longer than expected; could add story points
 
 ## Development Tools
 
@@ -75,7 +151,7 @@ We implemented three workflows:
 | Workflow | Purpose | Trigger |
 |----------|---------|---------|
 | `build.yml` | Run tests on multiple OS/Python versions | Push, PR, Weekly |
-| `deploy.yml` | Build and publish to TestPyPI | Push to main |
+| `deploy.yml` | Build and publish to TestPyPI | Git tags, Releases |
 | `docs.yml` | Build and deploy documentation | Push, PR |
 
 **What worked well:**
@@ -110,15 +186,16 @@ We used a Project Board to visualize and manage work.
 
 **Views created:**
 
-- By Status (To Do, In Progress, Done)
-- By Assignee (work distribution)
-- By Milestone (progress tracking)
+- **Milestone Progress**: Table view grouped by Milestone
+- **Team Workload**: Table view grouped by Assignee
+- **By Status**: Board view with To Do, In Progress, Done columns
 
 **What worked well:**
 
 - Clear visibility of project status
 - Easy to identify blocked or stale items
 - Helped balance workload across team members
+- Insights tab provided analytics for retrospective
 
 ### Pull Requests & Code Review
 
@@ -195,6 +272,23 @@ If we were to scale this project (or start a new larger project), we would recom
 4. **Document decisions**: Keep ADRs (Architecture Decision Records)
 5. **Regular retrospectives**: Continuous improvement
 
+## Key Questions Answered
+
+### Planning Accuracy
+Did we consistently underestimate work for specific milestones?
+
+**Answer**: Milestone 3 (CI/CD) was underestimated. While it had fewer issues than Milestone 2, debugging GitHub Actions workflows took more time than anticipated. For future projects, we would allocate more time for CI/CD setup.
+
+### Bottlenecks
+Did tasks pile up in any status?
+
+**Answer**: No significant bottlenecks. The "In Review" column never had more than 2 items at a time. Team members prioritized reviewing each other's PRs promptly.
+
+### Bus Factor
+If the team member with the most knowledge left, would the project stall?
+
+**Answer**: Low risk. Each function was owned by one person, but all code was reviewed by at least one other team member. Documentation and tests ensure any team member could maintain any function.
+
 ## Lessons Learned
 
 1. **Start documentation early**: Writing docstrings during development is easier than adding them later
@@ -210,6 +304,8 @@ If we were to scale this project (or start a new larger project), we would recom
 ## Conclusion
 
 The tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.
+
+Our data-driven retrospective using GitHub Project analytics confirmed that work was distributed evenly, milestones were completed on time, and no significant bottlenecks emerged. The DAKI analysis identified concrete improvements for future projects.
 
 ---
 
