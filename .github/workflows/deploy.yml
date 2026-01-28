@@ -1,9 +1,6 @@
 name: Deploy to TestPyPI
 
 on:
-  push:
-    branches:
-      - main
   release:
     types: [published]
 
@@ -14,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-tags: true
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -71,7 +68,6 @@ jobs:
 
   publish:
     name: Publish Python distribution to TestPyPI
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs:
       - build
       - test
