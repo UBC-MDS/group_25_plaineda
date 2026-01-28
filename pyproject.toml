@@ -4,15 +4,15 @@
 
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 
 ################################################################################
-# Project Configuration.
+# Project Configuration
 ################################################################################
 
 [project]
 name = "travelpy"
-version = "0.2.7"
+dynamic = ["version"]
 
 description = "A lightweight Python package for travel planning"
 authors = [
@@ -45,6 +45,7 @@ Download = "https://test.pypi.org/project/travelpy/#files"
 dev = [
     "hatch",
     "pre-commit",
+    "ruff",
 ]
 
 docs = [
@@ -55,6 +56,7 @@ build = [
     "pip-audit",
     "twine",
 ]
+
 tests = [
     "pytest",
     "pytest-cov",
@@ -75,8 +77,22 @@ only-packages = true
 packages = ["src/travelpy"]
 
 
+################################################################################
+# Semantic Versioning from Git Tags
+################################################################################
 
-######## Configure pytest for your test suite ########
+[tool.hatch.version]
+source = "vcs"
+raw-options = {version_scheme = "no-guess-dev", local_scheme = "no-local-version"}
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/travelpy/__version__.py"
+
+
+################################################################################
+# Pytest Configuration
+################################################################################
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = ["raises"]
@@ -142,7 +158,6 @@ features = [
 [tool.hatch.envs.docs.scripts]
 build = ["quartodoc build && quarto render"]
 serve = ["quarto preview"]
-
 
 
 #--------------- Check security for your dependencies ---------------#
