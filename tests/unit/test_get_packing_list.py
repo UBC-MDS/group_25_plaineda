@@ -50,7 +50,7 @@ def test_invalid_duration_type():
     with pytest.raises(TypeError):
         get_packing_list("mild", "five")
         
- def test_invalid_weather_type():
+def test_invalid_weather_type():
     """Test that a string weather input raises a TypeError."""
     with pytest.raises(TypeError):
         get_packing_list(123, 5)
