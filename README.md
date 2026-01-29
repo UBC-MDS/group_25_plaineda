@@ -11,36 +11,11 @@
 
 TravelPy is a lightweight Python package that provides a simplified way for students and travelers to plan their trips by considering budgeting, conversion, and preparing their packing list in one toolkit.
 
-## Why TravelPy?
+---
 
-Planning a trip often involves juggling multiple tools and websites: one for estimating fuel costs, another for currency conversion, and yet another for creating packing lists. **TravelPy solves this problem by bundling these common travel-planning tasks into a single, easy-to-use Python package.**
+## Documentation
 
-### The Problem
-
-When planning a road trip or international travel, you typically need to:
-- Calculate fuel costs using distance, gas prices, and vehicle efficiency
-- Convert your budget to foreign currencies with realistic fee expectations
-- Create weather-appropriate packing lists based on trip duration
-- Format destination names consistently for itineraries or documents
-
-Each of these tasks individually is simple arithmetic or string manipulation, but **the value of TravelPy is integration and convenience**. Instead of writing custom code or using multiple websites, TravelPy provides tested, documented functions that handle edge cases (like long-trip contingencies, small-transaction fees, and input validation).
-
-### Who Should Use TravelPy?
-
-- **Students** learning Python who want practical, real-world examples
-- **Travelers** who prefer programmatic trip planning over web tools
-- **Developers** building travel-related applications who need utility functions
-- **Data scientists** analyzing travel costs or patterns
-
-### How TravelPy Complements the Python Ecosystem
-
-| Existing Package | Purpose | TravelPy Difference |
-|------------------|---------|---------------------|
-| [forex-python](https://pypi.org/project/forex-python/) | Real-time currency rates via API | TravelPy uses user-provided rates (works offline, includes fee logic) |
-| [currencyconverter](https://pypi.org/project/currencyconverter/) | Historical exchange rates | TravelPy focuses on trip budgeting with service fees |
-| [pycountry](https://pypi.org/project/pycountry/) | Country/language codes | TravelPy formats destinations for display, not lookup |
-
-**TravelPy is intentionally simple and dependency-free**, making it ideal for learning, lightweight scripts, or embedding in larger applications without bloating dependencies.
+Full documentation: **https://ubc-mds.github.io/DSCI_524_group_25/**
 
 ---
 
@@ -49,23 +24,6 @@ Each of these tasks individually is simple arithmetic or string manipulation, bu
 Install from TestPyPI:
 ```bash
 pip install -i https://test.pypi.org/simple/ travelpy
-```
-
----
-
-## Quick Start
-
-```python
-from travelpy.estimate_trip_cost import estimate_trip_cost
-from travelpy.convert_currency import convert_currency
-from travelpy.get_packing_list import get_packing_list
-from travelpy.format_destination import format_destination
-
-# Plan a trip to Paris
-destination = format_destination("paris", "fr")  # "Paris, FR"
-fuel_cost = estimate_trip_cost(500, 1.8, 10)     # $103.5 CAD
-budget_eur = convert_currency(500, 0.68)          # €340.0
-packing = get_packing_list("cold", 7)             # ['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']
 ```
 
 ---
@@ -151,9 +109,56 @@ format_destination("TOKYO", "jp")        # Returns: "Tokyo, JP"
 
 ---
 
-## Documentation
+## Why TravelPy?
 
-Full documentation: **https://ubc-mds.github.io/DSCI_524_group_25/**
+TravelPy fits into the broader Python ecosystem as a small utility package that prioritizes integration, clarity, and offline usability over breadth or real-time data. Rather than competing with established libraries like `currencyconverter` or `pycountry`, TravelPy complements them by focusing on common travel-planning workflows. TravelPy is particularly valuable in situations where developers want practical functionality without external APIs, heavy dependencies, or complex configuration.
+
+Planning a trip often involves juggling multiple tools and websites: one for estimating fuel costs, another for currency conversion, and yet another for creating packing lists. **TravelPy solves this problem by bundling these common travel-planning tasks into a single, easy-to-use Python package.**
+
+### The Problem
+
+When planning a road trip or international travel, you typically need to:
+
+- Calculate fuel costs using distance, gas prices, and vehicle efficiency
+- Convert your budget to foreign currencies with realistic fee expectations
+- Create weather-appropriate packing lists based on trip duration
+- Format destination names consistently for itineraries or documents
+
+Each of these tasks individually is simple arithmetic or string manipulation, but **the value of TravelPy is integration and convenience**. Instead of writing custom code or using multiple websites, TravelPy provides tested, documented functions that handle edge cases (like long-trip contingencies, small-transaction fees, and input validation).
+
+### Who Should Use TravelPy?
+
+- **Students** learning Python who want practical, real-world examples
+- **Travelers** who prefer programmatic trip planning over web tools
+- **Developers** building travel-related applications who need utility functions
+- **Data scientists** analyzing travel costs or patterns
+
+### How TravelPy Complements the Python Ecosystem
+
+| Existing Package | Purpose | TravelPy Difference |
+|------------------|---------|---------------------|
+| [forex-python](https://pypi.org/project/forex-python/) | Real-time currency rates via API | TravelPy uses user-provided rates (works offline, includes fee logic) |
+| [currencyconverter](https://pypi.org/project/currencyconverter/) | Historical exchange rates | TravelPy focuses on trip budgeting with service fees |
+| [pycountry](https://pypi.org/project/pycountry/) | Country/language codes | TravelPy formats destinations for display, not lookup |
+
+**TravelPy is intentionally simple and dependency-free**, making it ideal for learning, lightweight scripts, or embedding in larger applications without bloating dependencies.
+
+---
+
+## Quick Start
+
+```python
+from travelpy.estimate_trip_cost import estimate_trip_cost
+from travelpy.convert_currency import convert_currency
+from travelpy.get_packing_list import get_packing_list
+from travelpy.format_destination import format_destination
+
+# Plan a trip to Paris
+destination = format_destination("paris", "fr")  # "Paris, FR"
+fuel_cost = estimate_trip_cost(500, 1.8, 10)     # $103.5 CAD
+budget_eur = convert_currency(500, 0.68)          # €340.0
+packing = get_packing_list("cold", 7)             # ['Passport', 'Toothbrush', 'Heavy Jacket', 'Gloves']
+```
 
 ---
 
