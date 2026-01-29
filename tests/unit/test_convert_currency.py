@@ -32,7 +32,7 @@ def test_amount_above_100():
     assert currency == (180 * 1.2)
 
 def test_invalid_input_types():
-    """Test that non-numeric inputs raise a TypeError."""
+    """Test that specific invalid types (string, None) raise a TypeError."""
     with pytest.raises(TypeError):
         convert_currency(amount="fifty", rate=1.2)
     with pytest.raises(TypeError):

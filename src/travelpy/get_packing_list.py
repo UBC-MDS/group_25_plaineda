@@ -35,6 +35,12 @@ def get_packing_list(weather, duration):
     if duration < 1:
         raise ValueError("Trip duration must be at least 1 day.")
 
+    if not isinstance(weather, str):
+        raise TypeError("Weather must be a string.")
+
+    if not isinstance(duration, int):
+        raise TypeError("Duration must be an integer.")
+        
     items = ["Passport", "Toothbrush"]
     weather_normalized = str(weather).strip().lower()
 
