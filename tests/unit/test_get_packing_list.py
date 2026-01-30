@@ -46,6 +46,11 @@ def test_weather_input_normalization():
     assert "Heavy Jacket" in result
 
 def test_invalid_duration_type():
-    """Test that a non-numeric duration raises a TypeError."""
+    """Test that a string duration input raises a TypeError."""
     with pytest.raises(TypeError):
         get_packing_list("mild", "five")
+        
+def test_invalid_weather_type():
+    """Test that a string weather input raises a TypeError."""
+    with pytest.raises(TypeError):
+        get_packing_list(123, 5)
