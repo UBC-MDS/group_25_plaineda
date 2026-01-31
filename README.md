@@ -202,6 +202,17 @@ Or using hatch:
 hatch run docs:build
 ```
 
+### Preview Documentation
+
+```bash
+quarto preview
+```
+
+Or using hatch:
+```bash
+hatch run docs:serve
+```
+
 ### Deploy Documentation
 
 Documentation is automatically deployed to GitHub Pages on push to `main` via GitHub Actions.
