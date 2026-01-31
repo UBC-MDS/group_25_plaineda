@@ -1,7 +1,9 @@
 def estimate_trip_cost(distance, fuel_price, efficiency):
     """
     Calculate the total fuel cost of a trip in Canada (Metric units), 
-    including a contingency fee for long trips.
+    including a contingency fee for long trips. Adds 15% contingency
+    for trips over 500 km to account for additional costs imposed by
+    extended trips, ie. food, activities, etc.
 
     Parameters
     ----------
