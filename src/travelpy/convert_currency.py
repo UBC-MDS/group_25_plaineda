@@ -32,8 +32,8 @@ def convert_currency(amount, rate):
     180.0
     """
     # Input Validation
-    if amount <= 0:
-        raise ValueError("Amount must be greater than 0 dollars.")
+    if amount < 5:
+        raise ValueError("Amount must be greater than 5 dollars.")
     if rate <= 0:
         raise ValueError("Rate must be greater than 0.")
     

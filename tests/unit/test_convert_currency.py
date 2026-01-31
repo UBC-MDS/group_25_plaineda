@@ -13,12 +13,17 @@ def test_invalid_rate_zero():
 
 def test_invalid_amount_negative():
     """Test that a negative amount raises a ValueError."""
-    with pytest.raises(ValueError, match="Amount must be greater than 0"):
+    with pytest.raises(ValueError, match="Amount must be greater than 5"):
+        convert_currency(amount=-50, rate=1.2)
+
+def test_invalid_amount_less_five():
+    """Test that an amount between 0 and 5 raises a ValueError."""
+    with pytest.raises(ValueError, match="Amount must be greater than 5"):
         convert_currency(amount=-50, rate=1.2)
 
 def test_invalid_amount_zero():
     """Test that an amount of 0 raises a ValueError (Edge Case)."""
-    with pytest.raises(ValueError, match="Amount must be greater than 0"):
+    with pytest.raises(ValueError, match="Amount must be greater than 5"):
         convert_currency(amount=0, rate=1.2)
 
 def test_amount_0_to_100():
