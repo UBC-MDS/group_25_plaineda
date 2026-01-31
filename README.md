@@ -46,6 +46,7 @@ from travelpy.estimate_trip_cost import estimate_trip_cost
 
 estimate_trip_cost(150, 1.7, 12)   # Returns: 21.25
 estimate_trip_cost(900, 1.7, 12)   # Returns: 146.62 (includes 15% contingency)
+estimate_trip_cost(-100, 1.7, 12)  # ValueError: Distance must be greater than 0 km
 ```
 
 ---
@@ -65,6 +66,7 @@ from travelpy.convert_currency import convert_currency
 
 convert_currency(150, 1.2)  # Returns: 180.0
 convert_currency(50, 1.2)   # Returns: 55.0 (fee applied)
+convert_currency(-50, 1.2)  # ValueError: Amount must be greater than 5 dollars
 ```
 
 ---
@@ -85,6 +87,7 @@ from travelpy.get_packing_list import get_packing_list
 get_packing_list("cold", 3)   # Returns: ["Passport", "Toothbrush", "Heavy Jacket", "Gloves"]
 get_packing_list("warm", 10)  # Returns: ["Passport", "Toothbrush", "Sunscreen", "Laundry kit"]
 get_packing_list("rainy", 5)  # Returns: ["Passport", "Toothbrush", "Umbrella"]
+get_packing_list("cold", 0)   # ValueError: Trip duration must be at least 1 day
 ```
 
 ---
@@ -105,6 +108,7 @@ from travelpy.format_destination import format_destination
 format_destination("vancouver", "ca")    # Returns: "Vancouver, CA"
 format_destination("  paris ", " fr ")   # Returns: "Paris, FR"
 format_destination("TOKYO", "jp")        # Returns: "Tokyo, JP"
+format_destination("", "ca")             # ValueError: city and country_code must not be empty
 ```
 
 ---
