@@ -12,10 +12,10 @@ This retrospective documents our team's reflection on the TravelPy project for D
 
 | Team Member | Issues Completed | Primary Focus |
 |-------------|------------------|---------------|
-| hoomanesteki | 40 | CI/CD, Testing, Documentation |
-| hugokwok0119 | 9 | `estimate_trip_cost`, Bug Fixes |
-| derrickmichaelj | 8 | `format_destination`, Peer Reviews |
-| RNanfuka | 6 | `get_packing_list`, Code Review |
+| hoomanesteki | 30 | CI/CD, Testing, Documentation |
+| hugokwok0119 | 10 | `estimate_trip_cost`, Bug Fixes |
+| derrickmichaelj | 10 | `format_destination`, Peer Reviews |
+| RNanfuka | 10 | `get_packing_list`, Code Review |
 
 **Total Completed:** 63 issues
 
