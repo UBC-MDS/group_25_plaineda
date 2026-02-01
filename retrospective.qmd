@@ -4,309 +4,84 @@ title: "Project Retrospective"
 
 ## Overview
 
-This page documents our team's reflection on the development tools, GitHub infrastructure, and organizational practices used throughout the TravelPy project for DSCI 524. Our analysis is grounded in data from our GitHub Project board and issue tracking.
+This retrospective documents our team's reflection on the TravelPy project for DSCI 524, using data from our GitHub Project board.
 
 ## Project Analytics
 
-### Milestone Progress (Velocity)
+### Team Workload
 
-We tracked our work across four milestones:
+| Team Member | Issues Completed | Primary Focus |
+|-------------|------------------|---------------|
+| hoomanesteki | 40 | CI/CD, Testing, Documentation |
+| hugokwok0119 | 9 | `estimate_trip_cost`, Bug Fixes |
+| derrickmichaelj | 8 | `format_destination`, Peer Reviews |
+| RNanfuka | 6 | `get_packing_list`, Code Review |
 
-| Milestone | Issues | Completed | Completion Rate |
-|-----------|--------|-----------|-----------------|
-| Milestone 1 | 8 | 8 | 100% |
-| Milestone 2 | 12 | 12 | 100% |
-| Milestone 3 | 10 | 10 | 100% |
-| Milestone 4 | 9 | 9 | 100% |
+**Total Completed:** 63 issues
 
-**Observations:**
+The workload distribution appears skewed, but hoomanesteki handled many smaller CI/CD configuration tasks, workflow debugging, and documentation updates that were quick to complete. The other team members focused on more complex core logic implementation.
 
-- Milestone 2 (code implementation) had the most issues, as expected for the core development phase
-- CI/CD setup in Milestone 3 required fewer issues but more debugging time per issue
-- Scope remained consistent across milestones with minimal scope creep
+### Milestone Progress
 
-### Team Workload (Contributions)
+| Milestone | Issues | Focus |
+|-----------|--------|-------|
+| M1 | 13 | Function specifications, initial setup |
+| M2 | 4 | Core implementation |
+| M3 | 17 | CI/CD, testing, documentation |
+| M4 | 29 | Polish, peer reviews, final fixes |
 
-| Team Member | Issues Assigned | Issues Completed | Primary Focus |
-|-------------|-----------------|------------------|---------------|
-| Hoi Hin Kwok | 10 | 10 | `estimate_trip_cost`, CI/CD |
-| Hooman Esteki | 10 | 10 | `convert_currency`, Documentation |
-| Derrick Jaskiel | 10 | 10 | `format_destination`, Testing |
-| Rebecca Rosette Nanfuka | 9 | 9 | `get_packing_list`, Code Review |
-
-**Observations:**
-
-- Work was distributed roughly equally across all team members
-- Each member owned one core function end-to-end (implementation, tests, docs)
-- No single point of failure - all members contributed to shared infrastructure
-
-### Bottleneck Analysis
-
-| Status | Average Time | Notes |
-|--------|--------------|-------|
-| To Do | < 1 day | Issues moved quickly to In Progress |
-| In Progress | 2-3 days | Most time spent here (expected) |
-| In Review | < 1 day | Quick turnaround on code reviews |
-| Done | - | All issues completed by milestone deadline |
-
-**Observations:**
-
-- No significant bottlenecks in review process
-- Team maintained good velocity throughout project
-- GitHub Actions failures caused occasional delays but were resolved quickly
+M3 had more issues than M2 due to CI/CD debugging—GitHub Actions workflows required multiple iterations to get right. M4 had the most issues as we addressed peer review feedback and finalized documentation.
 
 ## DAKI Analysis
 
-### Drop (What should we stop doing?)
+### Drop
+- Manual version bumping (switched to `hatch-vcs` with git tags)
+- Large PRs that were hard to review
 
-- **Manual version bumping**: We initially edited `pyproject.toml` manually for each release. Switching to `hatch-vcs` with git tags automated this.
-- **Large PRs**: Early PRs were too big and hard to review. We learned to keep them focused.
-- **Slack for technical discussions**: Moving all technical discussion to GitHub Issues improved traceability.
+### Add
+- Pre-commit hooks to catch linting issues before pushing
+- Issue templates for all task types
 
-### Add (What should we start doing?)
+### Keep
+- Matrix testing across OS and Python versions
+- Branch protection with required reviews
+- Codecov integration for coverage tracking
 
-- **Pre-commit hooks**: Would catch linting issues before pushing
-- **Automated changelog generation**: Currently manual, could be automated from commits
-- **Issue templates for all types**: We only had bug reports initially
+### Improve
+- Better time estimates for CI/CD setup
+- More parametrized tests to reduce duplication
 
-### Keep (What worked well?)
+## Tools & Infrastructure
 
-- **Matrix testing**: Testing on 3 OS × 2 Python versions caught platform-specific issues
-- **Branch protection**: Required reviews prevented bugs from reaching main
-- **Codecov integration**: Visual coverage tracking motivated maintaining high coverage
-- **Conventional commits**: Standardized commit messages improved readability
+| Tool | Purpose |
+|------|---------|
+| Hatch | Package management, environment handling |
+| pytest + pytest-cov | Testing and coverage |
+| Ruff | Fast linting |
+| Quartodoc | API documentation generation |
+| GitHub Actions | CI/CD pipelines |
+| Codecov | Coverage tracking |
 
-### Improve (What could be better?)
+### CI/CD Workflows
 
-- **Documentation previews**: Current artifact-based preview requires manual download; could use Netlify for live previews
-- **Test organization**: Could benefit from more fixtures and parametrized tests
-- **Issue estimation**: Some issues took longer than expected; could add story points
-
-## Development Tools
-
-### Package Management: Hatch
-
-We used **Hatch** as our Python project manager and build tool.
-
-**What worked well:**
-
-- Easy environment management with `hatch shell`
-- Matrix testing across Python versions (3.10, 3.13)
-- Simple script definitions in `pyproject.toml`
-- Built-in support for editable installs
-
-**Challenges:**
-
-- Initial learning curve for team members unfamiliar with Hatch
-- Some confusion between Hatch environments and conda environments
-
-### Testing: Pytest
-
-We used **pytest** with several plugins for our test suite.
-
-**Plugins used:**
-
-- `pytest-cov`: Code coverage reporting
-- `pytest-raises`: Exception testing
-- `pytest-randomly`: Randomized test order
-- `pytest-xdist`: Parallel test execution
-
-**What worked well:**
-
-- Easy to write and organize tests
-- Coverage reports helped identify untested code
-- Integration with Codecov for tracking coverage over time
-
-### Code Quality: Ruff
-
-We used **Ruff** as our linter and style checker.
-
-**What worked well:**
-
-- Extremely fast compared to other linters
-- Catches common Python issues
-- Easy CI integration
-
-### Documentation: Quartodoc + Quarto
-
-We used **Quartodoc** to generate API documentation from docstrings and **Quarto** to build our documentation website.
-
-**What worked well:**
-
-- Automatic generation of function reference pages
-- Nice integration with NumPy-style docstrings
-- Easy to add custom pages (like this one)
-
-**Challenges:**
-
-- Required careful attention to docstring formatting
-- Initial setup took some time to configure correctly
-
-## GitHub Infrastructure
-
-### GitHub Actions (CI/CD)
-
-We implemented three workflows:
-
-| Workflow | Purpose | Trigger |
+| Workflow | Trigger | Purpose |
 |----------|---------|---------|
-| `build.yml` | Run tests on multiple OS/Python versions | Push, PR, Weekly |
-| `deploy.yml` | Build and publish to TestPyPI | Git tags, Releases |
-| `docs.yml` | Build and deploy documentation | Push, PR |
-
-**What worked well:**
-
-- Automated testing caught bugs before merging
-- Automatic deployment reduced manual work
-- Matrix testing ensured cross-platform compatibility
-
-**Challenges:**
-
-- Debugging failed workflows required reading logs carefully
-- Secret management (CODECOV token) needed coordination
-
-### GitHub Issues
-
-We used Issues to track:
-
-- Bug reports
-- Feature requests
-- Documentation tasks
-- Milestone requirements
-
-**What worked well:**
-
-- Issue templates standardized bug reports
-- Labels helped categorize and filter issues
-- Linking issues to PRs provided traceability
-
-### GitHub Project Board
-
-We used a Project Board to visualize and manage work.
-
-**Views created:**
-
-- **Milestone Progress**: Table view grouped by Milestone
-- **Team Workload**: Table view grouped by Assignee
-- **By Status**: Board view with To Do, In Progress, Done columns
-
-**What worked well:**
-
-- Clear visibility of project status
-- Easy to identify blocked or stale items
-- Helped balance workload across team members
-- Insights tab provided analytics for retrospective
-
-### Pull Requests & Code Review
-
-We followed a branch-based workflow with code reviews.
-
-**What worked well:**
-
-- Code reviews caught errors and improved quality
-- PR templates ensured consistent descriptions
-- Branch protection prevented direct pushes to main
-
-## Organizational Practices
-
-### Branching Strategy
-
-We used a modified **Git Flow** approach:
-
-```
-main (stable)
-  └── develop (staging)
-       ├── feature/function-name
-       ├── fix/bug-description
-       └── docs/documentation-updates
-```
-
-**What worked well:**
-
-- Clear separation between stable and development code
-- Feature branches allowed parallel work
-- Develop branch provided integration testing before main
-
-### Communication
-
-- **GitHub Issues**: Task tracking and technical discussions
-- **Pull Request comments**: Code-specific feedback
-- **Weekly meetings**: Coordination and planning
-
-### Work Distribution
-
-Each team member was responsible for:
-
-- One core function implementation
-- Corresponding unit tests
-- Documentation for their function
+| `build.yml` | Push, PR | Run tests on multiple OS/Python versions |
+| `deploy.yml` | Tags | Publish to TestPyPI |
+| `docs.yml` | Push | Build and deploy documentation |
 
 ## Scaling Recommendations
 
-If we were to scale this project (or start a new larger project), we would recommend:
+For future projects like capstone:
 
-### Tools
+1. **Automate early**: Set up CI/CD in M1, not M3
+2. **Use pre-commit hooks**: Enforce standards before commits reach CI
+3. **Keep PRs small**: Easier to review and debug
+4. **Document as you go**: Writing docstrings during development saves time
 
-| Tool | Purpose | Why |
-|------|---------|-----|
-| **Hatch** | Package management | Excellent environment and build management |
-| **pytest** | Testing | Industry standard, extensive plugin ecosystem |
-| **Ruff** | Linting | Fast, comprehensive, replaces multiple tools |
-| **pre-commit** | Git hooks | Enforce standards before commits |
-| **Codecov** | Coverage tracking | Visual coverage trends over time |
+## Key Takeaways
 
-### Infrastructure
-
-| Infrastructure | Purpose | Why |
-|----------------|---------|-----|
-| **GitHub Actions** | CI/CD | Free for public repos, excellent GitHub integration |
-| **GitHub Projects** | Task management | Integrated with issues and PRs |
-| **Branch protection** | Code quality | Require reviews and passing CI |
-| **Dependabot** | Security | Automatic dependency updates |
-
-### Practices
-
-1. **Require PR reviews**: At least one approval before merging
-2. **Enforce CI passing**: No merging with failed tests
-3. **Use conventional commits**: Standardized commit messages
-4. **Document decisions**: Keep ADRs (Architecture Decision Records)
-5. **Regular retrospectives**: Continuous improvement
-
-## Key Questions Answered
-
-### Planning Accuracy
-Did we consistently underestimate work for specific milestones?
-
-**Answer**: Milestone 3 (CI/CD) was underestimated. While it had fewer issues than Milestone 2, debugging GitHub Actions workflows took more time than anticipated. For future projects, we would allocate more time for CI/CD setup.
-
-### Bottlenecks
-Did tasks pile up in any status?
-
-**Answer**: No significant bottlenecks. The "In Review" column never had more than 2 items at a time. Team members prioritized reviewing each other's PRs promptly.
-
-### Bus Factor
-If the team member with the most knowledge left, would the project stall?
-
-**Answer**: Low risk. Each function was owned by one person, but all code was reviewed by at least one other team member. Documentation and tests ensure any team member could maintain any function.
-
-## Lessons Learned
-
-1. **Start documentation early**: Writing docstrings during development is easier than adding them later
-
-2. **Test edge cases**: Many bugs were found by testing boundary conditions
-
-3. **Automate everything**: CI/CD saved significant time and caught issues early
-
-4. **Communicate often**: Regular check-ins prevented duplicate work and blockers
-
-5. **Keep PRs small**: Smaller PRs were easier to review and had fewer conflicts
-
-## Conclusion
-
-The tools and practices we adopted for TravelPy provided a solid foundation for collaborative development. The combination of automated testing, documentation generation, and structured workflows allowed our team to deliver a quality package efficiently.
-
-Our data-driven retrospective using GitHub Project analytics confirmed that work was distributed evenly, milestones were completed on time, and no significant bottlenecks emerged. The DAKI analysis identified concrete improvements for future projects.
-
----
-
-*DSCI 524 - Group 25 | January 2026*
+- CI/CD setup took more time than anticipated due to debugging workflow failures
+- Work distribution by issue count doesn't reflect complexity—explain context in retrospectives
+- All 63 issues completed with 100% completion rate across all milestones
+- No significant bottlenecks in review process
