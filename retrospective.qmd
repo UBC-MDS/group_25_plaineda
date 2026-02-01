@@ -82,6 +82,6 @@ For future projects like capstone:
 ## Key Takeaways
 
 - CI/CD setup took more time than anticipated due to debugging workflow failures
-- Work distribution by issue count doesn't reflect complexity—explain context in retrospectives
+- Work distribution by issue count doesn't reflect complexity explain context in retrospectives
 - All 63 issues completed with 100% completion rate across all milestones
 - No significant bottlenecks in review process
