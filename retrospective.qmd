@@ -30,7 +30,7 @@ The workload distribution appears skewed, but hoomanesteki handled many smaller 
 | M3 | 17 | CI/CD, testing, documentation |
 | M4 | 29 | Polish, peer reviews, final fixes |
 
-M3 had more issues than M2 due to CI/CD debugging—GitHub Actions workflows required multiple iterations to get right. M4 had the most issues as we addressed peer review feedback and finalized documentation.
+M3 had more issues than M2 due to CI/CD debugging GitHub Actions workflows required multiple iterations to get right. M4 had the most issues as we addressed peer review feedback and finalized documentation.
 
 ## DAKI Analysis
 
