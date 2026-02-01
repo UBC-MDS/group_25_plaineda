@@ -445,6 +445,6 @@
     "href": "retrospective.html#key-takeaways",
     "title": "Project Retrospective",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nCI/CD setup took more time than anticipated due to debugging workflow failures\nWork distribution by issue count doesn’t reflect complexity—explain context in retrospectives\nAll 63 issues completed with 100% completion rate across all milestones\nNo significant bottlenecks in review process"
+    "text": "Key Takeaways\n\nCI/CD setup took more time than anticipated due to debugging workflow failures\nWork distribution by issue count doesn’t reflect complexity explain context in retrospectives\nAll 63 issues completed with 100% completion rate across all milestones\nNo significant bottlenecks in review process"
   }
 ]
